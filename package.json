@@ -1,0 +1,15 @@
+{
+  "name": "rpscript-site",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "gen-doc": "bash build.sh"
+  },
+  "keywords": [],
+  "license": "Apache-2.0",
+  "author": "James Chong",
+  "devDependencies": {
+    "jsdoc": "^3.5.5",
+    "tui-jsdoc-template": "^1.2.2"
+  }
+}
