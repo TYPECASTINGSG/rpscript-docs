@@ -143,12 +143,12 @@ function buildItemTypeStrings(item) {
 function buildAttribsString(attribs) {
     var attribsString = '';
 
-    if (attribs && attribs.length) {
-        attribsString = util.format(
-            '<span class="icon green">%s</span> ',
-            attribs.join('</span>, <span class="icon green">')
-        );
-    }
+    // if (attribs && attribs.length) {
+    //     attribsString = util.format(
+    //         '<span class="icon green">%s</span> ',
+    //         attribs.join('</span>, <span class="icon green">')
+    //     );
+    // }
 
     return attribsString;
 }
@@ -166,7 +166,7 @@ function addNonParamAttributes(items) {
 function addSignatureParams(f) {
     var params = f.params ? addParamAttributes(f.params) : [];
 
-    f.signature = util.format( '%s(%s)', (f.signature || ''), params.join(', ') );
+    f.signature = util.format( '%s %s', (f.signature || ''), params.join(' ') );
 }
 
 function addSignatureReturns(f) {

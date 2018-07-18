@@ -1,0 +1,20 @@
+{
+    "gettingstarted": {
+        "title": "Getting Started"
+    },
+    "motivation": {
+        "title": "Motivation"
+    },
+    "directive": {
+        "title": "Directive"
+    },
+    "actions": {
+        "title": "Actions"
+    },
+    "modules": {
+        "title": "Modules"
+    },
+    "example-hello-world": {
+        "title": "Example: Hello World In Style"
+    }
+}

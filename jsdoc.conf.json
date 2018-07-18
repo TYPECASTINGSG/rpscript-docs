@@ -6,17 +6,25 @@
     },
     "opts": {
         "template": "tui-jsdoc-template",
-        "tutorials": "examples",
+        "tutorials": "articles",
         "package": "package.json",
         "recurse": true
     },
     "templates": {
-        "name": "RPScript Documentation",
+        "name": "RPScript",
         "footerText":"Typecasting SG",
         "useCollapsibles": true,
         "tabNames": {
             "api": "API",
-            "tutorials": "Examples"
-        }
+            "tutorials": "Documentation"
+        },
+        "default": {
+            "staticFiles": {
+                "include": ["static/"]
+            }
+        },
+        "css": [
+            "styles/custom.css"
+        ]
     }
 }
