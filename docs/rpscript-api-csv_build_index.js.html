@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109872082-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109872082-2');
+    </script>
+    <title>Source: rpscript-api-csv/build/index.js | RPScript</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/lang-rps.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="styles/custom.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <!--<div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
+    </div>-->
+    <div class="title">
+        <h1><a href="index.html" class="link">RPScript</a></h1>
+        
+            <!--<span class="version">v1.0.0</span>-->
+            <span class="badge badge-warning">alpha</span>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#"><h4>API</h4></a>
+            </li>
+            <li id="examples-tab">
+                <a href="#"><h4>Documentation</h4></a>
+            </li>
+        </ol>
+    
+    <div class="lnb-examples hidden"><h3>Documentation</h3><ul><li><a href="tutorial-gettingstarted.html">Getting Started</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="gettingstarted_sub"></div></li><li><a href="tutorial-usage.html">Usage</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="usage_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="Basic.html">Basic</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Basic_sub"><ul class="inner"><li><a href="Basic.html#.__">__</a></li><li><a href="Basic.html#.abs">abs</a></li><li><a href="Basic.html#.add">add</a></li><li><a href="Basic.html#.add-index">add-index</a></li><li><a href="Basic.html#.adjust">adjust</a></li><li><a href="Basic.html#.all">all</a></li><li><a href="Basic.html#.all-pass">all-pass</a></li><li><a href="Basic.html#.always">always</a></li><li><a href="Basic.html#.and">and</a></li><li><a href="Basic.html#.any">any</a></li><li><a href="Basic.html#.any-pass">any-pass</a></li><li><a href="Basic.html#.ap">ap</a></li><li><a href="Basic.html#.aperture">aperture</a></li><li><a href="Basic.html#.append">append</a></li><li><a href="Basic.html#.apply">apply</a></li><li><a href="Basic.html#.apply-spec">apply-spec</a></li><li><a href="Basic.html#.apply-to">apply-to</a></li><li><a href="Basic.html#.as">as</a></li><li><a href="Basic.html#.ascend">ascend</a></li><li><a href="Basic.html#.assign">assign</a></li><li><a href="Basic.html#.assoc">assoc</a></li><li><a href="Basic.html#.assoc-path">assoc-path</a></li><li><a href="Basic.html#.both">both</a></li><li><a href="Basic.html#.call">call</a></li><li><a href="Basic.html#.ceil">ceil</a></li><li><a href="Basic.html#.chain">chain</a></li><li><a href="Basic.html#.clamp">clamp</a></li><li><a href="Basic.html#.clone">clone</a></li><li><a href="Basic.html#.comparator">comparator</a></li><li><a href="Basic.html#.complement">complement</a></li><li><a href="Basic.html#.compose">compose</a></li><li><a href="Basic.html#.concat">concat</a></li><li><a href="Basic.html#.cond">cond</a></li><li><a href="Basic.html#.contains">contains</a></li><li><a href="Basic.html#.converge">converge</a></li><li><a href="Basic.html#.count-by">count-by</a></li><li><a href="Basic.html#.dec">dec</a></li><li><a href="Basic.html#.default-to">default-to</a></li><li><a href="Basic.html#.descend">descend</a></li><li><a href="Basic.html#.difference">difference</a></li><li><a href="Basic.html#.difference-with">difference-with</a></li><li><a href="Basic.html#.dissoc">dissoc</a></li><li><a href="Basic.html#.dissoc-path">dissoc-path</a></li><li><a href="Basic.html#.divide">divide</a></li><li><a href="Basic.html#.drop">drop</a></li><li><a href="Basic.html#.drop-last">drop-last</a></li><li><a href="Basic.html#.drop-last-while">drop-last-while</a></li><li><a href="Basic.html#.drop-repeats">drop-repeats</a></li><li><a href="Basic.html#.drop-repeats-with">drop-repeats-with</a></li><li><a href="Basic.html#.drop-while">drop-while</a></li><li><a href="Basic.html#.either">either</a></li><li><a href="Basic.html#.empty">empty</a></li><li><a href="Basic.html#.ends-with">ends-with</a></li><li><a href="Basic.html#.eq-by">eq-by</a></li><li><a href="Basic.html#.eq-props">eq-props</a></li><li><a href="Basic.html#.equals">equals</a></li><li><a href="Basic.html#.evolve">evolve</a></li><li><a href="Basic.html#.f">f</a></li><li><a href="Basic.html#.filter">filter</a></li><li><a href="Basic.html#.find">find</a></li><li><a href="Basic.html#.find-index">find-index</a></li><li><a href="Basic.html#.find-last">find-last</a></li><li><a href="Basic.html#.find-last-index">find-last-index</a></li><li><a href="Basic.html#.flatten">flatten</a></li><li><a href="Basic.html#.floor">floor</a></li><li><a href="Basic.html#.for-each">for-each</a></li><li><a href="Basic.html#.for-each-obj-indexed">for-each-obj-indexed</a></li><li><a href="Basic.html#.from-pairs">from-pairs</a></li><li><a href="Basic.html#.group-by">group-by</a></li><li><a href="Basic.html#.group-with">group-with</a></li><li><a href="Basic.html#.gt">gt</a></li><li><a href="Basic.html#.gte">gte</a></li><li><a href="Basic.html#.has">has</a></li><li><a href="Basic.html#.head">head</a></li><li><a href="Basic.html#.identical">identical</a></li><li><a href="Basic.html#.identity">identity</a></li><li><a href="Basic.html#.if-else">if-else</a></li><li><a href="Basic.html#.inc">inc</a></li><li><a href="Basic.html#.index-by">index-by</a></li><li><a href="Basic.html#.index-of">index-of</a></li><li><a href="Basic.html#.init">init</a></li><li><a href="Basic.html#.inner-join">inner-join</a></li><li><a href="Basic.html#.insert">insert</a></li><li><a href="Basic.html#.insert-all">insert-all</a></li><li><a href="Basic.html#.intersection">intersection</a></li><li><a href="Basic.html#.intersperse">intersperse</a></li><li><a href="Basic.html#.invert">invert</a></li><li><a href="Basic.html#.invert-obj">invert-obj</a></li><li><a href="Basic.html#.is">is</a></li><li><a href="Basic.html#.is-empty">is-empty</a></li><li><a href="Basic.html#.is-nil">is-nil</a></li><li><a href="Basic.html#.join">join</a></li><li><a href="Basic.html#.juxt">juxt</a></li><li><a href="Basic.html#.keys">keys</a></li><li><a href="Basic.html#.last">last</a></li><li><a href="Basic.html#.last-index-of">last-index-of</a></li><li><a href="Basic.html#.length">length</a></li><li><a href="Basic.html#.listen-on">listen-on</a></li><li><a href="Basic.html#.listen-once">listen-once</a></li><li><a href="Basic.html#.log">log</a></li><li><a href="Basic.html#.lt">lt</a></li><li><a href="Basic.html#.lte">lte</a></li><li><a href="Basic.html#.map">map</a></li><li><a href="Basic.html#.map-accum">map-accum</a></li><li><a href="Basic.html#.map-accum-right">map-accum-right</a></li><li><a href="Basic.html#.map-obj-indexed">map-obj-indexed</a></li><li><a href="Basic.html#.match">match</a></li><li><a href="Basic.html#.math-max">math-max</a></li><li><a href="Basic.html#.math-min">math-min</a></li><li><a href="Basic.html#.math-mod">math-mod</a></li><li><a href="Basic.html#.max">max</a></li><li><a href="Basic.html#.max-by">max-by</a></li><li><a href="Basic.html#.mean">mean</a></li><li><a href="Basic.html#.median">median</a></li><li><a href="Basic.html#.merge">merge</a></li><li><a href="Basic.html#.merge-all">merge-all</a></li><li><a href="Basic.html#.merge-deep-left">merge-deep-left</a></li><li><a href="Basic.html#.merge-deep-right">merge-deep-right</a></li><li><a href="Basic.html#.merge-deep-with">merge-deep-with</a></li><li><a href="Basic.html#.merge-with">merge-with</a></li><li><a href="Basic.html#.merge-with-key">merge-with-key</a></li><li><a href="Basic.html#.min">min</a></li><li><a href="Basic.html#.min-by">min-by</a></li><li><a href="Basic.html#.modulo">modulo</a></li><li><a href="Basic.html#.multiply">multiply</a></li><li><a href="Basic.html#.negate">negate</a></li><li><a href="Basic.html#.none">none</a></li><li><a href="Basic.html#.not">not</a></li><li><a href="Basic.html#.nth">nth</a></li><li><a href="Basic.html#.nth-arg">nth-arg</a></li><li><a href="Basic.html#.obj-of">obj-of</a></li><li><a href="Basic.html#.of">of</a></li><li><a href="Basic.html#.omit">omit</a></li><li><a href="Basic.html#.or">or</a></li><li><a href="Basic.html#.pair">pair</a></li><li><a href="Basic.html#.partition">partition</a></li><li><a href="Basic.html#.path">path</a></li><li><a href="Basic.html#.path-eq">path-eq</a></li><li><a href="Basic.html#.path-or">path-or</a></li><li><a href="Basic.html#.path-satisfies">path-satisfies</a></li><li><a href="Basic.html#.pick">pick</a></li><li><a href="Basic.html#.pick-all">pick-all</a></li><li><a href="Basic.html#.pick-by">pick-by</a></li><li><a href="Basic.html#.pipe">pipe</a></li><li><a href="Basic.html#.pluck">pluck</a></li><li><a href="Basic.html#.power">power</a></li><li><a href="Basic.html#.prepend">prepend</a></li><li><a href="Basic.html#.product">product</a></li><li><a href="Basic.html#.project">project</a></li><li><a href="Basic.html#.prop">prop</a></li><li><a href="Basic.html#.prop-eq">prop-eq</a></li><li><a href="Basic.html#.prop-is">prop-is</a></li><li><a href="Basic.html#.prop-or">prop-or</a></li><li><a href="Basic.html#.prop-satisfies">prop-satisfies</a></li><li><a href="Basic.html#.props">props</a></li><li><a href="Basic.html#.r">r</a></li><li><a href="Basic.html#.random">random</a></li><li><a href="Basic.html#.range">range</a></li><li><a href="Basic.html#.reduce">reduce</a></li><li><a href="Basic.html#.reduce-by">reduce-by</a></li><li><a href="Basic.html#.reduce-right">reduce-right</a></li><li><a href="Basic.html#.reduce-while">reduce-while</a></li><li><a href="Basic.html#.regexp">regexp</a></li><li><a href="Basic.html#.reject">reject</a></li><li><a href="Basic.html#.remove">remove</a></li><li><a href="Basic.html#.repeat">repeat</a></li><li><a href="Basic.html#.replace">replace</a></li><li><a href="Basic.html#.reverse">reverse</a></li><li><a href="Basic.html#.round">round</a></li><li><a href="Basic.html#.scan">scan</a></li><li><a href="Basic.html#.slice">slice</a></li><li><a href="Basic.html#.sort">sort</a></li><li><a href="Basic.html#.sort-by">sort-by</a></li><li><a href="Basic.html#.sort-with">sort-with</a></li><li><a href="Basic.html#.split">split</a></li><li><a href="Basic.html#.split-at">split-at</a></li><li><a href="Basic.html#.split-every">split-every</a></li><li><a href="Basic.html#.split-when">split-when</a></li><li><a href="Basic.html#.starts-with">starts-with</a></li><li><a href="Basic.html#.stdout">stdout</a></li><li><a href="Basic.html#.stringify">stringify</a></li><li><a href="Basic.html#.subtract">subtract</a></li><li><a href="Basic.html#.sum">sum</a></li><li><a href="Basic.html#.symmetric-difference">symmetric-difference</a></li><li><a href="Basic.html#.symmetric-difference-with">symmetric-difference-with</a></li><li><a href="Basic.html#.t">t</a></li><li><a href="Basic.html#.tail">tail</a></li><li><a href="Basic.html#.take">take</a></li><li><a href="Basic.html#.take-last">take-last</a></li><li><a href="Basic.html#.take-last-while">take-last-while</a></li><li><a href="Basic.html#.take-while">take-while</a></li><li><a href="Basic.html#.tap">tap</a></li><li><a href="Basic.html#.test">test</a></li><li><a href="Basic.html#.times">times</a></li><li><a href="Basic.html#.to-lower">to-lower</a></li><li><a href="Basic.html#.to-pairs">to-pairs</a></li><li><a href="Basic.html#.to-string">to-string</a></li><li><a href="Basic.html#.to-upper">to-upper</a></li><li><a href="Basic.html#.transpose">transpose</a></li><li><a href="Basic.html#.trim">trim</a></li><li><a href="Basic.html#.truncate">truncate</a></li><li><a href="Basic.html#.try-catch">try-catch</a></li><li><a href="Basic.html#.type">type</a></li><li><a href="Basic.html#.unapply">unapply</a></li><li><a href="Basic.html#.unfold">unfold</a></li><li><a href="Basic.html#.union">union</a></li><li><a href="Basic.html#.union-with">union-with</a></li><li><a href="Basic.html#.uniq">uniq</a></li><li><a href="Basic.html#.uniq-by">uniq-by</a></li><li><a href="Basic.html#.uniq-with">uniq-with</a></li><li><a href="Basic.html#.unless">unless</a></li><li><a href="Basic.html#.unnest">unnest</a></li><li><a href="Basic.html#.until">until</a></li><li><a href="Basic.html#.update">update</a></li><li><a href="Basic.html#.use-with">use-with</a></li><li><a href="Basic.html#.values">values</a></li><li><a href="Basic.html#.when">when</a></li><li><a href="Basic.html#.where">where</a></li><li><a href="Basic.html#.where-eq">where-eq</a></li><li><a href="Basic.html#.without">without</a></li><li><a href="Basic.html#.xprod">xprod</a></li><li><a href="Basic.html#.zip">zip</a></li><li><a href="Basic.html#.zip-obj">zip-obj</a></li><li><a href="Basic.html#.zip-with">zip-with</a></li></ul></div></li><li><a href="Beeper.html">Beeper</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Beeper_sub"><ul class="inner"><li><a href="Beeper.html#.beep">beep</a></li></ul></div></li><li><a href="CSV.html">CSV</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CSV_sub"><ul class="inner"><li><a href="CSV.html#.csv-to-data">csv-to-data</a></li><li><a href="CSV.html#.data-to-csv">data-to-csv</a></li></ul></div></li><li><a href="Date.html">Date</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Date_sub"><ul class="inner"><li><a href="Date.html#.add-date">add-date</a></li><li><a href="Date.html#.clone-date">clone-date</a></li><li><a href="Date.html#.date-convert-to">date-convert-to</a></li><li><a href="Date.html#.date-diff">date-diff</a></li><li><a href="Date.html#.date-equals">date-equals</a></li><li><a href="Date.html#.date-format">date-format</a></li><li><a href="Date.html#.date-get">date-get</a></li><li><a href="Date.html#.date-is-valid">date-is-valid</a></li><li><a href="Date.html#.date-of">date-of</a></li><li><a href="Date.html#.from-time">from-time</a></li><li><a href="Date.html#.is-leap-year">is-leap-year</a></li><li><a href="Date.html#.max-date">max-date</a></li><li><a href="Date.html#.min-date">min-date</a></li><li><a href="Date.html#.parse-date">parse-date</a></li><li><a href="Date.html#.set-date">set-date</a></li><li><a href="Date.html#.subtract-date">subtract-date</a></li><li><a href="Date.html#.unix-time">unix-time</a></li></ul></div></li><li><a href="Download.html">Download</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Download_sub"><ul class="inner"><li><a href="Download.html#.download">download</a></li></ul></div></li><li><a href="Figlet.html">Figlet</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Figlet_sub"><ul class="inner"><li><a href="Figlet.html#.figlet">figlet</a></li></ul></div></li><li><a href="File.html">File</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="File_sub"><ul class="inner"><li><a href="File.html#.append-to-file">append-to-file</a></li><li><a href="File.html#.delete-file">delete-file</a></li><li><a href="File.html#.file-exists">file-exists</a></li><li><a href="File.html#.file-stat">file-stat</a></li><li><a href="File.html#.read-file">read-file</a></li><li><a href="File.html#.rename-file">rename-file</a></li><li><a href="File.html#.write-file">write-file</a></li></ul></div></li><li><a href="Hogan.html">Hogan</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Hogan_sub"><ul class="inner"><li><a href="Hogan.html#.hogan">hogan</a></li></ul></div></li><li><a href="Notifier.html">Notifier</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Notifier_sub"><ul class="inner"><li><a href="Notifier.html#.notify">notify</a></li></ul></div></li><li><a href="Open.html">Open</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Open_sub"><ul class="inner"><li><a href="Open.html#.open">open</a></li></ul></div></li><li><a href="Zip.html">Zip</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Zip_sub"><ul class="inner"><li><a href="Zip.html#.compress">compress</a></li><li><a href="Zip.html#.extract">extract</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this &amp;&amp; this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
+    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const sync_1 = __importDefault(require("csv-parse/lib/sync"));
+const sync_2 = __importDefault(require("csv-stringify/lib/sync"));
+const rpscript_interface_1 = require("rpscript-interface");
+/** Module for parsing CSV file
+ * @see {@link https://www.npmjs.com/package/csv|CSV}
+ * @namespace CSV
+ * @example
+ * rps install csv
+*/
+let RPSCsv = class RPSCsv {
+    /**
+     * @function csv-to-data
+     * @memberof CSV
+     * @param {string} csvString csv content to be parsed
+     * @param {*} options
+     * @example
+     * csv-to-data --columns=true read-file "input.csv"
+     *
+     *
+     * @summary csv-to-data :: String → String
+     *
+     * @see {@link http://csv.adaltas.com/parse/} for available options.
+    */
+    parseCsvToData(ctx, opts, csvString) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (csvString)
+                return sync_1.default(csvString, opts);
+            else
+                return function (csvString) { return sync_1.default(csvString, opts); };
+        });
+    }
+    /**
+     * @function data-to-csv
+     * @memberof CSV
+     * @param {string} data csv content to be parsed
+     * @param {*} options
+     * @example
+     * write-file "result.csv" data-to-csv $processedResult
+     *
+     * @summary data-to-csv :: String → String
+     *
+     * @see {@link http://csv.adaltas.com/stringify/} for available options.
+     *
+    */
+    parseDataToCsv(ctx, opts, data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (data)
+                return sync_2.default(data, opts);
+            else
+                return function (data) { return sync_2.default(data, opts); };
+        });
+    }
+};
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'csv-to-data' })
+], RPSCsv.prototype, "parseCsvToData", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'data-to-csv' })
+], RPSCsv.prototype, "parseDataToCsv", null);
+RPSCsv = __decorate([
+    rpscript_interface_1.RpsModule("csv")
+], RPSCsv);
+exports.default = RPSCsv;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<!--<footer>
+    <!--<img class="logo" src="img/toast-ui.png" style="">-->
+    <!--<div class="footer-text">RPScript</div>-->
+</footer>-->
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+.lnb .title .link {
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.main section article dl dt .name {
+    font-size:15px;
+    font-weight:normal;
+    text-decoration:underline;
+}
+
+.main section article dl h4 .signature {
+    font-size:15px;
+    font-weight:normal;
+    color: green;
+}
+
+.main section article dl dt .name {
+    background-color:#d5f0f9;
+    border-left:6px #2196F3 solid;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+#main > section > article > div > h3 {
+    display:none;
+}

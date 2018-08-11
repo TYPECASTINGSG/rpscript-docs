@@ -1,0 +1,14 @@
+{
+    "gettingstarted": {
+        "title": "Getting Started"
+    },
+    "usage": {
+        "title":"Usage"
+    },
+    "examplegovdata": {
+        "title":"Example: Data Processing"
+    },
+    "examplefiglet": {
+        "title":"Example: Fanciful Ascii Art"
+    }
+}

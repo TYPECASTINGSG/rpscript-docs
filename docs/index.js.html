@@ -1,0 +1,4622 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: index.js | RPScript</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/lang-rps.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="styles/custom.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <!--<div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
+    </div>-->
+    <div class="title">
+        <h1><a href="index.html" class="link">RPScript</a></h1>
+        
+            <span class="version">v1.0.0</span>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#"><h4>API</h4></a>
+            </li>
+            <li id="examples-tab">
+                <a href="#"><h4>Documentation</h4></a>
+            </li>
+        </ol>
+    
+    <div class="lnb-examples hidden"><h3>Documentation</h3><ul><li><a href="tutorial-examplegovdata.html">Example: Process Gov Data</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="examplegovdata_sub"></div></li><li><a href="tutorial-examplegovdata_cea.html">examplegovdata_cea</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="examplegovdata_cea_sub"></div></li><li><a href="tutorial-gettingstarted.html">Getting Started</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="gettingstarted_sub"></div></li><li><a href="tutorial-syntax.html">Syntax</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="syntax_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="Basic.html">Basic</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Basic_sub"><ul class="inner"><li><a href="Basic.html#.__">__</a></li><li><a href="Basic.html#.abs">abs</a></li><li><a href="Basic.html#.add">add</a></li><li><a href="Basic.html#.add-index">add-index</a></li><li><a href="Basic.html#.adjust">adjust</a></li><li><a href="Basic.html#.all">all</a></li><li><a href="Basic.html#.all-pass">all-pass</a></li><li><a href="Basic.html#.always">always</a></li><li><a href="Basic.html#.and">and</a></li><li><a href="Basic.html#.any">any</a></li><li><a href="Basic.html#.any-pass">any-pass</a></li><li><a href="Basic.html#.ap">ap</a></li><li><a href="Basic.html#.aperture">aperture</a></li><li><a href="Basic.html#.append">append</a></li><li><a href="Basic.html#.apply">apply</a></li><li><a href="Basic.html#.apply-spec">apply-spec</a></li><li><a href="Basic.html#.apply-to">apply-to</a></li><li><a href="Basic.html#.as">as</a></li><li><a href="Basic.html#.ascend">ascend</a></li><li><a href="Basic.html#.assign">assign</a></li><li><a href="Basic.html#.assoc">assoc</a></li><li><a href="Basic.html#.assoc-path">assoc-path</a></li><li><a href="Basic.html#.both">both</a></li><li><a href="Basic.html#.call">call</a></li><li><a href="Basic.html#.ceil">ceil</a></li><li><a href="Basic.html#.chain">chain</a></li><li><a href="Basic.html#.clamp">clamp</a></li><li><a href="Basic.html#.clone">clone</a></li><li><a href="Basic.html#.comparator">comparator</a></li><li><a href="Basic.html#.complement">complement</a></li><li><a href="Basic.html#.compose">compose</a></li><li><a href="Basic.html#.concat">concat</a></li><li><a href="Basic.html#.cond">cond</a></li><li><a href="Basic.html#.contains">contains</a></li><li><a href="Basic.html#.converge">converge</a></li><li><a href="Basic.html#.count-by">count-by</a></li><li><a href="Basic.html#.dec">dec</a></li><li><a href="Basic.html#.default-to">default-to</a></li><li><a href="Basic.html#.descend">descend</a></li><li><a href="Basic.html#.difference">difference</a></li><li><a href="Basic.html#.difference-with">difference-with</a></li><li><a href="Basic.html#.dissoc">dissoc</a></li><li><a href="Basic.html#.dissoc-path">dissoc-path</a></li><li><a href="Basic.html#.divide">divide</a></li><li><a href="Basic.html#.drop">drop</a></li><li><a href="Basic.html#.drop-last">drop-last</a></li><li><a href="Basic.html#.drop-last-while">drop-last-while</a></li><li><a href="Basic.html#.drop-repeats">drop-repeats</a></li><li><a href="Basic.html#.drop-repeats-with">drop-repeats-with</a></li><li><a href="Basic.html#.drop-while">drop-while</a></li><li><a href="Basic.html#.either">either</a></li><li><a href="Basic.html#.empty">empty</a></li><li><a href="Basic.html#.ends-with">ends-with</a></li><li><a href="Basic.html#.eq-by">eq-by</a></li><li><a href="Basic.html#.eq-props">eq-props</a></li><li><a href="Basic.html#.equals">equals</a></li><li><a href="Basic.html#.evolve">evolve</a></li><li><a href="Basic.html#.f">f</a></li><li><a href="Basic.html#.filter">filter</a></li><li><a href="Basic.html#.find">find</a></li><li><a href="Basic.html#.find-index">find-index</a></li><li><a href="Basic.html#.find-last">find-last</a></li><li><a href="Basic.html#.find-last-index">find-last-index</a></li><li><a href="Basic.html#.flatten">flatten</a></li><li><a href="Basic.html#.flip">flip</a></li><li><a href="Basic.html#.floor">floor</a></li><li><a href="Basic.html#.for-each">for-each</a></li><li><a href="Basic.html#.for-each-obj-indexed">for-each-obj-indexed</a></li><li><a href="Basic.html#.from-pairs">from-pairs</a></li><li><a href="Basic.html#.group-by">group-by</a></li><li><a href="Basic.html#.group-with">group-with</a></li><li><a href="Basic.html#.gt">gt</a></li><li><a href="Basic.html#.gte">gte</a></li><li><a href="Basic.html#.has">has</a></li><li><a href="Basic.html#.head">head</a></li><li><a href="Basic.html#.identical">identical</a></li><li><a href="Basic.html#.identity">identity</a></li><li><a href="Basic.html#.if-else">if-else</a></li><li><a href="Basic.html#.inc">inc</a></li><li><a href="Basic.html#.index-by">index-by</a></li><li><a href="Basic.html#.index-of">index-of</a></li><li><a href="Basic.html#.init">init</a></li><li><a href="Basic.html#.inner-join">inner-join</a></li><li><a href="Basic.html#.insert">insert</a></li><li><a href="Basic.html#.insert-all">insert-all</a></li><li><a href="Basic.html#.intersection">intersection</a></li><li><a href="Basic.html#.intersperse">intersperse</a></li><li><a href="Basic.html#.invert">invert</a></li><li><a href="Basic.html#.invert-obj">invert-obj</a></li><li><a href="Basic.html#.is">is</a></li><li><a href="Basic.html#.is-empty">is-empty</a></li><li><a href="Basic.html#.is-nil">is-nil</a></li><li><a href="Basic.html#.join">join</a></li><li><a href="Basic.html#.juxt">juxt</a></li><li><a href="Basic.html#.keys">keys</a></li><li><a href="Basic.html#.last">last</a></li><li><a href="Basic.html#.last-index-of">last-index-of</a></li><li><a href="Basic.html#.length">length</a></li><li><a href="Basic.html#.lens">lens</a></li><li><a href="Basic.html#.lens-index">lens-index</a></li><li><a href="Basic.html#.lens-path">lens-path</a></li><li><a href="Basic.html#.lens-prop">lens-prop</a></li><li><a href="Basic.html#.lift">lift</a></li><li><a href="Basic.html#.lift-n">lift-n</a></li><li><a href="Basic.html#.listen-on">listen-on</a></li><li><a href="Basic.html#.listen-once">listen-once</a></li><li><a href="Basic.html#.log">log</a></li><li><a href="Basic.html#.lt">lt</a></li><li><a href="Basic.html#.lte">lte</a></li><li><a href="Basic.html#.map">map</a></li><li><a href="Basic.html#.map-accum">map-accum</a></li><li><a href="Basic.html#.map-accum-right">map-accum-right</a></li><li><a href="Basic.html#.map-obj-indexed">map-obj-indexed</a></li><li><a href="Basic.html#.match">match</a></li><li><a href="Basic.html#.math-mod">math-mod</a></li><li><a href="Basic.html#.max">max</a></li><li><a href="Basic.html#.max">max</a></li><li><a href="Basic.html#.max-by">max-by</a></li><li><a href="Basic.html#.mean">mean</a></li><li><a href="Basic.html#.median">median</a></li><li><a href="Basic.html#.merge">merge</a></li><li><a href="Basic.html#.merge-all">merge-all</a></li><li><a href="Basic.html#.merge-deep-left">merge-deep-left</a></li><li><a href="Basic.html#.merge-deep-right">merge-deep-right</a></li><li><a href="Basic.html#.merge-deep-with">merge-deep-with</a></li><li><a href="Basic.html#.merge-with">merge-with</a></li><li><a href="Basic.html#.merge-with-key">merge-with-key</a></li><li><a href="Basic.html#.min">min</a></li><li><a href="Basic.html#.min">min</a></li><li><a href="Basic.html#.minBy">minBy</a></li><li><a href="Basic.html#.modulo">modulo</a></li><li><a href="Basic.html#.multiply">multiply</a></li><li><a href="Basic.html#.negate">negate</a></li><li><a href="Basic.html#.none">none</a></li><li><a href="Basic.html#.not">not</a></li><li><a href="Basic.html#.nth">nth</a></li><li><a href="Basic.html#.nth-arg">nth-arg</a></li><li><a href="Basic.html#.o">o</a></li><li><a href="Basic.html#.obj-of">obj-of</a></li><li><a href="Basic.html#.of">of</a></li><li><a href="Basic.html#.omit">omit</a></li><li><a href="Basic.html#.once">once</a></li><li><a href="Basic.html#.or">or</a></li><li><a href="Basic.html#.over">over</a></li><li><a href="Basic.html#.pair">pair</a></li><li><a href="Basic.html#.partial">partial</a></li><li><a href="Basic.html#.partial-right">partial-right</a></li><li><a href="Basic.html#.partition">partition</a></li><li><a href="Basic.html#.path">path</a></li><li><a href="Basic.html#.path-eq">path-eq</a></li><li><a href="Basic.html#.path-or">path-or</a></li><li><a href="Basic.html#.path-satisfies">path-satisfies</a></li><li><a href="Basic.html#.pick">pick</a></li><li><a href="Basic.html#.pick-all">pick-all</a></li><li><a href="Basic.html#.pick-by">pick-by</a></li><li><a href="Basic.html#.pipe">pipe</a></li><li><a href="Basic.html#.pluck">pluck</a></li><li><a href="Basic.html#.power">power</a></li><li><a href="Basic.html#.prepend">prepend</a></li><li><a href="Basic.html#.product">product</a></li><li><a href="Basic.html#.project">project</a></li><li><a href="Basic.html#.prop">prop</a></li><li><a href="Basic.html#.prop-eq">prop-eq</a></li><li><a href="Basic.html#.prop-is">prop-is</a></li><li><a href="Basic.html#.prop-or">prop-or</a></li><li><a href="Basic.html#.prop-satisfies">prop-satisfies</a></li><li><a href="Basic.html#.props">props</a></li><li><a href="Basic.html#.r">r</a></li><li><a href="Basic.html#.random">random</a></li><li><a href="Basic.html#.range">range</a></li><li><a href="Basic.html#.reduce">reduce</a></li><li><a href="Basic.html#.reduce-by">reduce-by</a></li><li><a href="Basic.html#.reduce-right">reduce-right</a></li><li><a href="Basic.html#.reduce-while">reduce-while</a></li><li><a href="Basic.html#.regexp">regexp</a></li><li><a href="Basic.html#.reject">reject</a></li><li><a href="Basic.html#.remove">remove</a></li><li><a href="Basic.html#.repeat">repeat</a></li><li><a href="Basic.html#.replace">replace</a></li><li><a href="Basic.html#.reverse">reverse</a></li><li><a href="Basic.html#.round">round</a></li><li><a href="Basic.html#.scan">scan</a></li><li><a href="Basic.html#.set">set</a></li><li><a href="Basic.html#.slice">slice</a></li><li><a href="Basic.html#.sort">sort</a></li><li><a href="Basic.html#.sort-by">sort-by</a></li><li><a href="Basic.html#.sort-with">sort-with</a></li><li><a href="Basic.html#.split">split</a></li><li><a href="Basic.html#.split-at">split-at</a></li><li><a href="Basic.html#.split-every">split-every</a></li><li><a href="Basic.html#.split-when">split-when</a></li><li><a href="Basic.html#.starts-with">starts-with</a></li><li><a href="Basic.html#.stringify">stringify</a></li><li><a href="Basic.html#.subtract">subtract</a></li><li><a href="Basic.html#.sum">sum</a></li><li><a href="Basic.html#.symmetric-difference">symmetric-difference</a></li><li><a href="Basic.html#.symmetric-difference-with">symmetric-difference-with</a></li><li><a href="Basic.html#.t">t</a></li><li><a href="Basic.html#.tail">tail</a></li><li><a href="Basic.html#.take">take</a></li><li><a href="Basic.html#.take-last">take-last</a></li><li><a href="Basic.html#.take-last-while">take-last-while</a></li><li><a href="Basic.html#.take-while">take-while</a></li><li><a href="Basic.html#.tap">tap</a></li><li><a href="Basic.html#.test">test</a></li><li><a href="Basic.html#.times">times</a></li><li><a href="Basic.html#.to-lower">to-lower</a></li><li><a href="Basic.html#.to-pairs">to-pairs</a></li><li><a href="Basic.html#.to-string">to-string</a></li><li><a href="Basic.html#.to-upper">to-upper</a></li><li><a href="Basic.html#.transpose">transpose</a></li><li><a href="Basic.html#.trim">trim</a></li><li><a href="Basic.html#.truncate">truncate</a></li><li><a href="Basic.html#.try-catch">try-catch</a></li><li><a href="Basic.html#.type">type</a></li><li><a href="Basic.html#.unfold">unfold</a></li><li><a href="Basic.html#.union">union</a></li><li><a href="Basic.html#.union-with">union-with</a></li><li><a href="Basic.html#.uniq">uniq</a></li><li><a href="Basic.html#.uniq-by">uniq-by</a></li><li><a href="Basic.html#.uniq-with">uniq-with</a></li><li><a href="Basic.html#.unless">unless</a></li><li><a href="Basic.html#.unnest">unnest</a></li><li><a href="Basic.html#.until">until</a></li><li><a href="Basic.html#.update">update</a></li><li><a href="Basic.html#.use-with">use-with</a></li><li><a href="Basic.html#.values">values</a></li><li><a href="Basic.html#.view">view</a></li><li><a href="Basic.html#.wait">wait</a></li><li><a href="Basic.html#.when">when</a></li><li><a href="Basic.html#.where">where</a></li><li><a href="Basic.html#.where-eq">where-eq</a></li><li><a href="Basic.html#.without">without</a></li><li><a href="Basic.html#.xprod">xprod</a></li><li><a href="Basic.html#.zip">zip</a></li><li><a href="Basic.html#.zip-obj">zip-obj</a></li><li><a href="Basic.html#.zip-with">zip-with</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this &amp;&amp; this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const rpscript_interface_1 = require("rpscript-interface");
+/** Basic utility for rpscript. Contain basic operation such as condition, event listening, variable assignment, terminal print etc.
+ * @namespace Basic
+ *
+ * @example
+ * rps install basic
+*/
+let RPSBasic = class RPSBasic {
+    /**
+     * @function log
+     * @memberof Basic
+     * @example
+     * ;print 'Hello'
+     * log 'Hello'
+     * ;print 'Hello' again
+     * log $RESULT
+     *
+     * @param {string} text information to be printed out on the terminal.
+     * @returns {*}  Similar to text input.
+     * @summary log :: a → a
+     * @description
+     * This is a wrapper for javascript console.log function.
+     *
+     * @see {@link https://www.w3schools.com/jsref/met_console_log.asp}
+     *
+    */
+    print(ctx, opts, text) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (text) {
+                console.log(text);
+                return text;
+            }
+            else {
+                return console.log;
+            }
+        });
+    }
+    /**
+   * @function as
+   * @memberof Basic
+   * @example
+   * as 'varName' 1
+   * ;print out the value 1
+   * console-log $varName
+   *
+   * read 'filename.txt' | as 'varName'
+   * ;this will print out the content of 'filename.txt'
+   * console-log $varName
+   *
+   * @param {string} variable Variable name.
+   * @param {*} value  Value to be assigned to the variable.
+   * @returns {*}  Value of the variable.
+   * @summary as :: String → a → a
+   * @description
+   * This is equivalent to variable assignment in programming language.
+   * The assigned variable can be access by prefixing $ on the variable name.
+   *
+   *
+  */
+    as(ctx, opts, variable, value) {
+        variable = variable.trim();
+        ctx.variables[variable] = value;
+        if (variable.charAt(0) !== '$')
+            variable = '$' + variable;
+        ctx.variables[variable] = value;
+        return Promise.resolve(value);
+    }
+    /**
+     * @function assign
+     * @memberof Basic
+     *
+     * @param {string} variable Variable name.
+     * @param {*} value  Value to be assigned to the variable.
+     * @returns {*}  Value of the variable.
+     * @summary assign :: String → a → a
+     *
+     *
+    */
+    assign(ctx, opts, variable, value) {
+        variable = variable.trim();
+        ctx.variables[variable] = value;
+        if (variable.charAt(0) !== '$')
+            variable = '$' + variable;
+        ctx.variables[variable] = value;
+        return Promise.resolve(value);
+    }
+    /**
+   * @function listen-once
+   * @memberof Basic
+   * @example
+   * listen-once 'connected' $emitter
+   *
+   * @param {EventEmitter} event The object to listen to.
+   * @param {string} eventName Name to listen for event.
+   * @returns {*}  If condition is met, result of exec. else null.
+   * @summary listen-once :: EventEmitter → String → a
+   *
+   * @see {@link https://nodejs.org/api/events.html#events_emitter_once_eventname_listener}
+   *
+  */
+    listenOnce(ctx, opts, event, evtName) {
+        return new Promise(function (resolve) {
+            event.once(evtName, (...params) => resolve(params));
+        });
+    }
+    /**
+     * @function listen-on
+     * @memberof Basic
+     * @example
+     * listen-on 'start' (($output)=>log $output) $emitter
+     *
+     * @param {EventEmitter} event The object to listen to.
+     * @param {string} eventName Name to listen for event.
+     * @returns {*}  If condition is met, result of exec. else null.
+     * @summary listen-on :: String → (...* → *) → EventEmitter → EventEmitter
+     *
+     * @see {@link https://nodejs.org/api/events.html#events_emitter_once_eventname_listener}
+     *
+    */
+    on(ctx, opts, evtName, cb, event) {
+        return __awaiter(this, void 0, void 0, function* () {
+            event.on(evtName, (...params) => cb(params));
+            return event;
+        });
+    }
+    /**
+   * @function wait
+   * @memberof Basic
+   * @example
+   * ;wait for 5 second
+   * wait 5
+   *
+   * @param {number} period Period to wait for in second.
+   * @returns {*} Previous result.
+   * @summary wait :: Number → a → a
+   *
+  */
+    wait(ctx, opts, period, response) {
+        response = response ? response : ctx.$RESULT;
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                return __awaiter(this, void 0, void 0, function* () {
+                    resolve(response);
+                });
+            }, period * 1000);
+        });
+    }
+    /**
+     * @function stringify
+     * @memberof Basic
+     * @example
+     * stringify {'a':1,'b':2}
+     *
+     * @param {Object} object
+     * @returns {string} String result
+     * @summary stringify :: a → String
+     *
+    */
+    stringify(ctx, opts, obj) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return JSON.stringify(obj);
+        });
+    }
+    /**
+     * @function abs
+     * @memberof Basic
+     * @example
+     * ;absolute value
+     * abs -5.1
+     *
+     * @returns {number} Absolute number.
+     * @summary abs :: Number → Number
+     *
+    */
+    abs(ctx, opts, ...args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.abs), args);
+        });
+    }
+    /**
+     * @function ceil
+     * @memberof Basic
+     * @example
+     * ;ceil value
+     * ceil 5.1
+     *
+     * @param {number} number
+     * @returns {number} Absolute number.
+     * @summary ceil :: Number → Number
+     *
+    */
+    ceil(ctx, opts, ...args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.ceil), args);
+        });
+    }
+    /**
+     * @function max
+     * @memberof Basic
+     * @example
+     * ;max value
+     * max 5.1 1.2 3.3
+     *
+     * @param {number} number
+     * @returns {number} number.
+     *
+     * @summary math-max :: Number → ...Number → Number
+     *
+    */
+    mathMax(ctx, opts, ...num) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curryN(2, Math.max), num);
+        });
+    }
+    /**
+     * @function min
+     * @memberof Basic
+     * @example
+     * ;min value
+     * min 5.1 1.2 3.3
+     *
+     * @param {...number} number
+     * @returns {number} number.
+     *
+     * @summary math-min :: Number → ...Number → Number
+     *
+    */
+    mathMin(ctx, opts, ...num) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curryN(2, Math.min), num);
+        });
+    }
+    /**
+     * @function floor
+     * @memberof Basic
+     * @example
+     * ;floor value
+     * floor 5.1
+     *
+     * @param {number} number
+     * @returns {number} number.
+     *
+     * @summary floor :: Number → Number
+     *
+    */
+    floor(ctx, opts, ...num) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.floor), num);
+        });
+    }
+    /**
+     * @function power
+     * @memberof Basic
+     * @example
+     * ;power value
+     * power 5 3
+     *
+     * @param {number} x
+     * @param {number} y
+     * @returns {number} number.
+     *
+     * @summary pow :: Number → Number → Number
+     *
+    */
+    power(ctx, opts, ...args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.pow), args);
+        });
+    }
+    /**
+     * @function random
+     * @memberof Basic
+     * @example
+     * ;random
+     * random
+     *
+     * @returns {number} number.
+     *
+     * @summary random :: Number
+     *
+    */
+    random(ctx, opts) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return Math.random();
+        });
+    }
+    /**
+     * @function round
+     * @memberof Basic
+     * @example
+     * ;round
+     * round 1.3
+     *
+     * @returns {number} number.
+     *
+     * @summary round :: Number → Number
+     *
+    */
+    round(ctx, opts, num) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.round), num);
+        });
+    }
+    /**
+     * @function truncate
+     * @memberof Basic
+     * @example
+     * ;trunc
+     * truncate 1.3
+     *
+     * @returns {number} number.
+     *
+     * @summary truncate :: Number → Number
+     *
+    */
+    trunc(ctx, opts, num) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply(rpscript_interface_1.R.curry(Math.trunc), num);
+        });
+    }
+    /**************************** Ramda (List) ***********************************/
+    /**
+     * @function adjust
+     * @memberof Basic
+     * @example
+     * adjust (add 10) 1 [1,2,3]
+     *
+     * @param {Function} function
+     * @param {Number} number
+     * @param {Array} array
+     * @summary adjust :: (a → a) → Number → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#adjust}
+    */
+    adjust(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.adjust.apply(this, params);
+        });
+    }
+    /**
+   * @function all
+   * @memberof Basic
+   * @example
+   * all (equals 3) [3, 3, 3, 3]
+   *
+   * @param {Function} function
+   * @param {Array} array
+   * @summary all :: (a → Boolean) → [a] → Boolean
+   *
+   * @see {@link https://ramdajs.com/docs#all}
+  */
+    all(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.all.apply(this, params);
+        });
+    }
+    /**
+     * @function any
+     * @memberof Basic
+     * @example
+     * any (equals 1) [1,2]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary any :: (a → Boolean) → [a] → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#any}
+    */
+    any(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.any.apply(this, params);
+        });
+    }
+    /**
+     * @function aperture
+     * @memberof Basic
+     * @example
+     * aperture 2 [1,2,3,4,5]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary aperture :: Number → [a] → [[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#aperture}
+    */
+    aperture(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.aperture.apply(this, params);
+        });
+    }
+    /**
+     * @function append
+     * @memberof Basic
+     * @example
+     * append "tests" ["hello"]
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary append :: a → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#append}
+    */
+    append(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.append.apply(this, params);
+        });
+    }
+    /**
+     * @function chain
+     * @memberof Basic
+     * @example
+     * TODO:
+     *
+     * @param {*} TODO
+     * @param {Array} TODO
+     * @summary chain :: Chain m => (a → m b) → m a → m b
+     *
+     * @see {@link https://ramdajs.com/docs#chain}
+    */
+    chain(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.chain.apply(this, params);
+        });
+    }
+    /**
+     * @function concat
+     * @memberof Basic
+     * @example
+     * concat "hello" "world"
+     *
+     * @param {*} any
+     * @param {*} any
+     * @summary concat :: [a] → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#concat}
+    */
+    concat(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.concat.apply(this, params);
+        });
+    }
+    /**
+     * @function contains
+     * @memberof Basic
+     * @example
+     * contains 3 [1,2,3]
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary contains :: a → [a] → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#contains}
+    */
+    contains(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.contains.apply(this, params);
+        });
+    }
+    /**
+     * @function drop
+     * @memberof Basic
+     * @example
+     * drop 1 [1,2,3]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary drop :: Number → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#drop}
+    */
+    drop(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.drop.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-last
+     * @memberof Basic
+     * @example
+     * drop-last 1 [1,2,3]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary drop-last :: Number → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#dropLast}
+    */
+    dropLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dropLast.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-last-while
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary drop-last-while :: (a → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#dropLastWhile}
+    */
+    dropLastWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dropLastWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-repeats
+     * @memberof Basic
+     * @example
+     * drop-repeats [1,1,1,2,3,4,4,4,2,2]
+     *
+     * @param {Array} array
+     * @summary drop-repeats :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#dropRepeats}
+    */
+    dropRepeats(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return rpscript_interface_1.R.dropRepeats.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-repeats-with
+     * @memberof Basic
+     * @example
+     * drop-repeats-with (eq-by abs) [1,-1,3,-4,-4]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary drop-repeats-with :: ((a,a) → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#dropRepeatsWith}
+    */
+    dropRepeatsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return rpscript_interface_1.R.dropRepeatsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-while
+     * @memberof Basic
+     * @example
+     * drop-while (eq-by abs) [1,-1,3,-4,-4]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary drop-while :: (a → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#dropWhile}
+    */
+    dropWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dropWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function ends-with
+     * @memberof Basic
+     * @example
+     * ends-with 'c' 'abc'
+     *
+     * @param {Array} array
+     * @summary ends-with :: [a] → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#endsWith}
+    */
+    endsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.endsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function filter
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary filter :: Filterable f => (a → Boolean) → f a → f a
+     *
+     * @see {@link https://ramdajs.com/docs#filter}
+    */
+    filter(ctx, opts, ...params) {
+        return rpscript_interface_1.R.filter.apply(this, params);
+    }
+    /**
+     * @function find
+     * @memberof Basic
+     * @example
+     * find (prop-eq 'a' 2) [{'a':1},{'a':2},{'a':3}]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary find :: (a → Boolean) → [a] → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#find}
+    */
+    find(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.find.apply(this, params);
+        });
+    }
+    /**
+     * @function find-index
+     * @memberof Basic
+     * @example
+     * find-index (prop-eq 'a' 2) [{'a':1},{'a':2},{'a':3}]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary find-index :: (a → Boolean) → [a] → Number
+     *
+     * @see {@link https://ramdajs.com/docs#findIndex}
+    */
+    findIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.findIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function find-last
+     * @memberof Basic
+     * @example
+     * find-last (prop-eq 'a' 2) [{'a':1},{'a':2},{'a':3}]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary find :: (a → Boolean) → [a] → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#findLast}
+    */
+    findLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.findLast.apply(this, params);
+        });
+    }
+    /**
+     * @function find-last-index
+     * @memberof Basic
+     * @example
+     * find-last-index (prop-eq 'a' 2) [{'a':1},{'a':2},{'a':3}]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary find-index :: (a → Boolean) → [a] → Number
+     *
+     * @see {@link https://ramdajs.com/docs#findLastIndex}
+    */
+    findLastIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.findLastIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function flatten
+     * @memberof Basic
+     * @example
+     * flatten [1,2,[3,4]]
+     *
+     * @param {Array} array
+     * @summary flatten :: [a] → [b]
+     *
+     * @see {@link https://ramdajs.com/docs#flatten}
+    */
+    flatten(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.flatten.apply(this, params);
+        });
+    }
+    /**
+     * @function for-each
+     * @memberof Basic
+     * @example
+     * for-each (log) [1,2,3,4]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary for-each :: (a → *) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#forEach}
+    */
+    forEach(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.forEach.apply(this, params);
+        });
+    }
+    /**
+     * @function from-pairs
+     * @memberof Basic
+     * @example
+     * from-pairs [['a',1],['b',2],['c',3]]
+     *
+     * @param {Array} array
+     * @summary from-pairs :: [[k,v]] → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#fromPairs}
+    */
+    fromPairs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.fromPairs.apply(this, params);
+        });
+    }
+    /**
+     * @function group-by
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Array} array
+     * @summary group-by :: ((a → String) → [a] → {String:[a]}
+     *
+     * @see {@link https://ramdajs.com/docs#groupBy}
+    */
+    groupBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.groupBy.apply(this, params);
+        });
+    }
+    /**
+     * @function group-with
+     * @memberof Basic
+     * @example
+     * group-with (equals) [0,1,1,2,3,4,6,4]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary group-with :: ((a,a) → Boolean) → [a] → [[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#groupWith}
+    */
+    groupWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.groupWith.apply(this, params);
+        });
+    }
+    /**
+     * @function head
+     * @memberof Basic
+     * @example
+     * head ['ff',''aa','lol']
+     *
+     * @param {Array} array
+     * @summary head :: [a] → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#head}
+    */
+    head(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.head.apply(this, params);
+        });
+    }
+    /**
+     * @function index-of
+     * @memberof Basic
+     * @example
+     * index-of 3 [1,2,3,4]
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary index-of :: a → [a] → Number
+     *
+     * @see {@link https://ramdajs.com/docs#indexOf}
+    */
+    indexOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.indexOf.apply(this, params);
+        });
+    }
+    /**
+     * @function index-by
+     * @memberof Basic
+     * @example
+     * index-by (prop 'id') [{'id':'abc','title':'A'},{'id':'xyz','title':'B'}]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary index-by :: (a → String) → [{k:v}] → {:{k:v}}
+     *
+     * @see {@link https://ramdajs.com/docs#indexBy}
+    */
+    indexBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.indexBy.apply(this, params);
+        });
+    }
+    /**
+     * @function init
+     * @memberof Basic
+     * @example
+     * init [1, 2, 3]
+     *
+     * @param {Array} array
+     * @summary index-by :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#init}
+    */
+    init(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.init.apply(this, params);
+        });
+    }
+    /**
+     * @function insert
+     * @memberof Basic
+     * @example
+     * insert 2 'x' [1,2,3,4]
+     *
+     * @param {Number} number
+     * @param {*} any
+     * @param {Array} array
+     * @summary insert :: Number → a → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#insert}
+    */
+    insert(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.insert.apply(this, params);
+        });
+    }
+    /**
+     * @function insert-all
+     * @memberof Basic
+     * @example
+     * insert-all 2 ['x','y','z'] [1,2,3,4]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @param {Array} array
+     * @summary insert-all :: Number → [a] → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#insertAll}
+    */
+    insertAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.insertAll.apply(this, params);
+        });
+    }
+    /**
+     * @function intersperse
+     * @memberof Basic
+     * @example
+     * intersperse 'n' ['x','y','z']
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary intersperse :: a → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#intersperse}
+    */
+    intersperse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.intersperse.apply(this, params);
+        });
+    }
+    /**
+     * @function join
+     * @memberof Basic
+     * @example
+     * join ' ' ['x','y','z']
+     *
+     * @param {String} string
+     * @param {Array} array
+     * @summary join :: String → [a] → String
+     *
+     * @see {@link https://ramdajs.com/docs#join}
+    */
+    join(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.join.apply(this, params);
+        });
+    }
+    /**
+     * @function last
+     * @memberof Basic
+     * @example
+     * last ['x','y','z']
+     *
+     * @param {Array} array
+     * @summary last :: [a] → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#last}
+    */
+    last(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.last.apply(this, params);
+        });
+    }
+    /**
+     * @function last-index-of
+     * @memberof Basic
+     * @example
+     * last-index-of 'y' ['x','y','y','z']
+     *
+     * @param {Array} array
+     * @summary last-index-of :: a → [a] → Number
+     *
+     * @see {@link https://ramdajs.com/docs#lastIndexOf}
+    */
+    lastIndexOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lastIndexOf.apply(this, params);
+        });
+    }
+    /**
+     * @function length
+     * @memberof Basic
+     * @example
+     * length [1,2,3]
+     *
+     * @param {Array} array
+     * @summary length :: [a] → Number
+     *
+     * @see {@link https://ramdajs.com/docs/#length}
+    */
+    length(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.length.apply(this, params);
+        });
+    }
+    /**
+     * @function map
+     * @memberof Basic
+     * @example
+     * map (multiple 2) [1,2,3]
+     *
+     * @param {Function} function
+     * @param {Array} list
+     * @summary map :: Functor f => (a → b) → f a → f b
+     *
+     * @see {@link https://ramdajs.com/docs#map}
+    */
+    map(ctx, opts, ...params) {
+        return rpscript_interface_1.R.map.apply(this, params);
+    }
+    /**
+     * @function map-accum
+     * @memberof Basic
+     * @example
+     * map-accum (multiple 2) [1,2,3]
+     *
+     * @param {Function} function
+     * @param {Array} list
+     * @summary map-accum :: ((acc,x) → (acc,y)) → acc → [x] → (acc, [y])
+     *
+     * @see {@link https://ramdajs.com/docs#mapAccum}
+    */
+    mapAccum(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mapAccum.apply(this, params);
+        });
+    }
+    /**
+     * @function map-accum-right
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} list
+     * @summary map-accum-right :: ((acc,x) → (acc,y)) → acc → [x] → ([y],acc)
+     *
+     * @see {@link https://ramdajs.com/docs#mapAccumRight}
+    */
+    mapAccumRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mapAccumRight.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-all
+     * @memberof Basic
+     * @example
+     * merge-all [{'foo':1},{'bar':2},{'baz':3}]
+     *
+     * @param {Array} list
+     * @summary merge-all :: [{k:v}] → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeAll}
+    */
+    mergeAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeAll.apply(this, params);
+        });
+    }
+    /**
+     * @function none
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary none :: (a → Boolean) → [a] → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#none}
+    */
+    none(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.none.apply(this, params);
+        });
+    }
+    /**
+     * @function nth
+     * @memberof Basic
+     * @example
+     * nth 1 ['a','b','c']
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary nth :: Number → [a] → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#nth}
+    */
+    nth(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.nth.apply(this, params);
+        });
+    }
+    /**
+     * @function pair
+     * @memberof Basic
+     * @example
+     * pair 'foo' 'bar'
+     *
+     * @param {*} any
+     * @param {*} any
+     * @summary pair :: a → b → (a,b)
+     *
+     * @see {@link https://ramdajs.com/docs#pair}
+    */
+    pair(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pair.apply(this, params);
+        });
+    }
+    /**
+     * @function partition
+     * @memberof Basic
+     * @example
+     * partition (contains 's') ['sss','ttt','sas','abc']
+     *
+     * @param {Function} function
+     * @param {Array|Object} array or object
+     * @summary partition :: Filterable f => (a → Boolean) → f a → [f a, f a]
+     *
+     * @see {@link https://ramdajs.com/docs#partition}
+    */
+    partition(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.partition.apply(this, params);
+        });
+    }
+    /**
+     * @function pluck
+     * @memberof Basic
+     * @example
+     * pluck (prop 'a') [{a:1},{a:2}]
+     *
+     * @param {Function} function
+     * @param {Array|Object} array or object
+     * @summary pluck :: Functor f => k → f {k:v} → f v
+     *
+     * @see {@link https://ramdajs.com/docs#pluck}
+    */
+    pluck(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pluck.apply(this, params);
+        });
+    }
+    /**
+     * @function prepend
+     * @memberof Basic
+     * @example
+     * prepend 'fee' ['fi','fo','fum']
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary prepend :: a → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#prepend}
+    */
+    prepend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.prepend.apply(this, params);
+        });
+    }
+    /**
+     * @function range
+     * @memberof Basic
+     * @example
+     * range 1 5
+     *
+     * @param {Number} number
+     * @param {Number} number
+     * @summary range :: Number → Number → [Number]
+     *
+     * @see {@link https://ramdajs.com/docs#range}
+    */
+    range(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.range.apply(this, params);
+        });
+    }
+    /**
+     * @function reduce
+     * @memberof Basic
+     * @example
+     * reduce (subtract) 0 [1,2,3,4]
+     *
+     * @param {Function} function
+     * @param {*} any
+     * @param {Array} array
+     * @summary reduce :: ((a,b) → a) → a → [b] → a
+     *
+     * @see {@link https://ramdajs.com/docs#reduce}
+    */
+    reduce(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reduce.apply(this, params);
+        });
+    }
+    /**
+     * @function reduce-by
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary reduce-by :: ((a,b) → a) → a → (b → String) → [b] → {String:a}
+     *
+     * @see {@link https://ramdajs.com/docs#reduceBy}
+    */
+    reduceBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reduceBy.apply(this, params);
+        });
+    }
+    /**
+     * @function reduce-right
+     * @memberof Basic
+     * @example
+     * reduce-right (subtract) 0 [1,2,3,4]
+     *
+     * @param {Function} function
+     * @param {*} any
+     * @param {Array} array
+     * @summary reduce :: ((a,b) → b) → b → [a] → b
+     *
+     * @see {@link https://ramdajs.com/docs#reduceRight}
+    */
+    reduceRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reduceRight.apply(this, params);
+        });
+    }
+    /**
+     * @function reduce-while
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary reduce-while :: ((a,b) → Boolean) → ((a,b) → a) → a → [b] → a
+     *
+     * @see {@link https://ramdajs.com/docs#reduceWhile}
+    */
+    reduceWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reduceWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function reject
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary reject :: Filterable f => (a → Boolean) → f a → f a
+     *
+     * @see {@link https://ramdajs.com/docs#reject}
+    */
+    reject(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reject.apply(this, params);
+        });
+    }
+    /**
+     * @function remove
+     * @memberof Basic
+     * @example
+     * remove 2 3 [1,2,3,4,5,6,7,8]
+     *
+     * @param {Number} number
+     * @param {Number} number
+     * @param {Array} array
+     * @summary remove :: Number → Number → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#remove}
+    */
+    remove(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.remove.apply(this, params);
+        });
+    }
+    /**
+     * @function repeat
+     * @memberof Basic
+     * @example
+     * repeat "hi" 5
+     *
+     * @param {*} any
+     * @param {Number} number
+     * @summary repeat :: a → n → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#repeat}
+    */
+    repeat(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.repeat.apply(this, params);
+        });
+    }
+    /**
+     * @function reverse
+     * @memberof Basic
+     * @example
+     * reverse [1,2,3]
+     *
+     * @param {Array} array
+     * @summary reverse :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#reverse}
+    */
+    reverse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.reverse.apply(this, params);
+        });
+    }
+    /**
+     * @function scan
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary scan :: ((a,b) → a) → a → [b] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#scan}
+    */
+    scan(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.scan.apply(this, params);
+        });
+    }
+    /**
+     * @function slice
+     * @memberof Basic
+     * @example
+     * slice 1 3 ['a','b','c','d']
+     *
+     * @param {Number} number
+     * @param {Number} number
+     * @param {*} any
+     * @summary slice :: Number → Number → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#slice}
+    */
+    slice(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.slice.apply(this, params);
+        });
+    }
+    /**
+     * @function sort
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary sort :: ((a,a) → Number) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#sort}
+    */
+    sort(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.sort.apply(this, params);
+        });
+    }
+    /**
+     * @function split-at
+     * @memberof Basic
+     * @example
+     * split-at 1 [1,2,3]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary split-at :: Number → [a] → [[a],[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#splitAt}
+    */
+    splitAt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.splitAt.apply(this, params);
+        });
+    }
+    /**
+     * @function split-every
+     * @memberof Basic
+     * @example
+     * split-every 3 [1,2,3,4,5,6,7]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary split-every :: Number → [a] → [[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#splitEvery}
+    */
+    splitEvery(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.splitEvery.apply(this, params);
+        });
+    }
+    /**
+     * @function split-when
+     * @memberof Basic
+     * @example
+     * split-when (equals 3) [1,2,3,4,5,6,7]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary split-when :: (a → Boolean) → [a] → [[a],[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#splitWhen}
+    */
+    splitWhen(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.splitWhen.apply(this, params);
+        });
+    }
+    /**
+     * @function starts-with
+     * @memberof Basic
+     * @example
+     * starts-with 'a' 'abc'
+     *
+     * @param {*} any
+     * @param {Array} array
+     * @summary starts-with :: [a] → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#startsWith}
+    */
+    startsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.startsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function tail
+     * @memberof Basic
+     * @example
+     * tail [1,2,3]
+     *
+     * @param {Array} array
+     * @summary tail :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#tail}
+    */
+    tail(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.tail.apply(this, params);
+        });
+    }
+    /**
+     * @function take
+     * @memberof Basic
+     * @example
+     * take 2 [1,2,3]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary take :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#take}
+    */
+    take(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.take.apply(this, params);
+        });
+    }
+    /**
+     * @function take-last
+     * @memberof Basic
+     * @example
+     * take-last 2 [1,2,3]
+     *
+     * @param {Number} number
+     * @param {Array} array
+     * @summary take-last :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#takeLast}
+    */
+    takeLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.takeLast.apply(this, params);
+        });
+    }
+    /**
+     * @function take-last-while
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary take-last-while :: (a → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#takeLastWhile}
+    */
+    takeLastWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.takeLastWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function take-while
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary take-while :: (a → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#takeWhile}
+    */
+    takeWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.takeWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function times
+     * @memberof Basic
+     * @example
+     * times (identity) 5
+     *
+     * @param {Function} function
+     * @param {Number} number
+     * @summary times :: (Number → a) → Number → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#times}
+    */
+    times(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.times.apply(this, params);
+        });
+    }
+    /**
+     * @function transpose
+     * @memberof Basic
+     * @example
+     * transpose [[1,'a'],[2,'b'],[3,'c']]
+     *
+     * @param {Array} array
+     * @summary transpose :: [[a]] → [[a]]
+     *
+     * @see {@link https://ramdajs.com/docs#transpose}
+    */
+    transpose(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.transpose.apply(this, params);
+        });
+    }
+    /**
+     * @function unfold
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary unfold :: (a → [b]) → * → [b]
+     *
+     * @see {@link https://ramdajs.com/docs#unfold}
+    */
+    unfold(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.unfold.apply(this, params);
+        });
+    }
+    /**
+     * @function uniq
+     * @memberof Basic
+     * @example
+     * uniq [1,2,3,3,4,5,4]
+     *
+     * @param {Array} array
+     * @summary uniq :: [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#uniq}
+    */
+    uniq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.uniq.apply(this, params);
+        });
+    }
+    /**
+     * @function uniq-by
+     * @memberof Basic
+     * @example
+     * uniq-by (abs) [-1, -5, 2, 10, 1, 2]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary uniq-by :: (a → b) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#uniqBy}
+    */
+    uniqBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.uniqBy.apply(this, params);
+        });
+    }
+    /**
+     * @function uniq-with
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary uniq-with :: ((a,a) → Boolean) → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#uniqWith}
+    */
+    uniqWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.uniqWith.apply(this, params);
+        });
+    }
+    /**
+     * @function unnest
+     * @memberof Basic
+     * @example
+     * unnest  [1 , [2], [[3]]]
+     *
+     * @param {Array} array
+     * @summary unnest :: Chain c => c (c a) → c a
+     *
+     * @see {@link https://ramdajs.com/docs#unnest}
+    */
+    unnest(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.unnest.apply(this, params);
+        });
+    }
+    /**
+     * @function update
+     * @memberof Basic
+     * @example
+     * update 1 11 [0,1,2]
+     *
+     * @param {Number} number
+     * @param {*} any
+     * @param {Array} array
+     * @summary update :: Number → a → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#update}
+    */
+    update(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.update.apply(this, params);
+        });
+    }
+    /**
+     * @function without
+     * @memberof Basic
+     * @example
+     * without [1,2] [1,2,1,3,4]
+     *
+     * @param {Array} array
+     * @param {Array} array
+     * @summary without :: [a] → [a] → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#without}
+    */
+    without(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.without.apply(this, params);
+        });
+    }
+    /**
+     * @function xprod
+     * @memberof Basic
+     * @example
+     * xprod [1,2] ['a','b']
+     *
+     * @param {Array} array
+     * @param {Array} array
+     * @summary xprod :: [a] → [b] → [[a,b]]
+     *
+     * @see {@link https://ramdajs.com/docs#xprod}
+    */
+    xprod(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.xprod.apply(this, params);
+        });
+    }
+    /**
+     * @function zip
+     * @memberof Basic
+     * @example
+     * zip [1,2,3] ['a','b','c']
+     *
+     * @param {Array} array
+     * @param {Array} array
+     * @summary zip :: [a] → [b] → [[a,b]]
+     *
+     * @see {@link https://ramdajs.com/docs#zip}
+    */
+    zip(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.zip.apply(this, params);
+        });
+    }
+    /**
+     * @function zip-obj
+     * @memberof Basic
+     * @example
+     * zip-obj ['a','b','c'] [1,2,3]
+     *
+     * @param {Array} array
+     * @param {Array} array
+     * @summary zip-obj :: [String] → [*] → {String:*}
+     *
+     * @see {@link https://ramdajs.com/docs#zipObj}
+    */
+    zipObj(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.zipObj.apply(this, params);
+        });
+    }
+    /**
+     * @function zip-with
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @param {Array} array
+     * @summary zip-with :: ((a,b) → c) [a] → [b] → [c]
+     *
+     * @see {@link https://ramdajs.com/docs#zipWith}
+    */
+    zipWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.zipWith.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Object) ***********************************/
+    /**
+     * @function keys
+     * @memberof Basic
+     * @example
+     * keys {a:1,b:2,c:3}
+     *
+     * @param {Objects} object
+     * @summary keys :: {k:v} → [k]
+     *
+     * @see {@link https://ramdajs.com/docs#keys}
+    */
+    keys(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.keys.apply(this, params);
+        });
+    }
+    /**
+     * @function assoc
+     * @memberof Basic
+     * @example
+     * assoc 'd' 4 {a:1,b:2,c:3}
+     *
+     * @param {String} string
+     * @param {*} any
+     * @param {Objects} object
+     * @summary assoc :: String → a → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#assoc}
+    */
+    assoc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.assoc.apply(this, params);
+        });
+    }
+    /**
+     * @function assoc-path
+     * @memberof Basic
+     * @example
+     * assoc-path ['c','d'] 4 {a:1,b:2,c:{d:0}}
+     *
+     * @param {Array} array
+     * @param {*} any
+     * @param {Objects} object
+     * @summary assoc-path :: [Idx] → a → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#assocPath}
+    */
+    assocPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.assocPath.apply(this, params);
+        });
+    }
+    /**
+     * @function clone
+     * @memberof Basic
+     * @example
+     * clone {a:1}
+     *
+     * @param {Objects} object
+     * @summary clone :: {*} → {*}
+     *
+     * @see {@link https://ramdajs.com/docs#clone}
+    */
+    clone(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.clone.apply(this, params);
+        });
+    }
+    /**
+     * @function dissoc
+     * @memberof Basic
+     * @example
+     * dissoc 'b' {a:1,b:2,c:3}
+     *
+     * @param {String} string
+     * @param {Objects} object
+     * @summary assoc :: String → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#dissoc}
+    */
+    dissoc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dissoc.apply(this, params);
+        });
+    }
+    /**
+     * @function dissoc-path
+     * @memberof Basic
+     * @example
+     * dissoc-path ['c','d'] 4 {a:1,b:2,c:{d:5}}
+     *
+     * @param {Array} array
+     * @param {Objects} object
+     * @summary assoc-path :: [Idx] → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#dissocPath}
+    */
+    dissocPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dissocPath.apply(this, params);
+        });
+    }
+    /**
+     * @function eq-props
+     * @memberof Basic
+     * @example
+     * eq-props 'a' {a:1} {a:1}
+     *
+     * @param {String} string
+     * @param {Objects} object
+     * @param {Objects} object
+     * @summary eq-props :: k → {k:v} → {k:v} →  Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#eqProps}
+    */
+    eqProps(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.eqProps.apply(this, params);
+        });
+    }
+    /**
+     * @function evolve
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary evolve :: {k: (v → v)} → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#evolve}
+    */
+    evolve(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.evolve.apply(this, params);
+        });
+    }
+    /**
+     * @function for-each-obj-indexed
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary for-each-obj-indexed :: ((a,String,StrMap a)  → Any) → StrMap a → StrMap a
+     *
+     * @see {@link https://ramdajs.com/docs#forEachObjIndexed}
+    */
+    forEachObjIndexed(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.forEachObjIndexed.apply(this, params);
+        });
+    }
+    /**
+     * @function has
+     * @memberof Basic
+     * @example
+     * has 'name' {name:'Alice'}
+     *
+     * @param {String} string
+     * @param {Object} object
+     * @summary has :: s → {s:x} → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#has}
+    */
+    has(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.has.apply(this, params);
+        });
+    }
+    /**
+     * @function invert
+     * @memberof Basic
+     * @example
+     * invert {first:'Alice',second:'allen',third:'Alice'}
+     *
+     * @param {Object} object
+     * @summary invert :: {s:x} → {x:[s,...]}
+     *
+     * @see {@link https://ramdajs.com/docs#invert}
+    */
+    invert(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.invert.apply(this, params);
+        });
+    }
+    /**
+     * @function invert-obj
+     * @memberof Basic
+     * @example
+     * invert-obj {first:'Alice',second:'allen'}
+     *
+     * @param {Object} object
+     * @summary invert-obj :: {s:x} → {x:s}
+     *
+     * @see {@link https://ramdajs.com/docs#invertObj}
+    */
+    invertObj(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.invertObj.apply(this, params);
+        });
+    }
+    /**
+     * @function lens
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#lens}
+    */
+    lens(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lens.apply(this, params);
+        });
+    }
+    /**
+     * @function lens-index
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#lensIndex}
+    */
+    lensIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lensIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function lens-path
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#lensPath}
+    */
+    lensPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lensPath.apply(this, params);
+        });
+    }
+    /**
+     * @function lens-prop
+     * @memberof Basic
+     * @example
+     * TODO
+     * @see {@link https://ramdajs.com/docs#lensProp}
+    */
+    lensProp(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lensProp.apply(this, params);
+        });
+    }
+    /**
+     * @function map-obj-indexed
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary map-obj-indexed :: ((*,String,Object)→ *) → Object → Object
+     *
+     * @see {@link https://ramdajs.com/docs#mapObjIndexed}
+    */
+    mapObjIndexed(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mapObjIndexed.apply(this, params);
+        });
+    }
+    /**
+     * @function merge
+     * @memberof Basic
+     * @example
+     * merge {name:'fred',age:10} {age:40}
+     *
+     * @param {Object} object
+     * @param {Object} object
+     * @summary merge :: {k:v} → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#merge}
+    */
+    merge(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.merge.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-deep-left
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary merge-deep-left :: {a} → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeDeepLeft}
+    */
+    mergeDeepLeft(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeDeepLeft.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-deep-right
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary merge :: {a} → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeDeepRight}
+    */
+    mergeDeepRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeDeepRight.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-deep-with
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary merge-deep-with :: ((a,a) → a) → {a} → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeDeepWith}
+    */
+    mergeDeepWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeDeepWith.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-with
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary merge-deep-with :: ((a,a) → a) → {a} → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeWith}
+    */
+    mergeWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeWith.apply(this, params);
+        });
+    }
+    /**
+     * @function merge-with-key
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary merge-with-key :: ((String, a,a) → a) → {a} → {a} → {a}
+     *
+     * @see {@link https://ramdajs.com/docs#mergeWithKey}
+    */
+    mergeWithKey(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mergeWithKey.apply(this, params);
+        });
+    }
+    /**
+     * @function obj-of
+     * @memberof Basic
+     * @example
+     * obj-of 'must' ['a','b','c']
+     *
+     * @param {String} string
+     * @param {*} any
+     * @summary obj-of :: String → a → {String:a}
+     *
+     * @see {@link https://ramdajs.com/docs#objOf}
+    */
+    objOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.objOf.apply(this, params);
+        });
+    }
+    /**
+     * @function omit
+     * @memberof Basic
+     * @example
+     * omit ['a','b'] {a:1,b:2,c:3,d:4}
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary omit :: [String] → {String:*} → {String:*}
+     *
+     * @see {@link https://ramdajs.com/docs#omit}
+    */
+    omit(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.omit.apply(this, params);
+        });
+    }
+    /**
+     * @function over
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#over}
+    */
+    over(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.over.apply(this, params);
+        });
+    }
+    /**
+     * @function path
+     * @memberof Basic
+     * @example
+     * path ['a','b'] {a:1,{b:2}}
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary path :: [Idx] → {a} → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#path}
+    */
+    path(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.path.apply(this, params);
+        });
+    }
+    /**
+     * @function path-or
+     * @memberof Basic
+     * @example
+     * path-or 'N/A' ['a','b'] {a:1,{b:2}}
+     *
+     * @param {String} string
+     * @param {Array} array
+     * @param {Object} object
+     * @summary path-or :: a → [Idx] → {a} → a
+     *
+     * @see {@link https://ramdajs.com/docs#pathOr}
+    */
+    pathOr(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pathOr.apply(this, params);
+        });
+    }
+    /**
+     * @function pick
+     * @memberof Basic
+     * @example
+     * pick ['a','b'] {a:1,b:2,c:3,d:4}
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary pick :: [k] → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#pick}
+    */
+    pick(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pick.apply(this, params);
+        });
+    }
+    /**
+     * @function pick-all
+     * @memberof Basic
+     * @example
+     * pick-all ['a','b','g'] {a:1,b:2,c:3,d:4}
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary pick-all :: [k] → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#pickAll}
+    */
+    pickAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pickAll.apply(this, params);
+        });
+    }
+    /**
+     * @function pick-by
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     * @param {Object} object
+     * @summary pick-by :: ((v,k) → Boolean) → {k:v} → {k:v}
+     *
+     * @see {@link https://ramdajs.com/docs#pickBy}
+    */
+    pickBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pickBy.apply(this, params);
+        });
+    }
+    /**
+     * @function project
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Array} array
+     * @param {Array} array
+     * @summary project :: [k] → [{k:v}] → [{k:v}]
+     *
+     * @see {@link https://ramdajs.com/docs#project}
+    */
+    project(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.project.apply(this, params);
+        });
+    }
+    /**
+     * @function prop
+     * @memberof Basic
+     * @example
+     * prop 'x' {x:100}
+     *
+     * @param {String} string
+     * @param {Object} object
+     * @summary prop :: s → {s:a} → a | undefined
+     *
+     * @see {@link https://ramdajs.com/docs#prop}
+    */
+    prop(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.prop.apply(this, params);
+        });
+    }
+    /**
+     * @function prop-or
+     * @memberof Basic
+     * @example
+     * prop-or 'N/A' 'notfound' {x:100}
+     *
+     * @param {Object} object
+     * @param {String} string
+     * @param {Object} object
+     * @summary prop-or :: a → String → Object → a
+     *
+     * @see {@link https://ramdajs.com/docs#propOr}
+    */
+    propOr(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.propOr.apply(this, params);
+        });
+    }
+    /**
+     * @function props
+     * @memberof Basic
+     * @example
+     * props ['x','y'] {x:100,y:50}
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary props :: [k] → {k:v} → [v]
+     *
+     * @see {@link https://ramdajs.com/docs#props}
+    */
+    props(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.props.apply(this, params);
+        });
+    }
+    /**
+     * @function set
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#set}
+    */
+    set(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.set.apply(this, params);
+        });
+    }
+    /**
+     * @function to-pairs
+     * @memberof Basic
+     * @example
+     * to-pairs {a:1,b:2,c:3}
+     *
+     * @param {Object} object
+     * @summary to-pairs :: {String: *} → [[String,*]]
+     *
+     * @see {@link https://ramdajs.com/docs#toPairs}
+    */
+    toPairs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.toPairs.apply(this, params);
+        });
+    }
+    /**
+     * @function values
+     * @memberof Basic
+     * @example
+     * values {a:1,b:2,c:3}
+     *
+     * @param {Object} object
+     * @summary values :: {k: v} → [v]
+     *
+     * @see {@link https://ramdajs.com/docs#values}
+    */
+    values(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.values.apply(this, params);
+        });
+    }
+    /**
+     * @function view
+     * @memberof Basic
+     * @example
+     * TODO
+     * @see {@link https://ramdajs.com/docs#view}
+    */
+    view(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.view.apply(this, params);
+        });
+    }
+    /**
+     * @function where
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Array} array
+     * @param {Object} object
+     * @summary where :: {String: (* → Boolean} → {String:*} → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#where}
+    */
+    where(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.where.apply(this, params);
+        });
+    }
+    /**
+     * @function where-eq
+     * @memberof Basic
+     * @example
+     * where-eq {a:1,b:2} {a:1,b:2}
+     *
+     * @param {Object} object
+     * @param {Object} object
+     * @summary where-eq :: {String:*} → {String:*} → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#whereEq}
+    */
+    whereEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.whereEq.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Function) ***********************************/
+    /**
+     * @function __
+     * @memberof Basic
+     *
+     * @see {@link https://ramdajs.com/docs/#module.exports}
+    */
+    underscore(ctx, opts) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return rpscript_interface_1.R.__;
+        });
+    }
+    /**
+     * @function add-index
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     *
+     * @see {@link https://ramdajs.com/docs#addIndex}
+    */
+    addIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.addIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function always
+     * @memberof Basic
+     * @example
+     * always 'Tee'
+     *
+     * @param {*} any
+     * @summary always :: a → (* → a)
+     *
+     * @see {@link https://ramdajs.com/docs#always}
+    */
+    always(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.always.apply(this, params);
+        });
+    }
+    /**
+     * @function ap
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#ap}
+    */
+    ap(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.ap.apply(this, params);
+        });
+    }
+    /**
+     * @function apply
+     * @memberof Basic
+     * @example
+     * apply math-max [1,2,3,-99,42,6,7]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary apply :: (*... → a) → [*] → a
+     *
+     * @see {@link https://ramdajs.com/docs#apply}
+    */
+    apply(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.apply.apply(this, params);
+        });
+    }
+    /**
+     * @function apply-spec
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#applySpec}
+    */
+    applySpec(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.applySpec.apply(this, params);
+        });
+    }
+    /**
+     * @function apply-to
+     * @memberof Basic
+     * @example
+     * apply-to math-max [1,2,3,-99,42,6,7]
+     *
+     * @param {Function} function
+     * @param {Array} array
+     * @summary apply-to :: a → (a → b) → b
+     *
+     * @see {@link https://ramdajs.com/docs#applyTo}
+    */
+    applyTo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.applyTo.apply(this, params);
+        });
+    }
+    /**
+     * @function ascend
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary ascend :: Ord b => (a → b) → a → a → Number
+     *
+     * @see {@link https://ramdajs.com/docs#ascend}
+    */
+    ascend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.ascend.apply(this, params);
+        });
+    }
+    /**
+     * @function call
+     * @memberof Basic
+     * @example
+     * call add 1 2
+     *
+     * @param {Function} function
+     * @param {...*} any
+     *
+     * @summary call :: (*... → a), *... → a
+     *
+     * @see {@link https://ramdajs.com/docs#call}
+    */
+    call(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.call.apply(this, params);
+        });
+    }
+    /**
+     * @function comparator
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Function} function
+     *
+     * @summary comparator :: ((a,b) → Boolean) → ((a,b) → Number)
+     *
+     * @see {@link https://ramdajs.com/docs#comparator}
+    */
+    comparator(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.comparator.apply(this, params);
+        });
+    }
+    /**
+     * @function compose
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#compose}
+    */
+    compose(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.compose.apply(this, params);
+        });
+    }
+    /**
+     * @function converge
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     *
+     * @see {@link https://ramdajs.com/docs#converge}
+    */
+    converge(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.converge.apply(this, params);
+        });
+    }
+    /**
+     * @function descend
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary converge :: Ord b => (a → b) → a → a → Number
+     *
+     * @see {@link https://ramdajs.com/docs#descend}
+    */
+    descend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.descend.apply(this, params);
+        });
+    }
+    /**
+     * @function empty
+     * @memberof Basic
+     * @example
+     * empty 'abc'
+     *
+     * @param {*} any
+     * @summary empty :: a → a
+     *
+     * @see {@link https://ramdajs.com/docs#empty}
+    */
+    empty(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.empty.apply(this, params);
+        });
+    }
+    /**
+     * @function f
+     * @memberof Basic
+     * @example
+     * f
+     *
+     * @param {any} any
+     * @summary * → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#F}
+    */
+    F(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.F.apply(this, params);
+        });
+    }
+    /**
+     * @function flip
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#flip}
+    */
+    flip(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.flip.apply(this, params);
+        });
+    }
+    /**
+     * @function identity
+     * @memberof Basic
+     * @example
+     * identity 1
+     *
+     * @param {any} any
+     * @summary a → a
+     *
+     * @see {@link https://ramdajs.com/docs#identity}
+    */
+    identity(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.identity.apply(this, params);
+        });
+    }
+    /**
+     * @function juxt
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#juxt}
+    */
+    juxt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.juxt.apply(this, params);
+        });
+    }
+    /**
+     * @function lift
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary (*... → *) → ([*]... → [*])
+     *
+     * @see {@link https://ramdajs.com/docs#lift}
+    */
+    lift(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lift.apply(this, params);
+        });
+    }
+    /**
+     * @function lift-n
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary Number → (*... → *) → ([*]... → [*])
+     *
+     * @see {@link https://ramdajs.com/docs#liftN}
+    */
+    liftN(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.liftN.apply(this, params);
+        });
+    }
+    /**
+     * @function nth-arg
+     * @memberof Basic
+     * @example
+     * nth 1 'a' 'b' 'c'
+     *
+     * @param {Number} number
+     * @param {List} list
+     *
+     * @summary Number → *...  → *
+     *
+     * @see {@link https://ramdajs.com/docs#nthArg}
+    */
+    nthArg(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.nthArg.apply(this, params);
+        });
+    }
+    /**
+     * @function o
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#o}
+    */
+    o(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return rpscript_interface_1.R.o.apply(this, params);
+        });
+    }
+    /**
+     * @function of
+     * @memberof Basic
+     * @example
+     * of 42
+     *
+     * @param {*} any
+     *
+     * @summary a → [a]
+     *
+     * @see {@link https://ramdajs.com/docs#of}
+    */
+    of(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.of.apply(this, params);
+        });
+    }
+    /**
+     * @function once
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#once}
+    */
+    once(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.once.apply(this, params);
+        });
+    }
+    /**
+     * @function partial
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#partial}
+    */
+    partial(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.partial.apply(this, params);
+        });
+    }
+    /**
+     * @function partial-right
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#partialRight}
+    */
+    partialRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.partialRight.apply(this, params);
+        });
+    }
+    /**
+     * @function pipe
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#pipe}
+    */
+    pipe(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pipe.apply(this, params);
+        });
+    }
+    /**
+     * @function t
+     * @memberof Basic
+     * @example
+     * t
+     *
+     * @param {*} any
+     *
+     * @summary * → Boolean
+     *
+     * @see {@link https://ramdajs.com/docs#T}
+    */
+    t(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.T.apply(this, params);
+        });
+    }
+    /**
+     * @function tap
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @param {Functon} function
+     * @param {Number} number
+     * @summary (a → *) → a → a
+     * @see {@link https://ramdajs.com/docs#tap}
+    */
+    tap(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.tap.apply(this, params);
+        });
+    }
+    /**
+     * @function try-catch
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#tryCatch}
+    */
+    tryCatch(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.tryCatch.apply(this, params);
+        });
+    }
+    /**
+     * @function use-with
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#useWith}
+    */
+    useWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.useWith.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Relation) ***********************************/
+    /**
+    * @function clamp
+    * @memberof Basic
+    * @example
+    * clamp 1 10 15
+    *
+    * @param {Number} number
+    * @param {Number} number
+    * @param {Number} number
+    *
+    * @summary Ord a => a → a → a → a
+    *
+    * @see {@link https://ramdajs.com/docs#clamp}
+   */
+    clamp(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.clamp.apply(this, params);
+        });
+    }
+    /**
+    * @function count-by
+    * @memberof Basic
+    * @example
+    * count-by floor [1.0,1.1,1.2,2.3,2.5]
+    *
+    * @param {Function} function
+    * @param {Array} array
+    *
+    * @summary (a → String) → [a] → {*}
+    *
+    * @see {@link https://ramdajs.com/docs#countBy}
+   */
+    countBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.countBy.apply(this, params);
+        });
+    }
+    /**
+    * @function difference
+    * @memberof Basic
+    * @example
+    * difference [1,2,3,4] [3,4,5,6]
+    *
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary [*] → [*] → [*]
+    *
+    * @see {@link https://ramdajs.com/docs#difference}
+   */
+    difference(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.difference.apply(this, params);
+        });
+    }
+    /**
+    * @function difference-with
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @param {Function} function
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary ((a,a) → Boolean) → [a] → [a] → [a]
+    *
+    * @see {@link https://ramdajs.com/docs#differenceWith}
+   */
+    differenceWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.differenceWith.apply(this, params);
+        });
+    }
+    /**
+    * @function eq-by
+    * @memberof Basic
+    * @example
+    * eq-by (abs) 5 -5
+    *
+    * @param {Function} function
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary (a → b) → a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#eqBy}
+   */
+    eqBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.eqBy.apply(this, params);
+        });
+    }
+    /**
+    * @function equals
+    * @memberof Basic
+    * @example
+    * equals 5 5
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary a → b → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#equals}
+   */
+    equals(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.equals.apply(this, params);
+        });
+    }
+    /**
+    * @function gt
+    * @memberof Basic
+    * @example
+    * gt 2 1
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#gt}
+   */
+    gt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.gt.apply(this, params);
+        });
+    }
+    /**
+    * @function gte
+    * @memberof Basic
+    * @example
+    * gte 2 2
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#gte}
+   */
+    gte(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.gte.apply(this, params);
+        });
+    }
+    /**
+    * @function identical
+    * @memberof Basic
+    * @example
+    * identical 1 1
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#identical}
+   */
+    identical(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.identical.apply(this, params);
+        });
+    }
+    /**
+    * @function inner-join
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @param {Function} function
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary ((a,b) → Boolean) → [a] → [b] → [a]
+    *
+    * @see {@link https://ramdajs.com/docs#innerJoin}
+   */
+    innerJoin(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return rpscript_interface_1.R.innerJoin.apply(this, params);
+        });
+    }
+    /**
+    * @function intersection
+    * @memberof Basic
+    * @example
+    * intersection [1,2,3,4] [3,4,5,6]
+    *
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary [*] → [*] → [*]
+    *
+    * @see {@link https://ramdajs.com/docs#intersection}
+   */
+    intersection(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.intersection.apply(this, params);
+        });
+    }
+    /**
+    * @function lt
+    * @memberof Basic
+    * @example
+    * lt 2 1
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#lt}
+   */
+    lt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lt.apply(this, params);
+        });
+    }
+    /**
+    * @function lte
+    * @memberof Basic
+    * @example
+    * lte 2 2
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#lte}
+   */
+    lte(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.lte.apply(this, params);
+        });
+    }
+    /**
+    * @function max
+    * @memberof Basic
+    * @example
+    * max 2 4
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → a
+    *
+    * @see {@link https://ramdajs.com/docs#max}
+   */
+    max(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.max.apply(this, params);
+        });
+    }
+    /**
+    * @function max-by
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @param {Function} function
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => (a → b) → a → a → a
+    *
+    * @see {@link https://ramdajs.com/docs#maxBy}
+   */
+    maxBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.maxBy.apply(this, params);
+        });
+    }
+    /**
+    * @function min
+    * @memberof Basic
+    * @example
+    * min 10 5
+    *
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => a → a → a
+    *
+    * @see {@link https://ramdajs.com/docs#min}
+   */
+    min(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.min.apply(this, params);
+        });
+    }
+    /**
+    * @function minBy
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @param {Function} function
+    * @param {*} any
+    * @param {*} any
+    *
+    * @summary Ord a => (a → b) → a → a → a
+    *
+    * @see {@link https://ramdajs.com/docs#minBy}
+   */
+    minBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.minBy.apply(this, params);
+        });
+    }
+    /**
+    * @function path-eq
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @summary [Idx] → a → {a} → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#pathEq}
+   */
+    pathEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pathEq.apply(this, params);
+        });
+    }
+    /**
+    * @function prop-eq
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @summary String → a → Object → Boolean
+    *
+    * @see {@link https://ramdajs.com/docs#propEq}
+   */
+    propEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.propEq.apply(this, params);
+        });
+    }
+    /**
+    * @function sort-by
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @summary Ord b => (a → b) → [a] → [a]
+    *
+    * @see {@link https://ramdajs.com/docs#sortBy}
+   */
+    sortBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.sortBy.apply(this, params);
+        });
+    }
+    /**
+    * @function sort-with
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @summary [(a,a) → Number] → [a] → [a]
+    *
+    * @see {@link https://ramdajs.com/docs#sortWith}
+   */
+    sortWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.sortWith.apply(this, params);
+        });
+    }
+    /**
+    * @function symmetric-difference
+    * @memberof Basic
+    * @example
+    * symmetric-difference [1,2,3,4] [3,4,5,6,7]
+    *
+    * @summary [*] → [*] → [*]
+    *
+    * @see {@link https://ramdajs.com/docs#symmetricDifference}
+   */
+    symmetricDifference(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.symmetricDifference.apply(this, params);
+        });
+    }
+    /**
+    * @function symmetric-difference-with
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @summary ((a,a) → Boolean) → [a] → [a] → [a]
+    *
+    * @see {@link https://ramdajs.com/docs#symmetricDifferenceWith}
+   */
+    symmetricDifferenceWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.symmetricDifferenceWith.apply(this, params);
+        });
+    }
+    /**
+    * @function union
+    * @memberof Basic
+    * @example
+    * union [1,2,3] [2,3,4]
+    *
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary [*] → [*] → [*]
+    *
+    * @see {@link https://ramdajs.com/docs#union}
+   */
+    union(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.union.apply(this, params);
+        });
+    }
+    /**
+    * @function union-with
+    * @memberof Basic
+    * @example
+    * union-with (eq-by prop 'a') [{a:1}] [{a:1}]
+    *
+    * @param {Array} array
+    * @param {Array} array
+    *
+    * @summary ((a,a) → Boolean) → [*] → [*] → [*]
+    *
+    * @see {@link https://ramdajs.com/docs#unionWith}
+   */
+    unionWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.unionWith.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Logic) ***********************************/
+    /**
+     * @function all-pass
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @summary [(*...) → Boolean] → (*... → Boolean)
+     *
+     * @see {@link https://ramdajs.com/docs#allPass}
+    */
+    allPass(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.allPass.apply(this, params);
+        });
+    }
+    /**
+     * @function and
+     * @memberof Basic
+     * @example
+     * and true false
+     *
+     * @param {*} any
+     * @param {*} any
+     *
+     * @summary a → b → a | b
+     *
+     * @see {@link https://ramdajs.com/docs#and}
+    */
+    and(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.and.apply(this, params);
+        });
+    }
+    /**
+     * @function any-pass
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#anyPass}
+    */
+    anyPass(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.anyPass.apply(this, params);
+        });
+    }
+    /**
+     * @function both
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#both}
+    */
+    both(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.both.apply(this, params);
+        });
+    }
+    /**
+     * @function complement
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#complement}
+    */
+    complement(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.complement.apply(this, params);
+        });
+    }
+    /**
+     * @function cond
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#cond}
+    */
+    cond(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.cond.apply(this, params);
+        });
+    }
+    /**
+     * @function default-to
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#defaultTo}
+    */
+    defaultTo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.defaultTo.apply(this, params);
+        });
+    }
+    /**
+     * @function either
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#either}
+    */
+    either(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.either.apply(this, params);
+        });
+    }
+    /**
+     * @function if-else
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#ifElse}
+    */
+    ifElse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.ifElse.apply(this, params);
+        });
+    }
+    /**
+     * @function is-empty
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#isEmpty}
+    */
+    isEmpty(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.isEmpty.apply(this, params);
+        });
+    }
+    /**
+     * @function not
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#not}
+    */
+    not(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.not.apply(this, params);
+        });
+    }
+    /**
+     * @function or
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#or}
+    */
+    or(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.or.apply(this, params);
+        });
+    }
+    /**
+     * @function path-satisfies
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#pathSatisfies}
+    */
+    pathSatisfies(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.pathSatisfies.apply(this, params);
+        });
+    }
+    /**
+     * @function prop-satisfies
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#propSatisfies}
+    */
+    propSatisfies(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.propSatisfies.apply(this, params);
+        });
+    }
+    /**
+     * @function unless
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#unless}
+    */
+    unless(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.unless.apply(this, params);
+        });
+    }
+    /**
+     * @function until
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#until}
+    */
+    until(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.until.apply(this, params);
+        });
+    }
+    /**
+     * @function when
+     * @memberof Basic
+     * @example
+     * TODO
+     *
+     * @see {@link https://ramdajs.com/docs#when}
+    */
+    when(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.when.apply(this, params);
+        });
+    }
+    /**************************** Ramda (String) ***********************************/
+    /**
+    * @function trim
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#trim}
+   */
+    trim(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.trim.apply(this, params);
+        });
+    }
+    /**
+    * @function match
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#match}
+   */
+    match(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.match.apply(this, params);
+        });
+    }
+    /**
+    * @function replace
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#replace}
+   */
+    replace(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.replace.apply(this, params);
+        });
+    }
+    /**
+    * @function split
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#split}
+   */
+    split(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.split.apply(this, params);
+        });
+    }
+    /**
+    * @function test
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#test}
+   */
+    test(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.test.apply(this, params);
+        });
+    }
+    /**
+    * @function to-lower
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#toLower}
+   */
+    toLower(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.toLower.apply(this, params);
+        });
+    }
+    /**
+    * @function to-string
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#toString}
+   */
+    toString(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.toString.apply(this, params);
+        });
+    }
+    /**
+    * @function to-upper
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#toUpper}
+   */
+    toUpper(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.toUpper.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Math) ***********************************/
+    /**
+    * @function add
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#add}
+   */
+    add(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.add.apply(this, params);
+        });
+    }
+    /**
+    * @function dec
+    * @memberof Basic
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://ramdajs.com/docs#dec}
+   */
+    dec(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.dec.apply(this, params);
+        });
+    }
+    /**
+    * @function divide
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#divide}
+   */
+    divide(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.divide.apply(this, params);
+        });
+    }
+    /**
+    * @function inc
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#inc}
+   */
+    inc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.inc.apply(this, params);
+        });
+    }
+    /**
+    * @function math-mod
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#mathMod}
+   */
+    mathMod(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mathMod.apply(this, params);
+        });
+    }
+    /**
+    * @function mean
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#mean}
+   */
+    mean(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.mean.apply(this, params);
+        });
+    }
+    /**
+    * @function median
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#median}
+   */
+    median(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.median.apply(this, params);
+        });
+    }
+    /**
+    * @function modulo
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#modulo}
+   */
+    modulo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.modulo.apply(this, params);
+        });
+    }
+    /**
+    * @function multiply
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#multiply}
+   */
+    multiply(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.multiply.apply(this, params);
+        });
+    }
+    /**
+    * @function negate
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#negate}
+   */
+    negate(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.negate.apply(this, params);
+        });
+    }
+    /**
+    * @function product
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#product}
+   */
+    product(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.product.apply(this, params);
+        });
+    }
+    /**
+    * @function subtract
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#subtract}
+   */
+    subtract(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.subtract.apply(this, params);
+        });
+    }
+    /**
+    * @function sum
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#sum}
+   */
+    sum(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.sum.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Type) ***********************************/
+    /**
+    * @function is
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#is}
+   */
+    is(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.is.apply(this, params);
+        });
+    }
+    /**
+    * @function is-nil
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#isNil}
+   */
+    isNil(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.isNil.apply(this, params);
+        });
+    }
+    /**
+    * @function prop-is
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#propIs}
+   */
+    propIs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.propIs.apply(this, params);
+        });
+    }
+    /**
+    * @function type
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+    * @see {@link https://ramdajs.com/docs#type}
+   */
+    type(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R.type.apply(this, params);
+        });
+    }
+    /**************************** Ramda (Customize) ***********************************/
+    /**
+    * @function r
+    * @memberof Basic
+    * @example
+    * TODO
+    *
+   */
+    r(ctx, opts, functionName) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return rpscript_interface_1.R[functionName];
+        });
+    }
+    /**
+    * @function regexp
+    * @memberof Basic
+    *
+    * @param {RegExp} regexp regular expression
+    *
+   */
+    regexp(ctx, opts, regexp) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new RegExp(regexp);
+        });
+    }
+};
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'log' })
+], RPSBasic.prototype, "print", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'as' })
+], RPSBasic.prototype, "as", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'assign' })
+], RPSBasic.prototype, "assign", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'listen-once' })
+], RPSBasic.prototype, "listenOnce", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'listen-on' })
+], RPSBasic.prototype, "on", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'wait' })
+], RPSBasic.prototype, "wait", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'stringify' })
+], RPSBasic.prototype, "stringify", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'abs' })
+], RPSBasic.prototype, "abs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ceil' })
+], RPSBasic.prototype, "ceil", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'math-max' })
+], RPSBasic.prototype, "mathMax", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'math-min' })
+], RPSBasic.prototype, "mathMin", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'floor' })
+], RPSBasic.prototype, "floor", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pow' })
+], RPSBasic.prototype, "power", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'random' })
+], RPSBasic.prototype, "random", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'round' })
+], RPSBasic.prototype, "round", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'truncate' })
+], RPSBasic.prototype, "trunc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'adjust' })
+], RPSBasic.prototype, "adjust", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'all' })
+], RPSBasic.prototype, "all", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'any' })
+], RPSBasic.prototype, "any", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'aperture' })
+], RPSBasic.prototype, "aperture", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'append' })
+], RPSBasic.prototype, "append", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'chain' })
+], RPSBasic.prototype, "chain", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'concat' })
+], RPSBasic.prototype, "concat", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'contains' })
+], RPSBasic.prototype, "contains", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop' })
+], RPSBasic.prototype, "drop", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-last' })
+], RPSBasic.prototype, "dropLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-last-while' })
+], RPSBasic.prototype, "dropLastWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-repeats' })
+], RPSBasic.prototype, "dropRepeats", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-repeats-with' })
+], RPSBasic.prototype, "dropRepeatsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-while' })
+], RPSBasic.prototype, "dropWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ends-with' })
+], RPSBasic.prototype, "endsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'filter' })
+], RPSBasic.prototype, "filter", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find' })
+], RPSBasic.prototype, "find", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-index' })
+], RPSBasic.prototype, "findIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-last' })
+], RPSBasic.prototype, "findLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-last-index' })
+], RPSBasic.prototype, "findLastIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'flatten' })
+], RPSBasic.prototype, "flatten", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'for-each' })
+], RPSBasic.prototype, "forEach", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'from-pairs' })
+], RPSBasic.prototype, "fromPairs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'group-by' })
+], RPSBasic.prototype, "groupBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'group-with' })
+], RPSBasic.prototype, "groupWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'head' })
+], RPSBasic.prototype, "head", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'index-of' })
+], RPSBasic.prototype, "indexOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'index-by' })
+], RPSBasic.prototype, "indexBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'init' })
+], RPSBasic.prototype, "init", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'insert' })
+], RPSBasic.prototype, "insert", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'insert-all' })
+], RPSBasic.prototype, "insertAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'intersperse' })
+], RPSBasic.prototype, "intersperse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'join' })
+], RPSBasic.prototype, "join", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'last' })
+], RPSBasic.prototype, "last", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'last-index-of' })
+], RPSBasic.prototype, "lastIndexOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'length' })
+], RPSBasic.prototype, "length", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map' })
+], RPSBasic.prototype, "map", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-accum' })
+], RPSBasic.prototype, "mapAccum", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-accum-right' })
+], RPSBasic.prototype, "mapAccumRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-all' })
+], RPSBasic.prototype, "mergeAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'none' })
+], RPSBasic.prototype, "none", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'nth' })
+], RPSBasic.prototype, "nth", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pair' })
+], RPSBasic.prototype, "pair", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partition' })
+], RPSBasic.prototype, "partition", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pluck' })
+], RPSBasic.prototype, "pluck", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prepend' })
+], RPSBasic.prototype, "prepend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'range' })
+], RPSBasic.prototype, "range", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce' })
+], RPSBasic.prototype, "reduce", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-by' })
+], RPSBasic.prototype, "reduceBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-right' })
+], RPSBasic.prototype, "reduceRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-while' })
+], RPSBasic.prototype, "reduceWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reject' })
+], RPSBasic.prototype, "reject", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'remove' })
+], RPSBasic.prototype, "remove", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'repeat' })
+], RPSBasic.prototype, "repeat", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reverse' })
+], RPSBasic.prototype, "reverse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'scan' })
+], RPSBasic.prototype, "scan", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'slice' })
+], RPSBasic.prototype, "slice", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort' })
+], RPSBasic.prototype, "sort", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-at' })
+], RPSBasic.prototype, "splitAt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-every' })
+], RPSBasic.prototype, "splitEvery", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-when' })
+], RPSBasic.prototype, "splitWhen", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'starts-with' })
+], RPSBasic.prototype, "startsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'tail' })
+], RPSBasic.prototype, "tail", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take' })
+], RPSBasic.prototype, "take", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-last' })
+], RPSBasic.prototype, "takeLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-last-while' })
+], RPSBasic.prototype, "takeLastWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-while' })
+], RPSBasic.prototype, "takeWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'times' })
+], RPSBasic.prototype, "times", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'transpose' })
+], RPSBasic.prototype, "transpose", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unfold' })
+], RPSBasic.prototype, "unfold", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq' })
+], RPSBasic.prototype, "uniq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq-by' })
+], RPSBasic.prototype, "uniqBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq-with' })
+], RPSBasic.prototype, "uniqWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unnest' })
+], RPSBasic.prototype, "unnest", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'update' })
+], RPSBasic.prototype, "update", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'without' })
+], RPSBasic.prototype, "without", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'xprod' })
+], RPSBasic.prototype, "xprod", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip' })
+], RPSBasic.prototype, "zip", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip-obj' })
+], RPSBasic.prototype, "zipObj", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip-with' })
+], RPSBasic.prototype, "zipWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'keys' })
+], RPSBasic.prototype, "keys", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'assoc' })
+], RPSBasic.prototype, "assoc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'assoc-path' })
+], RPSBasic.prototype, "assocPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'clone' })
+], RPSBasic.prototype, "clone", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dissoc' })
+], RPSBasic.prototype, "dissoc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dissoc-path' })
+], RPSBasic.prototype, "dissocPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'eq-props' })
+], RPSBasic.prototype, "eqProps", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'evolve' })
+], RPSBasic.prototype, "evolve", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'for-each-obj-indexed' })
+], RPSBasic.prototype, "forEachObjIndexed", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'has' })
+], RPSBasic.prototype, "has", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'invert' })
+], RPSBasic.prototype, "invert", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'invert-obj' })
+], RPSBasic.prototype, "invertObj", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens' })
+], RPSBasic.prototype, "lens", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-index' })
+], RPSBasic.prototype, "lensIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-path' })
+], RPSBasic.prototype, "lensPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-prop' })
+], RPSBasic.prototype, "lensProp", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-obj-indexed' })
+], RPSBasic.prototype, "mapObjIndexed", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge' })
+], RPSBasic.prototype, "merge", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-left' })
+], RPSBasic.prototype, "mergeDeepLeft", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-right' })
+], RPSBasic.prototype, "mergeDeepRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-with' })
+], RPSBasic.prototype, "mergeDeepWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-with' })
+], RPSBasic.prototype, "mergeWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-with-key' })
+], RPSBasic.prototype, "mergeWithKey", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'obj-of' })
+], RPSBasic.prototype, "objOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'omit' })
+], RPSBasic.prototype, "omit", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'over' })
+], RPSBasic.prototype, "over", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path' })
+], RPSBasic.prototype, "path", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-or' })
+], RPSBasic.prototype, "pathOr", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick' })
+], RPSBasic.prototype, "pick", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick-all' })
+], RPSBasic.prototype, "pickAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick-by' })
+], RPSBasic.prototype, "pickBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'project' })
+], RPSBasic.prototype, "project", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop' })
+], RPSBasic.prototype, "prop", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-or' })
+], RPSBasic.prototype, "propOr", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'props' })
+], RPSBasic.prototype, "props", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'set' })
+], RPSBasic.prototype, "set", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-pairs' })
+], RPSBasic.prototype, "toPairs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'values' })
+], RPSBasic.prototype, "values", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'view' })
+], RPSBasic.prototype, "view", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'where' })
+], RPSBasic.prototype, "where", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'where-eq' })
+], RPSBasic.prototype, "whereEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: '__' })
+], RPSBasic.prototype, "underscore", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'add-index' })
+], RPSBasic.prototype, "addIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'always' })
+], RPSBasic.prototype, "always", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ap' })
+], RPSBasic.prototype, "ap", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply' })
+], RPSBasic.prototype, "apply", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply-spec' })
+], RPSBasic.prototype, "applySpec", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply-to' })
+], RPSBasic.prototype, "applyTo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ascend' })
+], RPSBasic.prototype, "ascend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'call' })
+], RPSBasic.prototype, "call", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'comparator' })
+], RPSBasic.prototype, "comparator", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'compose' })
+], RPSBasic.prototype, "compose", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'converge' })
+], RPSBasic.prototype, "converge", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'descend' })
+], RPSBasic.prototype, "descend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'empty' })
+], RPSBasic.prototype, "empty", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'f' })
+], RPSBasic.prototype, "F", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'flip' })
+], RPSBasic.prototype, "flip", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'identity' })
+], RPSBasic.prototype, "identity", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'juxt' })
+], RPSBasic.prototype, "juxt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lift' })
+], RPSBasic.prototype, "lift", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lift-n' })
+], RPSBasic.prototype, "liftN", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'nth-arg' })
+], RPSBasic.prototype, "nthArg", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'o' })
+], RPSBasic.prototype, "o", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'of' })
+], RPSBasic.prototype, "of", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'once' })
+], RPSBasic.prototype, "once", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partial' })
+], RPSBasic.prototype, "partial", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partial-right' })
+], RPSBasic.prototype, "partialRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pipe' })
+], RPSBasic.prototype, "pipe", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 't' })
+], RPSBasic.prototype, "t", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'tap' })
+], RPSBasic.prototype, "tap", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'try-catch' })
+], RPSBasic.prototype, "tryCatch", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'use-with' })
+], RPSBasic.prototype, "useWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'clamp' })
+], RPSBasic.prototype, "clamp", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'count-by' })
+], RPSBasic.prototype, "countBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'difference' })
+], RPSBasic.prototype, "difference", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'difference-with' })
+], RPSBasic.prototype, "differenceWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'eq-by' })
+], RPSBasic.prototype, "eqBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'equals' })
+], RPSBasic.prototype, "equals", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'gt' })
+], RPSBasic.prototype, "gt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'gte' })
+], RPSBasic.prototype, "gte", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'identical' })
+], RPSBasic.prototype, "identical", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'inner-join' })
+], RPSBasic.prototype, "innerJoin", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'intersection' })
+], RPSBasic.prototype, "intersection", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lt' })
+], RPSBasic.prototype, "lt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lte' })
+], RPSBasic.prototype, "lte", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'max' })
+], RPSBasic.prototype, "max", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'max-by' })
+], RPSBasic.prototype, "maxBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'min' })
+], RPSBasic.prototype, "min", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'min-by' })
+], RPSBasic.prototype, "minBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-eq' })
+], RPSBasic.prototype, "pathEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-eq' })
+], RPSBasic.prototype, "propEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort-by' })
+], RPSBasic.prototype, "sortBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort-with' })
+], RPSBasic.prototype, "sortWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'symmetric-difference' })
+], RPSBasic.prototype, "symmetricDifference", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'symmetric-difference-with' })
+], RPSBasic.prototype, "symmetricDifferenceWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'union' })
+], RPSBasic.prototype, "union", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'union-with' })
+], RPSBasic.prototype, "unionWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'all-pass' })
+], RPSBasic.prototype, "allPass", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'and' })
+], RPSBasic.prototype, "and", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'any-pass' })
+], RPSBasic.prototype, "anyPass", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'both' })
+], RPSBasic.prototype, "both", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'complement' })
+], RPSBasic.prototype, "complement", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'cond' })
+], RPSBasic.prototype, "cond", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'default-to' })
+], RPSBasic.prototype, "defaultTo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'either' })
+], RPSBasic.prototype, "either", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'if-else' })
+], RPSBasic.prototype, "ifElse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is-empty' })
+], RPSBasic.prototype, "isEmpty", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'not' })
+], RPSBasic.prototype, "not", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'or' })
+], RPSBasic.prototype, "or", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-satisfies' })
+], RPSBasic.prototype, "pathSatisfies", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-satisfies' })
+], RPSBasic.prototype, "propSatisfies", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unless' })
+], RPSBasic.prototype, "unless", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'until' })
+], RPSBasic.prototype, "until", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'when' })
+], RPSBasic.prototype, "when", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'trim' })
+], RPSBasic.prototype, "trim", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'match' })
+], RPSBasic.prototype, "match", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'replace' })
+], RPSBasic.prototype, "replace", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split' })
+], RPSBasic.prototype, "split", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'test' })
+], RPSBasic.prototype, "test", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-lower' })
+], RPSBasic.prototype, "toLower", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-string' })
+], RPSBasic.prototype, "toString", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-upper' })
+], RPSBasic.prototype, "toUpper", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'add' })
+], RPSBasic.prototype, "add", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dec' })
+], RPSBasic.prototype, "dec", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'divide' })
+], RPSBasic.prototype, "divide", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'inc' })
+], RPSBasic.prototype, "inc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'math-mod' })
+], RPSBasic.prototype, "mathMod", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'mean' })
+], RPSBasic.prototype, "mean", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'median' })
+], RPSBasic.prototype, "median", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'modulo' })
+], RPSBasic.prototype, "modulo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'multiply' })
+], RPSBasic.prototype, "multiply", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'negate' })
+], RPSBasic.prototype, "negate", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'product' })
+], RPSBasic.prototype, "product", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'subtract' })
+], RPSBasic.prototype, "subtract", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sum' })
+], RPSBasic.prototype, "sum", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is' })
+], RPSBasic.prototype, "is", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is-nil' })
+], RPSBasic.prototype, "isNil", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-is' })
+], RPSBasic.prototype, "propIs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'type' })
+], RPSBasic.prototype, "type", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'r' })
+], RPSBasic.prototype, "r", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'regexp' })
+], RPSBasic.prototype, "regexp", null);
+RPSBasic = __decorate([
+    rpscript_interface_1.RpsModule("basic")
+], RPSBasic);
+exports.default = RPSBasic;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <!--<img class="logo" src="img/toast-ui.png" style="">-->
+    <div class="footer-text">Typecasting SG</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

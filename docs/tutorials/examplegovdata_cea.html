@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>Using RPscript to handle data enquiry</title>
+</head>
+<body>
+    This example demonstrate the flexilibity to handle information enquiry
+
+    Scenario: Finding out CEA agent information provided by Gov Data
+
+    Step 1: Download and unzip the data
+    download 'file' 'url'
+    unzip 'destinationFolder' $RESULT 
+    
+    OR
+    
+    unzip 'folder' download 'file' 'url'
+
+    Step 2: Parsing csv file for processing
+
+    convert-csv-string-to-data $RESULT 
+
+    Step 3: And you can do whatever you want from now.
+
+    Take for example, query based on name.
+    Save to file
+
+
+    
+
+
+</body>
+</html>

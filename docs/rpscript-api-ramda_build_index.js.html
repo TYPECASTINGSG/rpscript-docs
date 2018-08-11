@@ -1,0 +1,4143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: rpscript-api-ramda/build/index.js | RPScript</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/lang-rps.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="styles/custom.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <!--<div class="logo" style="">
+        
+            <img src="img/toast-ui.png" width="100%" height="100%">
+        
+    </div>-->
+    <div class="title">
+        <h1><a href="index.html" class="link">RPScript</a></h1>
+        
+            <span class="version">v1.0.0</span>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+        <ol class="lnb-tab">
+            <li id="api-tab">
+                <a href="#"><h4>API</h4></a>
+            </li>
+            <li id="examples-tab">
+                <a href="#"><h4>Documentation</h4></a>
+            </li>
+        </ol>
+    
+    <div class="lnb-examples hidden"><h3>Documentation</h3><ul><li><a href="tutorial-examplegovdata.html">Example: Process Gov Data</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="examplegovdata_sub"></div></li><li><a href="tutorial-examplegovdata_cea.html">examplegovdata_cea</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="examplegovdata_cea_sub"></div></li><li><a href="tutorial-gettingstarted.html">Getting Started</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="gettingstarted_sub"></div></li><li><a href="tutorial-syntax.html">Syntax</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="syntax_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="Basic.html">Basic</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Basic_sub"><ul class="inner"><li><a href="Basic.html#.abs">abs</a></li><li><a href="Basic.html#.as">as</a></li><li><a href="Basic.html#.assign">assign</a></li><li><a href="Basic.html#.ceil">ceil</a></li><li><a href="Basic.html#.floor">floor</a></li><li><a href="Basic.html#.listen-on">listen-on</a></li><li><a href="Basic.html#.listen-once">listen-once</a></li><li><a href="Basic.html#.log">log</a></li><li><a href="Basic.html#.max">max</a></li><li><a href="Basic.html#.min">min</a></li><li><a href="Basic.html#.power">power</a></li><li><a href="Basic.html#.random">random</a></li><li><a href="Basic.html#.round">round</a></li><li><a href="Basic.html#.stringify">stringify</a></li><li><a href="Basic.html#.trunc">trunc</a></li><li><a href="Basic.html#.wait">wait</a></li></ul></div></li><li><a href="Ramda.html">Ramda</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Ramda_sub"><ul class="inner"><li><a href="Ramda.html#.__">__</a></li><li><a href="Ramda.html#.add">add</a></li><li><a href="Ramda.html#.addIndex">addIndex</a></li><li><a href="Ramda.html#.adjust">adjust</a></li><li><a href="Ramda.html#.all">all</a></li><li><a href="Ramda.html#.allPass">allPass</a></li><li><a href="Ramda.html#.always">always</a></li><li><a href="Ramda.html#.and">and</a></li><li><a href="Ramda.html#.any">any</a></li><li><a href="Ramda.html#.anyPass">anyPass</a></li><li><a href="Ramda.html#.ap">ap</a></li><li><a href="Ramda.html#.aperture">aperture</a></li><li><a href="Ramda.html#.append">append</a></li><li><a href="Ramda.html#.apply">apply</a></li><li><a href="Ramda.html#.applySpec">applySpec</a></li><li><a href="Ramda.html#.applyTo">applyTo</a></li><li><a href="Ramda.html#.ascend">ascend</a></li><li><a href="Ramda.html#.assoc">assoc</a></li><li><a href="Ramda.html#.assocPath">assocPath</a></li><li><a href="Ramda.html#.binary">binary</a></li><li><a href="Ramda.html#.bind">bind</a></li><li><a href="Ramda.html#.both">both</a></li><li><a href="Ramda.html#.call">call</a></li><li><a href="Ramda.html#.chain">chain</a></li><li><a href="Ramda.html#.clamp">clamp</a></li><li><a href="Ramda.html#.clone">clone</a></li><li><a href="Ramda.html#.comparator">comparator</a></li><li><a href="Ramda.html#.complement">complement</a></li><li><a href="Ramda.html#.compose">compose</a></li><li><a href="Ramda.html#.composeK">composeK</a></li><li><a href="Ramda.html#.composeP">composeP</a></li><li><a href="Ramda.html#.concat">concat</a></li><li><a href="Ramda.html#.cond">cond</a></li><li><a href="Ramda.html#.construct">construct</a></li><li><a href="Ramda.html#.constructN">constructN</a></li><li><a href="Ramda.html#.contains">contains</a></li><li><a href="Ramda.html#.converge">converge</a></li><li><a href="Ramda.html#.countBy">countBy</a></li><li><a href="Ramda.html#.curry">curry</a></li><li><a href="Ramda.html#.curryN">curryN</a></li><li><a href="Ramda.html#.dec">dec</a></li><li><a href="Ramda.html#.defaultTo">defaultTo</a></li><li><a href="Ramda.html#.descend">descend</a></li><li><a href="Ramda.html#.difference">difference</a></li><li><a href="Ramda.html#.differenceWith">differenceWith</a></li><li><a href="Ramda.html#.dissoc">dissoc</a></li><li><a href="Ramda.html#.dissocPath">dissocPath</a></li><li><a href="Ramda.html#.divide">divide</a></li><li><a href="Ramda.html#.drop">drop</a></li><li><a href="Ramda.html#.drop-last-while">drop-last-while</a></li><li><a href="Ramda.html#.dropLast">dropLast</a></li><li><a href="Ramda.html#.dropRepeats">dropRepeats</a></li><li><a href="Ramda.html#.dropRepeatsWith">dropRepeatsWith</a></li><li><a href="Ramda.html#.dropWhile">dropWhile</a></li><li><a href="Ramda.html#.either">either</a></li><li><a href="Ramda.html#.empty">empty</a></li><li><a href="Ramda.html#.endsWith">endsWith</a></li><li><a href="Ramda.html#.eqBy">eqBy</a></li><li><a href="Ramda.html#.eqProps">eqProps</a></li><li><a href="Ramda.html#.equals">equals</a></li><li><a href="Ramda.html#.evolve">evolve</a></li><li><a href="Ramda.html#.F">F</a></li><li><a href="Ramda.html#.filter">filter</a></li><li><a href="Ramda.html#.filter-series">filter-series</a></li><li><a href="Ramda.html#.find">find</a></li><li><a href="Ramda.html#.findIndex">findIndex</a></li><li><a href="Ramda.html#.findLast">findLast</a></li><li><a href="Ramda.html#.findLastIndex">findLastIndex</a></li><li><a href="Ramda.html#.flatten">flatten</a></li><li><a href="Ramda.html#.flip">flip</a></li><li><a href="Ramda.html#.forEach">forEach</a></li><li><a href="Ramda.html#.forEachObjIndexed">forEachObjIndexed</a></li><li><a href="Ramda.html#.fromPairs">fromPairs</a></li><li><a href="Ramda.html#.groupBy">groupBy</a></li><li><a href="Ramda.html#.groupWith">groupWith</a></li><li><a href="Ramda.html#.gt">gt</a></li><li><a href="Ramda.html#.gte">gte</a></li><li><a href="Ramda.html#.has">has</a></li><li><a href="Ramda.html#.hasIn">hasIn</a></li><li><a href="Ramda.html#.head">head</a></li><li><a href="Ramda.html#.identical">identical</a></li><li><a href="Ramda.html#.identity">identity</a></li><li><a href="Ramda.html#.ifElse">ifElse</a></li><li><a href="Ramda.html#.inc">inc</a></li><li><a href="Ramda.html#.indexBy">indexBy</a></li><li><a href="Ramda.html#.indexOf">indexOf</a></li><li><a href="Ramda.html#.init">init</a></li><li><a href="Ramda.html#.innerJoin">innerJoin</a></li><li><a href="Ramda.html#.insert">insert</a></li><li><a href="Ramda.html#.insertAll">insertAll</a></li><li><a href="Ramda.html#.intersection">intersection</a></li><li><a href="Ramda.html#.intersperse">intersperse</a></li><li><a href="Ramda.html#.into">into</a></li><li><a href="Ramda.html#.invert">invert</a></li><li><a href="Ramda.html#.invertObj">invertObj</a></li><li><a href="Ramda.html#.invoker">invoker</a></li><li><a href="Ramda.html#.is">is</a></li><li><a href="Ramda.html#.isEmpty">isEmpty</a></li><li><a href="Ramda.html#.isNil">isNil</a></li><li><a href="Ramda.html#.join">join</a></li><li><a href="Ramda.html#.juxt">juxt</a></li><li><a href="Ramda.html#.keys">keys</a></li><li><a href="Ramda.html#.keysIn">keysIn</a></li><li><a href="Ramda.html#.last">last</a></li><li><a href="Ramda.html#.lastIndexOf">lastIndexOf</a></li><li><a href="Ramda.html#.length">length</a></li><li><a href="Ramda.html#.lens">lens</a></li><li><a href="Ramda.html#.lensIndex">lensIndex</a></li><li><a href="Ramda.html#.lensPath">lensPath</a></li><li><a href="Ramda.html#.lensProp">lensProp</a></li><li><a href="Ramda.html#.lift">lift</a></li><li><a href="Ramda.html#.lift-n">lift-n</a></li><li><a href="Ramda.html#.lt">lt</a></li><li><a href="Ramda.html#.lte">lte</a></li><li><a href="Ramda.html#.map">map</a></li><li><a href="Ramda.html#.map-series">map-series</a></li><li><a href="Ramda.html#.mapAccum">mapAccum</a></li><li><a href="Ramda.html#.mapAccumRight">mapAccumRight</a></li><li><a href="Ramda.html#.mapObjIndexed">mapObjIndexed</a></li><li><a href="Ramda.html#.match">match</a></li><li><a href="Ramda.html#.mathMod">mathMod</a></li><li><a href="Ramda.html#.max">max</a></li><li><a href="Ramda.html#.maxBy">maxBy</a></li><li><a href="Ramda.html#.mean">mean</a></li><li><a href="Ramda.html#.median">median</a></li><li><a href="Ramda.html#.memoize">memoize</a></li><li><a href="Ramda.html#.memoizeWith">memoizeWith</a></li><li><a href="Ramda.html#.merge">merge</a></li><li><a href="Ramda.html#.mergeAll">mergeAll</a></li><li><a href="Ramda.html#.mergeDeepLeft">mergeDeepLeft</a></li><li><a href="Ramda.html#.mergeDeepRight">mergeDeepRight</a></li><li><a href="Ramda.html#.mergeDeepWith">mergeDeepWith</a></li><li><a href="Ramda.html#.mergeWith">mergeWith</a></li><li><a href="Ramda.html#.mergeWithKey">mergeWithKey</a></li><li><a href="Ramda.html#.min">min</a></li><li><a href="Ramda.html#.minBy">minBy</a></li><li><a href="Ramda.html#.modulo">modulo</a></li><li><a href="Ramda.html#.multiply">multiply</a></li><li><a href="Ramda.html#.nAry">nAry</a></li><li><a href="Ramda.html#.negate">negate</a></li><li><a href="Ramda.html#.none">none</a></li><li><a href="Ramda.html#.not">not</a></li><li><a href="Ramda.html#.nth">nth</a></li><li><a href="Ramda.html#.nthArg">nthArg</a></li><li><a href="Ramda.html#.o">o</a></li><li><a href="Ramda.html#.objOf">objOf</a></li><li><a href="Ramda.html#.of">of</a></li><li><a href="Ramda.html#.omit">omit</a></li><li><a href="Ramda.html#.once">once</a></li><li><a href="Ramda.html#.or">or</a></li><li><a href="Ramda.html#.over">over</a></li><li><a href="Ramda.html#.pair">pair</a></li><li><a href="Ramda.html#.partial">partial</a></li><li><a href="Ramda.html#.partialRight">partialRight</a></li><li><a href="Ramda.html#.partition">partition</a></li><li><a href="Ramda.html#.path">path</a></li><li><a href="Ramda.html#.pathEq">pathEq</a></li><li><a href="Ramda.html#.pathOr">pathOr</a></li><li><a href="Ramda.html#.pathSatisfies">pathSatisfies</a></li><li><a href="Ramda.html#.pick">pick</a></li><li><a href="Ramda.html#.pickAll">pickAll</a></li><li><a href="Ramda.html#.pickBy">pickBy</a></li><li><a href="Ramda.html#.pipe">pipe</a></li><li><a href="Ramda.html#.pipeK">pipeK</a></li><li><a href="Ramda.html#.pipeP">pipeP</a></li><li><a href="Ramda.html#.pluck">pluck</a></li><li><a href="Ramda.html#.prepend">prepend</a></li><li><a href="Ramda.html#.product">product</a></li><li><a href="Ramda.html#.project">project</a></li><li><a href="Ramda.html#.prop">prop</a></li><li><a href="Ramda.html#.propEq">propEq</a></li><li><a href="Ramda.html#.propIs">propIs</a></li><li><a href="Ramda.html#.propOr">propOr</a></li><li><a href="Ramda.html#.props">props</a></li><li><a href="Ramda.html#.propSatisfies">propSatisfies</a></li><li><a href="Ramda.html#.r">r</a></li><li><a href="Ramda.html#.range">range</a></li><li><a href="Ramda.html#.reduce">reduce</a></li><li><a href="Ramda.html#.reduceBy">reduceBy</a></li><li><a href="Ramda.html#.reduced">reduced</a></li><li><a href="Ramda.html#.reduceRight">reduceRight</a></li><li><a href="Ramda.html#.reduceWhile">reduceWhile</a></li><li><a href="Ramda.html#.regexp">regexp</a></li><li><a href="Ramda.html#.reject">reject</a></li><li><a href="Ramda.html#.remove">remove</a></li><li><a href="Ramda.html#.repeat">repeat</a></li><li><a href="Ramda.html#.replace">replace</a></li><li><a href="Ramda.html#.reverse">reverse</a></li><li><a href="Ramda.html#.scan">scan</a></li><li><a href="Ramda.html#.sequence">sequence</a></li><li><a href="Ramda.html#.set">set</a></li><li><a href="Ramda.html#.slice">slice</a></li><li><a href="Ramda.html#.sort">sort</a></li><li><a href="Ramda.html#.sortBy">sortBy</a></li><li><a href="Ramda.html#.sortWith">sortWith</a></li><li><a href="Ramda.html#.split">split</a></li><li><a href="Ramda.html#.splitAt">splitAt</a></li><li><a href="Ramda.html#.splitEvery">splitEvery</a></li><li><a href="Ramda.html#.splitWhen">splitWhen</a></li><li><a href="Ramda.html#.startsWith">startsWith</a></li><li><a href="Ramda.html#.subtract">subtract</a></li><li><a href="Ramda.html#.sum">sum</a></li><li><a href="Ramda.html#.symmetricDifference">symmetricDifference</a></li><li><a href="Ramda.html#.symmetricDifferenceWith">symmetricDifferenceWith</a></li><li><a href="Ramda.html#.t">t</a></li><li><a href="Ramda.html#.tail">tail</a></li><li><a href="Ramda.html#.take">take</a></li><li><a href="Ramda.html#.takeLast">takeLast</a></li><li><a href="Ramda.html#.takeLastWhile">takeLastWhile</a></li><li><a href="Ramda.html#.takeWhile">takeWhile</a></li><li><a href="Ramda.html#.tap">tap</a></li><li><a href="Ramda.html#.test">test</a></li><li><a href="Ramda.html#.times">times</a></li><li><a href="Ramda.html#.toLower">toLower</a></li><li><a href="Ramda.html#.toPairs">toPairs</a></li><li><a href="Ramda.html#.toPairsIn">toPairsIn</a></li><li><a href="Ramda.html#.toString">toString</a></li><li><a href="Ramda.html#.toUpper">toUpper</a></li><li><a href="Ramda.html#.transduce">transduce</a></li><li><a href="Ramda.html#.transpose">transpose</a></li><li><a href="Ramda.html#.traverse">traverse</a></li><li><a href="Ramda.html#.trim">trim</a></li><li><a href="Ramda.html#.tryCatch">tryCatch</a></li><li><a href="Ramda.html#.type">type</a></li><li><a href="Ramda.html#.unapply">unapply</a></li><li><a href="Ramda.html#.unary">unary</a></li><li><a href="Ramda.html#.uncurryN">uncurryN</a></li><li><a href="Ramda.html#.unfold">unfold</a></li><li><a href="Ramda.html#.union">union</a></li><li><a href="Ramda.html#.unionWith">unionWith</a></li><li><a href="Ramda.html#.uniq">uniq</a></li><li><a href="Ramda.html#.uniqBy">uniqBy</a></li><li><a href="Ramda.html#.uniqWith">uniqWith</a></li><li><a href="Ramda.html#.unless">unless</a></li><li><a href="Ramda.html#.unnest">unnest</a></li><li><a href="Ramda.html#.until">until</a></li><li><a href="Ramda.html#.update">update</a></li><li><a href="Ramda.html#.useWith">useWith</a></li><li><a href="Ramda.html#.values">values</a></li><li><a href="Ramda.html#.valuesIn">valuesIn</a></li><li><a href="Ramda.html#.view">view</a></li><li><a href="Ramda.html#.when">when</a></li><li><a href="Ramda.html#.where">where</a></li><li><a href="Ramda.html#.whereEq">whereEq</a></li><li><a href="Ramda.html#.without">without</a></li><li><a href="Ramda.html#.xprod">xprod</a></li><li><a href="Ramda.html#.zip">zip</a></li><li><a href="Ramda.html#.zipObj">zipObj</a></li><li><a href="Ramda.html#.zipWith">zipWith</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
+};
+var __awaiter = (this &amp;&amp; this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
+    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const rpscript_interface_1 = require("rpscript-interface");
+const async_1 = __importDefault(require("async"));
+const ramda_1 = __importDefault(require("ramda"));
+/** Module for Ramda
+ * @namespace Ramda
+ *
+ * @see {@link https://ramdajs.com/docs/}
+*/
+let RpsRamda = class RpsRamda {
+    // ********  List  ********
+    /**
+     * @function adjust
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#adjust}
+    */
+    adjust(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.adjust.apply(this, params);
+        });
+    }
+    /**
+   * @function all
+   * @memberof Ramda
+   *
+   * @param {Array} params
+   *
+   * @see {@link https://lodash.com/docs#all}
+  */
+    all(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.all.apply(this, params);
+        });
+    }
+    /**
+     * @function any
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#any}
+    */
+    any(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.any.apply(this, params);
+        });
+    }
+    /**
+     * @function aperture
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#aperture}
+    */
+    aperture(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.aperture.apply(this, params);
+        });
+    }
+    /**
+     * @function append
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#append}
+    */
+    append(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.append.apply(this, params);
+        });
+    }
+    /**
+     * @function chain
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#chain}
+    */
+    chain(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.chain.apply(this, params);
+        });
+    }
+    /**
+     * @function concat
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#concat}
+    */
+    concat(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.concat.apply(this, params);
+        });
+    }
+    /**
+     * @function contains
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#contains}
+    */
+    contains(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.contains.apply(this, params);
+        });
+    }
+    /**
+     * @function drop
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#drop}
+    */
+    drop(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.drop.apply(this, params);
+        });
+    }
+    /**
+     * @function dropLast
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dropLast}
+    */
+    dropLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dropLast.apply(this, params);
+        });
+    }
+    /**
+     * @function drop-last-while
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dropLastWhile}
+    */
+    dropLastWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dropLastWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function dropRepeats
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dropRepeats}
+    */
+    dropRepeats(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.dropRepeats.apply(this, params);
+        });
+    }
+    /**
+     * @function dropRepeatsWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dropRepeatsWith}
+    */
+    dropRepeatsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.dropRepeatsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function dropWhile
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dropWhile}
+    */
+    dropWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dropWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function endsWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#endsWith}
+    */
+    endsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.endsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function filter
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#filter}
+    */
+    filter(ctx, opts, ...params) {
+        return ramda_1.default.filter.apply(this, params);
+    }
+    /**
+     * @function filter-series
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#filter}
+    */
+    filterSeries(ctx, opts, fn, functor) {
+        var func = (val, cb) => __awaiter(this, void 0, void 0, function* () { return cb(null, yield fn(val)); });
+        return new Promise((resolve, reject) => {
+            async_1.default.filterSeries(functor, func, (err, results) => {
+                if (err)
+                    reject(err);
+                else
+                    resolve(results);
+            });
+        });
+    }
+    /**
+     * @function find
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#find}
+    */
+    find(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.find.apply(this, params);
+        });
+    }
+    /**
+     * @function findIndex
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#findIndex}
+    */
+    findIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.findIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function findLast
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#findLast}
+    */
+    findLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.findLast.apply(this, params);
+        });
+    }
+    /**
+     * @function findLastIndex
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#findLastIndex}
+    */
+    findLastIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.findLastIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function flatten
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#flatten}
+    */
+    flatten(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.flatten.apply(this, params);
+        });
+    }
+    /**
+     * @function forEach
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#forEach}
+    */
+    forEach(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.forEach.apply(this, params);
+        });
+    }
+    /**
+     * @function fromPairs
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#fromPairs}
+    */
+    fromPairs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.fromPairs.apply(this, params);
+        });
+    }
+    /**
+     * @function groupBy
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#groupBy}
+    */
+    groupBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.groupBy.apply(this, params);
+        });
+    }
+    /**
+     * @function groupWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#groupWith}
+    */
+    groupWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.groupWith.apply(this, params);
+        });
+    }
+    /**
+     * @function head
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#head}
+    */
+    head(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.head.apply(this, params);
+        });
+    }
+    /**
+     * @function indexOf
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#indexOf}
+    */
+    indexOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.indexOf.apply(this, params);
+        });
+    }
+    /**
+     * @function indexBy
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#indexBy}
+    */
+    indexBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.indexBy.apply(this, params);
+        });
+    }
+    /**
+     * @function init
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#init}
+    */
+    init(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.init.apply(this, params);
+        });
+    }
+    /**
+     * @function insert
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#insert}
+    */
+    insert(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.insert.apply(this, params);
+        });
+    }
+    /**
+     * @function insertAll
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#insertAll}
+    */
+    insertAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.insertAll.apply(this, params);
+        });
+    }
+    /**
+     * @function intersperse
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#intersperse}
+    */
+    intersperse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.intersperse.apply(this, params);
+        });
+    }
+    /**
+     * @function into
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#into}
+    */
+    into(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.into.apply(this, params);
+        });
+    }
+    /**
+     * @function join
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#join}
+    */
+    join(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.join.apply(this, params);
+        });
+    }
+    /**
+     * @function last
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#last}
+    */
+    last(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.last.apply(this, params);
+        });
+    }
+    /**
+     * @function lastIndexOf
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lastIndexOf}
+    */
+    lastIndexOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lastIndexOf.apply(this, params);
+        });
+    }
+    /**
+     * @function length
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#length}
+    */
+    length(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.length.apply(this, params);
+        });
+    }
+    /**
+     * @function map
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#map}
+    */
+    map(ctx, opts, ...params) {
+        return ramda_1.default.map.apply(this, params);
+    }
+    /**
+     * @function map-series
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#map}
+    */
+    mapSeries(ctx, opts, fn, functor) {
+        var func = (val, cb) => __awaiter(this, void 0, void 0, function* () { return cb(null, yield fn(val)); });
+        return new Promise((resolve, reject) => {
+            async_1.default.mapSeries(functor, func, (err, results) => {
+                if (err)
+                    reject(err);
+                else
+                    resolve(results);
+            });
+        });
+    }
+    /**
+     * @function mapAccum
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mapAccum}
+    */
+    mapAccum(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mapAccum.apply(this, params);
+        });
+    }
+    /**
+     * @function mapAccumRight
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mapAccumRight}
+    */
+    mapAccumRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mapAccumRight.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeAll
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeAll}
+    */
+    mergeAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeAll.apply(this, params);
+        });
+    }
+    /**
+     * @function none
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#none}
+    */
+    none(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.none.apply(this, params);
+        });
+    }
+    /**
+     * @function nth
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#nth}
+    */
+    nth(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.nth.apply(this, params);
+        });
+    }
+    /**
+     * @function pair
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pair}
+    */
+    pair(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pair.apply(this, params);
+        });
+    }
+    /**
+     * @function partition
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#partition}
+    */
+    partition(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.partition.apply(this, params);
+        });
+    }
+    /**
+     * @function pluck
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pluck}
+    */
+    pluck(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pluck.apply(this, params);
+        });
+    }
+    /**
+     * @function prepend
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#prepend}
+    */
+    prepend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.prepend.apply(this, params);
+        });
+    }
+    /**
+     * @function range
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#range}
+    */
+    range(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.range.apply(this, params);
+        });
+    }
+    /**
+     * @function reduce
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reduce}
+    */
+    reduce(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reduce.apply(this, params);
+        });
+    }
+    /**
+     * @function reduceBy
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reduceBy}
+    */
+    reduceBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reduceBy.apply(this, params);
+        });
+    }
+    /**
+     * @function reduced
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reduced}
+    */
+    reduced(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reduced.apply(this, params);
+        });
+    }
+    /**
+     * @function reduceRight
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reduceRight}
+    */
+    reduceRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reduceRight.apply(this, params);
+        });
+    }
+    /**
+     * @function reduceWhile
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reduceWhile}
+    */
+    reduceWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reduceWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function reject
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reject}
+    */
+    reject(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reject.apply(this, params);
+        });
+    }
+    /**
+     * @function remove
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#remove}
+    */
+    remove(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.remove.apply(this, params);
+        });
+    }
+    /**
+     * @function repeat
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#repeat}
+    */
+    repeat(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.repeat.apply(this, params);
+        });
+    }
+    /**
+     * @function reverse
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#reverse}
+    */
+    reverse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.reverse.apply(this, params);
+        });
+    }
+    /**
+     * @function scan
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#scan}
+    */
+    scan(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.scan.apply(this, params);
+        });
+    }
+    /**
+     * @function sequence
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#sequence}
+    */
+    sequence(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.sequence.apply(this, params);
+        });
+    }
+    /**
+     * @function slice
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#slice}
+    */
+    slice(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.slice.apply(this, params);
+        });
+    }
+    /**
+     * @function sort
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#sort}
+    */
+    sort(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.sort.apply(this, params);
+        });
+    }
+    /**
+     * @function splitAt
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#splitAt}
+    */
+    splitAt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.splitAt.apply(this, params);
+        });
+    }
+    /**
+     * @function splitEvery
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#splitEvery}
+    */
+    splitEvery(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.splitEvery.apply(this, params);
+        });
+    }
+    /**
+     * @function splitWhen
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#splitWhen}
+    */
+    splitWhen(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.splitWhen.apply(this, params);
+        });
+    }
+    /**
+     * @function startsWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#startsWith}
+    */
+    startsWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.startsWith.apply(this, params);
+        });
+    }
+    /**
+     * @function tail
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#tail}
+    */
+    tail(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.tail.apply(this, params);
+        });
+    }
+    /**
+     * @function take
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#take}
+    */
+    take(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.take.apply(this, params);
+        });
+    }
+    /**
+     * @function takeLast
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#takeLast}
+    */
+    takeLast(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.takeLast.apply(this, params);
+        });
+    }
+    /**
+     * @function takeLastWhile
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#takeLastWhile}
+    */
+    takeLastWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.takeLastWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function takeWhile
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#takeWhile}
+    */
+    takeWhile(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.takeWhile.apply(this, params);
+        });
+    }
+    /**
+     * @function times
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#times}
+    */
+    times(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.times.apply(this, params);
+        });
+    }
+    /**
+     * @function transduce
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#transduce}
+    */
+    transduce(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.transduce.apply(this, params);
+        });
+    }
+    /**
+     * @function transpose
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#transpose}
+    */
+    transpose(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.transpose.apply(this, params);
+        });
+    }
+    /**
+     * @function traverse
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#traverse}
+    */
+    traverse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.traverse.apply(this, params);
+        });
+    }
+    /**
+     * @function unfold
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#unfold}
+    */
+    unfold(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unfold.apply(this, params);
+        });
+    }
+    /**
+     * @function uniq
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#uniq}
+    */
+    uniq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.uniq.apply(this, params);
+        });
+    }
+    /**
+     * @function uniqBy
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#uniqBy}
+    */
+    uniqBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.uniqBy.apply(this, params);
+        });
+    }
+    /**
+     * @function uniqWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#uniqWith}
+    */
+    uniqWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.uniqWith.apply(this, params);
+        });
+    }
+    /**
+     * @function unnest
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#unnest}
+    */
+    unnest(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unnest.apply(this, params);
+        });
+    }
+    /**
+     * @function update
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#update}
+    */
+    update(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.update.apply(this, params);
+        });
+    }
+    /**
+     * @function without
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#without}
+    */
+    without(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.without.apply(this, params);
+        });
+    }
+    /**
+     * @function xprod
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#xprod}
+    */
+    xprod(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.xprod.apply(this, params);
+        });
+    }
+    /**
+     * @function zip
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#zip}
+    */
+    zip(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.zip.apply(this, params);
+        });
+    }
+    /**
+     * @function zipObj
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#zipObj}
+    */
+    zipObj(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.zipObj.apply(this, params);
+        });
+    }
+    /**
+     * @function zipWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#zipWith}
+    */
+    zipWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.zipWith.apply(this, params);
+        });
+    }
+    // ********  Object  ********
+    /**
+     * @function keys
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#keys}
+    */
+    keys(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.keys.apply(this, params);
+        });
+    }
+    /**
+     * @function assoc
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#assoc}
+    */
+    assoc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.assoc.apply(this, params);
+        });
+    }
+    /**
+     * @function assocPath
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#assocPath}
+    */
+    assocPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.assocPath.apply(this, params);
+        });
+    }
+    /**
+     * @function clone
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#clone}
+    */
+    clone(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.clone.apply(this, params);
+        });
+    }
+    /**
+     * @function dissoc
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dissoc}
+    */
+    dissoc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dissoc.apply(this, params);
+        });
+    }
+    /**
+     * @function dissocPath
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#dissocPath}
+    */
+    dissocPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dissocPath.apply(this, params);
+        });
+    }
+    /**
+     * @function eqProps
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#eqProps}
+    */
+    eqProps(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.eqProps.apply(this, params);
+        });
+    }
+    /**
+     * @function evolve
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#evolve}
+    */
+    evolve(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.evolve.apply(this, params);
+        });
+    }
+    /**
+     * @function forEachObjIndexed
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#forEachObjIndexed}
+    */
+    forEachObjIndexed(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.forEachObjIndexed.apply(this, params);
+        });
+    }
+    /**
+     * @function has
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#has}
+    */
+    has(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.has.apply(this, params);
+        });
+    }
+    /**
+     * @function hasIn
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#hasIn}
+    */
+    hasIn(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.hasIn.apply(this, params);
+        });
+    }
+    /**
+     * @function invert
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#invert}
+    */
+    invert(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.invert.apply(this, params);
+        });
+    }
+    /**
+     * @function invertObj
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#invertObj}
+    */
+    invertObj(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.invertObj.apply(this, params);
+        });
+    }
+    /**
+     * @function keysIn
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#keysIn}
+    */
+    keysIn(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.keysIn.apply(this, params);
+        });
+    }
+    /**
+     * @function lens
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lens}
+    */
+    lens(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lens.apply(this, params);
+        });
+    }
+    /**
+     * @function lensIndex
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lensIndex}
+    */
+    lensIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lensIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function lensPath
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lensPath}
+    */
+    lensPath(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lensPath.apply(this, params);
+        });
+    }
+    /**
+     * @function lensProp
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lensProp}
+    */
+    lensProp(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lensProp.apply(this, params);
+        });
+    }
+    /**
+     * @function mapObjIndexed
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mapObjIndexed}
+    */
+    mapObjIndexed(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mapObjIndexed.apply(this, params);
+        });
+    }
+    /**
+     * @function merge
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#merge}
+    */
+    merge(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.merge.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeDeepLeft
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeDeepLeft}
+    */
+    mergeDeepLeft(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeDeepLeft.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeDeepRight
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeDeepRight}
+    */
+    mergeDeepRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeDeepRight.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeDeepWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeDeepWith}
+    */
+    mergeDeepWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeDeepWith.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeWith}
+    */
+    mergeWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeWith.apply(this, params);
+        });
+    }
+    /**
+     * @function mergeWithKey
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#mergeWithKey}
+    */
+    mergeWithKey(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mergeWithKey.apply(this, params);
+        });
+    }
+    /**
+     * @function objOf
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#objOf}
+    */
+    objOf(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.objOf.apply(this, params);
+        });
+    }
+    /**
+     * @function omit
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#omit}
+    */
+    omit(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.omit.apply(this, params);
+        });
+    }
+    /**
+     * @function over
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#over}
+    */
+    over(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.over.apply(this, params);
+        });
+    }
+    /**
+     * @function path
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#path}
+    */
+    path(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.path.apply(this, params);
+        });
+    }
+    /**
+     * @function pathOr
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pathOr}
+    */
+    pathOr(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pathOr.apply(this, params);
+        });
+    }
+    /**
+     * @function pick
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pick}
+    */
+    pick(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pick.apply(this, params);
+        });
+    }
+    /**
+     * @function pickAll
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pickAll}
+    */
+    pickAll(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pickAll.apply(this, params);
+        });
+    }
+    /**
+     * @function pickBy
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pickBy}
+    */
+    pickBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pickBy.apply(this, params);
+        });
+    }
+    /**
+     * @function project
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#project}
+    */
+    project(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.project.apply(this, params);
+        });
+    }
+    /**
+     * @function prop
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#prop}
+    */
+    prop(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.prop.apply(this, params);
+        });
+    }
+    /**
+     * @function propOr
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#propOr}
+    */
+    propOr(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.propOr.apply(this, params);
+        });
+    }
+    /**
+     * @function props
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#props}
+    */
+    props(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.props.apply(this, params);
+        });
+    }
+    /**
+     * @function set
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#set}
+    */
+    set(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.set.apply(this, params);
+        });
+    }
+    /**
+     * @function toPairs
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#toPairs}
+    */
+    toPairs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.toPairs.apply(this, params);
+        });
+    }
+    /**
+     * @function toPairsIn
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#toPairsIn}
+    */
+    toPairsIn(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.toPairsIn.apply(this, params);
+        });
+    }
+    /**
+     * @function values
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#values}
+    */
+    values(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.values.apply(this, params);
+        });
+    }
+    /**
+     * @function valuesIn
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#valuesIn}
+    */
+    valuesIn(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.valuesIn.apply(this, params);
+        });
+    }
+    /**
+     * @function view
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#view}
+    */
+    view(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.view.apply(this, params);
+        });
+    }
+    /**
+     * @function where
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#where}
+    */
+    where(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.where.apply(this, params);
+        });
+    }
+    /**
+     * @function whereEq
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#whereEq}
+    */
+    whereEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.whereEq.apply(this, params);
+        });
+    }
+    // ********  Function  ********
+    /**
+     * @function __
+     * @memberof Ramda
+     *
+     *
+     * @see {@link https://ramdajs.com/docs/#module.exports}
+    */
+    underscore(ctx, opts) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.__;
+        });
+    }
+    /**
+     * @function addIndex
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#addIndex}
+    */
+    addIndex(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.addIndex.apply(this, params);
+        });
+    }
+    /**
+     * @function always
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#always}
+    */
+    always(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.always.apply(this, params);
+        });
+    }
+    /**
+     * @function ap
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#ap}
+    */
+    ap(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.ap.apply(this, params);
+        });
+    }
+    /**
+     * @function apply
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#apply}
+    */
+    apply(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.apply.apply(this, params);
+        });
+    }
+    /**
+     * @function applySpec
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#applySpec}
+    */
+    applySpec(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.applySpec.apply(this, params);
+        });
+    }
+    /**
+     * @function applyTo
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#applyTo}
+    */
+    applyTo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.applyTo.apply(this, params);
+        });
+    }
+    /**
+     * @function ascend
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#ascend}
+    */
+    ascend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.ascend.apply(this, params);
+        });
+    }
+    /**
+     * @function binary
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#binary}
+    */
+    binary(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.binary.apply(this, params);
+        });
+    }
+    /**
+     * @function bind
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#bind}
+    */
+    bind(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.bind.apply(this, params);
+        });
+    }
+    /**
+     * @function call
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#call}
+    */
+    call(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.call.apply(this, params);
+        });
+    }
+    /**
+     * @function comparator
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#comparator}
+    */
+    comparator(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.comparator.apply(this, params);
+        });
+    }
+    /**
+     * @function compose
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#compose}
+    */
+    compose(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.compose.apply(this, params);
+        });
+    }
+    /**
+     * @function composeK
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#composeK}
+    */
+    composeK(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.composeK.apply(this, params);
+        });
+    }
+    /**
+     * @function composeP
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#composeP}
+    */
+    composeP(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.composeP.apply(this, params);
+        });
+    }
+    /**
+     * @function construct
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#construct}
+    */
+    construct(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.construct.apply(this, params);
+        });
+    }
+    /**
+     * @function constructN
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#constructN}
+    */
+    constructN(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.constructN.apply(this, params);
+        });
+    }
+    /**
+     * @function converge
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#converge}
+    */
+    converge(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.converge.apply(this, params);
+        });
+    }
+    /**
+     * @function curry
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#curry}
+    */
+    curry(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.curry.apply(this, params);
+        });
+    }
+    /**
+     * @function curryN
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#curryN}
+    */
+    curryN(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.curryN.apply(this, params);
+        });
+    }
+    /**
+     * @function descend
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#descend}
+    */
+    descend(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.descend.apply(this, params);
+        });
+    }
+    /**
+     * @function empty
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#empty}
+    */
+    empty(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.empty.apply(this, params);
+        });
+    }
+    /**
+     * @function F
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#F}
+    */
+    F(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.F.apply(this, params);
+        });
+    }
+    /**
+     * @function flip
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#flip}
+    */
+    flip(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.flip.apply(this, params);
+        });
+    }
+    /**
+     * @function identity
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#identity}
+    */
+    identity(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.identity.apply(this, params);
+        });
+    }
+    /**
+     * @function invoker
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#invoker}
+    */
+    invoker(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.invoker.apply(this, params);
+        });
+    }
+    /**
+     * @function juxt
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#juxt}
+    */
+    juxt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.juxt.apply(this, params);
+        });
+    }
+    /**
+     * @function lift
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#lift}
+    */
+    lift(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lift.apply(this, params);
+        });
+    }
+    /**
+     * @function lift-n
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#liftN}
+    */
+    liftN(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.liftN.apply(this, params);
+        });
+    }
+    /**
+     * @function memoize
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#memoize}
+    */
+    memoize(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.memoize.apply(this, params);
+        });
+    }
+    /**
+     * @function memoizeWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#memoizeWith}
+    */
+    memoizeWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.memoizeWith.apply(this, params);
+        });
+    }
+    // /**
+    //  * @function module.export
+    //  * @memberof Ramda
+    //  * 
+    //  * @param {Array} params 
+    //  * 
+    //  * @see {@link https://lodash.com/docs#module.export}
+    // */
+    // @rpsAction({verbName:'module.export'})
+    // async module.export (ctx:RpsContext,opts:{}, ...params:any[]) : Promise&lt;any> {
+    //   return R.module.export.apply(this,params);
+    // }
+    /**
+     * @function nAry
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#nAry}
+    */
+    nAry(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.nAry.apply(this, params);
+        });
+    }
+    /**
+     * @function nthArg
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#nthArg}
+    */
+    nthArg(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.nthArg.apply(this, params);
+        });
+    }
+    /**
+     * @function o
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#o}
+    */
+    o(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.o.apply(this, params);
+        });
+    }
+    /**
+     * @function of
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#of}
+    */
+    of(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.of.apply(this, params);
+        });
+    }
+    /**
+     * @function once
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#once}
+    */
+    once(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.once.apply(this, params);
+        });
+    }
+    /**
+     * @function partial
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#partial}
+    */
+    partial(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.partial.apply(this, params);
+        });
+    }
+    /**
+     * @function partialRight
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#partialRight}
+    */
+    partialRight(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.partialRight.apply(this, params);
+        });
+    }
+    /**
+     * @function pipe
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pipe}
+    */
+    pipe(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pipe.apply(this, params);
+        });
+    }
+    /**
+     * @function pipeK
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pipeK}
+    */
+    pipeK(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pipeK.apply(this, params);
+        });
+    }
+    /**
+     * @function pipeP
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pipeP}
+    */
+    pipeP(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pipeP.apply(this, params);
+        });
+    }
+    /**
+     * @function t
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#T}
+    */
+    t(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.T.apply(this, params);
+        });
+    }
+    /**
+     * @function tap
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#tap}
+    */
+    tap(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.tap.apply(this, params);
+        });
+    }
+    /**
+     * @function tryCatch
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#tryCatch}
+    */
+    tryCatch(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.tryCatch.apply(this, params);
+        });
+    }
+    /**
+     * @function unapply
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#unapply}
+    */
+    unapply(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unapply.apply(this, params);
+        });
+    }
+    /**
+     * @function unary
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#unary}
+    */
+    unary(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unary.apply(this, params);
+        });
+    }
+    /**
+     * @function uncurryN
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#uncurryN}
+    */
+    uncurryN(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.uncurryN.apply(this, params);
+        });
+    }
+    /**
+     * @function useWith
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#useWith}
+    */
+    useWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.useWith.apply(this, params);
+        });
+    }
+    // ********  Logic  ********
+    /**
+     * @function allPass
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#allPass}
+    */
+    allPass(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.allPass.apply(this, params);
+        });
+    }
+    /**
+     * @function and
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#and}
+    */
+    and(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.and.apply(this, params);
+        });
+    }
+    /**
+     * @function anyPass
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#anyPass}
+    */
+    anyPass(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.anyPass.apply(this, params);
+        });
+    }
+    /**
+     * @function both
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#both}
+    */
+    both(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.both.apply(this, params);
+        });
+    }
+    /**
+     * @function complement
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#complement}
+    */
+    complement(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.complement.apply(this, params);
+        });
+    }
+    /**
+     * @function cond
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#cond}
+    */
+    cond(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.cond.apply(this, params);
+        });
+    }
+    /**
+     * @function defaultTo
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#defaultTo}
+    */
+    defaultTo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.defaultTo.apply(this, params);
+        });
+    }
+    /**
+     * @function either
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#either}
+    */
+    either(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.either.apply(this, params);
+        });
+    }
+    /**
+     * @function ifElse
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#ifElse}
+    */
+    ifElse(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.ifElse.apply(this, params);
+        });
+    }
+    /**
+     * @function isEmpty
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#isEmpty}
+    */
+    isEmpty(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.isEmpty.apply(this, params);
+        });
+    }
+    /**
+     * @function not
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#not}
+    */
+    not(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.not.apply(this, params);
+        });
+    }
+    /**
+     * @function or
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#or}
+    */
+    or(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.or.apply(this, params);
+        });
+    }
+    /**
+     * @function pathSatisfies
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#pathSatisfies}
+    */
+    pathSatisfies(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pathSatisfies.apply(this, params);
+        });
+    }
+    /**
+     * @function propSatisfies
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#propSatisfies}
+    */
+    propSatisfies(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.propSatisfies.apply(this, params);
+        });
+    }
+    /**
+     * @function unless
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#unless}
+    */
+    unless(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unless.apply(this, params);
+        });
+    }
+    /**
+     * @function until
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#until}
+    */
+    until(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.until.apply(this, params);
+        });
+    }
+    /**
+     * @function when
+     * @memberof Ramda
+     *
+     * @param {Array} params
+     *
+     * @see {@link https://lodash.com/docs#when}
+    */
+    when(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.when.apply(this, params);
+        });
+    }
+    // ********  Relation  ********
+    /**
+    * @function clamp
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#clamp}
+   */
+    clamp(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.clamp.apply(this, params);
+        });
+    }
+    /**
+    * @function countBy
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#countBy}
+   */
+    countBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.countBy.apply(this, params);
+        });
+    }
+    /**
+    * @function difference
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#difference}
+   */
+    difference(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.difference.apply(this, params);
+        });
+    }
+    /**
+    * @function differenceWith
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#differenceWith}
+   */
+    differenceWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.differenceWith.apply(this, params);
+        });
+    }
+    /**
+    * @function eqBy
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#eqBy}
+   */
+    eqBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.eqBy.apply(this, params);
+        });
+    }
+    /**
+    * @function equals
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#equals}
+   */
+    equals(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.equals.apply(this, params);
+        });
+    }
+    /**
+    * @function gt
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#gt}
+   */
+    gt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.gt.apply(this, params);
+        });
+    }
+    /**
+    * @function gte
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#gte}
+   */
+    gte(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.gte.apply(this, params);
+        });
+    }
+    /**
+    * @function identical
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#identical}
+   */
+    identical(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.identical.apply(this, params);
+        });
+    }
+    /**
+    * @function innerJoin
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#innerJoin}
+   */
+    innerJoin(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //@ts-ignore
+            return ramda_1.default.innerJoin.apply(this, params);
+        });
+    }
+    /**
+    * @function intersection
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#intersection}
+   */
+    intersection(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.intersection.apply(this, params);
+        });
+    }
+    /**
+    * @function lt
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#lt}
+   */
+    lt(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lt.apply(this, params);
+        });
+    }
+    /**
+    * @function lte
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#lte}
+   */
+    lte(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.lte.apply(this, params);
+        });
+    }
+    /**
+    * @function max
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#max}
+   */
+    max(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.max.apply(this, params);
+        });
+    }
+    /**
+    * @function maxBy
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#maxBy}
+   */
+    maxBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.maxBy.apply(this, params);
+        });
+    }
+    /**
+    * @function min
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#min}
+   */
+    min(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.min.apply(this, params);
+        });
+    }
+    /**
+    * @function minBy
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#minBy}
+   */
+    minBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.minBy.apply(this, params);
+        });
+    }
+    /**
+    * @function pathEq
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#pathEq}
+   */
+    pathEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.pathEq.apply(this, params);
+        });
+    }
+    /**
+    * @function propEq
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#propEq}
+   */
+    propEq(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.propEq.apply(this, params);
+        });
+    }
+    /**
+    * @function sortBy
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#sortBy}
+   */
+    sortBy(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.sortBy.apply(this, params);
+        });
+    }
+    /**
+    * @function sortWith
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#sortWith}
+   */
+    sortWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.sortWith.apply(this, params);
+        });
+    }
+    /**
+    * @function symmetricDifference
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#symmetricDifference}
+   */
+    symmetricDifference(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.symmetricDifference.apply(this, params);
+        });
+    }
+    /**
+    * @function symmetricDifferenceWith
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#symmetricDifferenceWith}
+   */
+    symmetricDifferenceWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.symmetricDifferenceWith.apply(this, params);
+        });
+    }
+    /**
+    * @function union
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#union}
+   */
+    union(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.union.apply(this, params);
+        });
+    }
+    /**
+    * @function unionWith
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#unionWith}
+   */
+    unionWith(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.unionWith.apply(this, params);
+        });
+    }
+    // ********  Type  ********
+    /**
+    * @function is
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#is}
+   */
+    is(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.is.apply(this, params);
+        });
+    }
+    /**
+    * @function isNil
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#isNil}
+   */
+    isNil(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.isNil.apply(this, params);
+        });
+    }
+    /**
+    * @function propIs
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#propIs}
+   */
+    propIs(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.propIs.apply(this, params);
+        });
+    }
+    /**
+    * @function type
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#type}
+   */
+    type(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.type.apply(this, params);
+        });
+    }
+    // ********  Math  ********
+    /**
+    * @function add
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#add}
+   */
+    add(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.add.apply(this, params);
+        });
+    }
+    /**
+    * @function dec
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#dec}
+   */
+    dec(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.dec.apply(this, params);
+        });
+    }
+    /**
+    * @function divide
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#divide}
+   */
+    divide(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.divide.apply(this, params);
+        });
+    }
+    /**
+    * @function inc
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#inc}
+   */
+    inc(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.inc.apply(this, params);
+        });
+    }
+    /**
+    * @function mathMod
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#mathMod}
+   */
+    mathMod(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mathMod.apply(this, params);
+        });
+    }
+    /**
+    * @function mean
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#mean}
+   */
+    mean(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.mean.apply(this, params);
+        });
+    }
+    /**
+    * @function median
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#median}
+   */
+    median(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.median.apply(this, params);
+        });
+    }
+    /**
+    * @function modulo
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#modulo}
+   */
+    modulo(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.modulo.apply(this, params);
+        });
+    }
+    /**
+    * @function multiply
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#multiply}
+   */
+    multiply(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.multiply.apply(this, params);
+        });
+    }
+    /**
+    * @function negate
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#negate}
+   */
+    negate(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.negate.apply(this, params);
+        });
+    }
+    /**
+    * @function product
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#product}
+   */
+    product(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.product.apply(this, params);
+        });
+    }
+    /**
+    * @function subtract
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#subtract}
+   */
+    subtract(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.subtract.apply(this, params);
+        });
+    }
+    /**
+    * @function sum
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#sum}
+   */
+    sum(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.sum.apply(this, params);
+        });
+    }
+    // ********  String  ********
+    /**
+    * @function trim
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#trim}
+   */
+    trim(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.trim.apply(this, params);
+        });
+    }
+    /**
+    * @function match
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#match}
+   */
+    match(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.match.apply(this, params);
+        });
+    }
+    /**
+    * @function replace
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#replace}
+   */
+    replace(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.replace.apply(this, params);
+        });
+    }
+    /**
+    * @function split
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#split}
+   */
+    split(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.split.apply(this, params);
+        });
+    }
+    /**
+    * @function test
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#test}
+   */
+    test(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.test.apply(this, params);
+        });
+    }
+    /**
+    * @function toLower
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#toLower}
+   */
+    toLower(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.toLower.apply(this, params);
+        });
+    }
+    /**
+    * @function toString
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#toString}
+   */
+    toString(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.toString.apply(this, params);
+        });
+    }
+    /**
+    * @function toUpper
+    * @memberof Ramda
+    *
+    * @param {Array} params
+    *
+    * @see {@link https://lodash.com/docs#toUpper}
+   */
+    toUpper(ctx, opts, ...params) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default.toUpper.apply(this, params);
+        });
+    }
+    // ********** CUSTOMIZE **********
+    /**
+    * @function r
+    * @memberof Ramda
+    *
+    * @param {string} functionName functionName
+    *
+   */
+    r(ctx, opts, functionName) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return ramda_1.default[functionName];
+        });
+    }
+    /**
+    * @function regexp
+    * @memberof Ramda
+    *
+    * @param {RegExp} regexp regular expression
+    *
+   */
+    regexp(ctx, opts, regexp) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new RegExp(regexp);
+        });
+    }
+};
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'adjust' })
+], RpsRamda.prototype, "adjust", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'all' })
+], RpsRamda.prototype, "all", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'any' })
+], RpsRamda.prototype, "any", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'aperture' })
+], RpsRamda.prototype, "aperture", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'append' })
+], RpsRamda.prototype, "append", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'chain' })
+], RpsRamda.prototype, "chain", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'concat' })
+], RpsRamda.prototype, "concat", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'contains' })
+], RpsRamda.prototype, "contains", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop' })
+], RpsRamda.prototype, "drop", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-last' })
+], RpsRamda.prototype, "dropLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-last-while' })
+], RpsRamda.prototype, "dropLastWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-repeats' })
+], RpsRamda.prototype, "dropRepeats", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-repeats-with' })
+], RpsRamda.prototype, "dropRepeatsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'drop-while' })
+], RpsRamda.prototype, "dropWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ends-with' })
+], RpsRamda.prototype, "endsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'filter' })
+], RpsRamda.prototype, "filter", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'filter-series' })
+], RpsRamda.prototype, "filterSeries", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find' })
+], RpsRamda.prototype, "find", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-index' })
+], RpsRamda.prototype, "findIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-last' })
+], RpsRamda.prototype, "findLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'find-last-index' })
+], RpsRamda.prototype, "findLastIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'flatten' })
+], RpsRamda.prototype, "flatten", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'for-each' })
+], RpsRamda.prototype, "forEach", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'from-pairs' })
+], RpsRamda.prototype, "fromPairs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'group-by' })
+], RpsRamda.prototype, "groupBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'group-with' })
+], RpsRamda.prototype, "groupWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'head' })
+], RpsRamda.prototype, "head", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'index-of' })
+], RpsRamda.prototype, "indexOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'index-by' })
+], RpsRamda.prototype, "indexBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'init' })
+], RpsRamda.prototype, "init", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'insert' })
+], RpsRamda.prototype, "insert", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'insert-all' })
+], RpsRamda.prototype, "insertAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'intersperse' })
+], RpsRamda.prototype, "intersperse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'into' })
+], RpsRamda.prototype, "into", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'join' })
+], RpsRamda.prototype, "join", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'last' })
+], RpsRamda.prototype, "last", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'last-index-of' })
+], RpsRamda.prototype, "lastIndexOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'length' })
+], RpsRamda.prototype, "length", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map' })
+], RpsRamda.prototype, "map", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-series' })
+], RpsRamda.prototype, "mapSeries", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-accum' })
+], RpsRamda.prototype, "mapAccum", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-accum-right' })
+], RpsRamda.prototype, "mapAccumRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-all' })
+], RpsRamda.prototype, "mergeAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'none' })
+], RpsRamda.prototype, "none", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'nth' })
+], RpsRamda.prototype, "nth", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pair' })
+], RpsRamda.prototype, "pair", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partition' })
+], RpsRamda.prototype, "partition", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pluck' })
+], RpsRamda.prototype, "pluck", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prepend' })
+], RpsRamda.prototype, "prepend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'range' })
+], RpsRamda.prototype, "range", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce' })
+], RpsRamda.prototype, "reduce", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-by' })
+], RpsRamda.prototype, "reduceBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduced' })
+], RpsRamda.prototype, "reduced", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-right' })
+], RpsRamda.prototype, "reduceRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reduce-while' })
+], RpsRamda.prototype, "reduceWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reject' })
+], RpsRamda.prototype, "reject", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'remove' })
+], RpsRamda.prototype, "remove", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'repeat' })
+], RpsRamda.prototype, "repeat", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'reverse' })
+], RpsRamda.prototype, "reverse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'scan' })
+], RpsRamda.prototype, "scan", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sequence' })
+], RpsRamda.prototype, "sequence", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'slice' })
+], RpsRamda.prototype, "slice", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort' })
+], RpsRamda.prototype, "sort", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-at' })
+], RpsRamda.prototype, "splitAt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-every' })
+], RpsRamda.prototype, "splitEvery", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split-when' })
+], RpsRamda.prototype, "splitWhen", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'starts-with' })
+], RpsRamda.prototype, "startsWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'tail' })
+], RpsRamda.prototype, "tail", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take' })
+], RpsRamda.prototype, "take", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-last' })
+], RpsRamda.prototype, "takeLast", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-last-while' })
+], RpsRamda.prototype, "takeLastWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'take-while' })
+], RpsRamda.prototype, "takeWhile", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'times' })
+], RpsRamda.prototype, "times", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'transduce' })
+], RpsRamda.prototype, "transduce", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'transpose' })
+], RpsRamda.prototype, "transpose", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'traverse' })
+], RpsRamda.prototype, "traverse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unfold' })
+], RpsRamda.prototype, "unfold", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq' })
+], RpsRamda.prototype, "uniq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq-by' })
+], RpsRamda.prototype, "uniqBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uniq-with' })
+], RpsRamda.prototype, "uniqWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unnest' })
+], RpsRamda.prototype, "unnest", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'update' })
+], RpsRamda.prototype, "update", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'without' })
+], RpsRamda.prototype, "without", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'xprod' })
+], RpsRamda.prototype, "xprod", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip' })
+], RpsRamda.prototype, "zip", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip-obj' })
+], RpsRamda.prototype, "zipObj", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'zip-with' })
+], RpsRamda.prototype, "zipWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'keys' })
+], RpsRamda.prototype, "keys", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'assoc' })
+], RpsRamda.prototype, "assoc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'assoc-path' })
+], RpsRamda.prototype, "assocPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'clone' })
+], RpsRamda.prototype, "clone", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dissoc' })
+], RpsRamda.prototype, "dissoc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dissoc-path' })
+], RpsRamda.prototype, "dissocPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'eq-props' })
+], RpsRamda.prototype, "eqProps", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'evolve' })
+], RpsRamda.prototype, "evolve", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'for-each-obj-indexed' })
+], RpsRamda.prototype, "forEachObjIndexed", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'has' })
+], RpsRamda.prototype, "has", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'has-in' })
+], RpsRamda.prototype, "hasIn", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'invert' })
+], RpsRamda.prototype, "invert", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'invert-obj' })
+], RpsRamda.prototype, "invertObj", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'keys-in' })
+], RpsRamda.prototype, "keysIn", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens' })
+], RpsRamda.prototype, "lens", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-index' })
+], RpsRamda.prototype, "lensIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-path' })
+], RpsRamda.prototype, "lensPath", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lens-prop' })
+], RpsRamda.prototype, "lensProp", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'map-obj-indexed' })
+], RpsRamda.prototype, "mapObjIndexed", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge' })
+], RpsRamda.prototype, "merge", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-left' })
+], RpsRamda.prototype, "mergeDeepLeft", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-right' })
+], RpsRamda.prototype, "mergeDeepRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-deep-with' })
+], RpsRamda.prototype, "mergeDeepWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-with' })
+], RpsRamda.prototype, "mergeWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'merge-with-key' })
+], RpsRamda.prototype, "mergeWithKey", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'obj-of' })
+], RpsRamda.prototype, "objOf", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'omit' })
+], RpsRamda.prototype, "omit", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'over' })
+], RpsRamda.prototype, "over", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path' })
+], RpsRamda.prototype, "path", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-or' })
+], RpsRamda.prototype, "pathOr", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick' })
+], RpsRamda.prototype, "pick", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick-all' })
+], RpsRamda.prototype, "pickAll", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pick-by' })
+], RpsRamda.prototype, "pickBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'project' })
+], RpsRamda.prototype, "project", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop' })
+], RpsRamda.prototype, "prop", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-or' })
+], RpsRamda.prototype, "propOr", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'props' })
+], RpsRamda.prototype, "props", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'set' })
+], RpsRamda.prototype, "set", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-pairs' })
+], RpsRamda.prototype, "toPairs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-pairs-in' })
+], RpsRamda.prototype, "toPairsIn", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'values' })
+], RpsRamda.prototype, "values", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'values-in' })
+], RpsRamda.prototype, "valuesIn", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'view' })
+], RpsRamda.prototype, "view", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'where' })
+], RpsRamda.prototype, "where", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'where-eq' })
+], RpsRamda.prototype, "whereEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: '__' })
+], RpsRamda.prototype, "underscore", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'add-index' })
+], RpsRamda.prototype, "addIndex", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'always' })
+], RpsRamda.prototype, "always", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ap' })
+], RpsRamda.prototype, "ap", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply' })
+], RpsRamda.prototype, "apply", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply-spec' })
+], RpsRamda.prototype, "applySpec", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'apply-to' })
+], RpsRamda.prototype, "applyTo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'ascend' })
+], RpsRamda.prototype, "ascend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'binary' })
+], RpsRamda.prototype, "binary", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'bind' })
+], RpsRamda.prototype, "bind", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'call' })
+], RpsRamda.prototype, "call", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'comparator' })
+], RpsRamda.prototype, "comparator", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'compose' })
+], RpsRamda.prototype, "compose", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'composeK' })
+], RpsRamda.prototype, "composeK", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'composeP' })
+], RpsRamda.prototype, "composeP", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'construct' })
+], RpsRamda.prototype, "construct", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'constructN' })
+], RpsRamda.prototype, "constructN", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'converge' })
+], RpsRamda.prototype, "converge", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'curry' })
+], RpsRamda.prototype, "curry", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'curryN' })
+], RpsRamda.prototype, "curryN", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'descend' })
+], RpsRamda.prototype, "descend", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'empty' })
+], RpsRamda.prototype, "empty", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'f' })
+], RpsRamda.prototype, "F", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'flip' })
+], RpsRamda.prototype, "flip", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'identity' })
+], RpsRamda.prototype, "identity", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'invoker' })
+], RpsRamda.prototype, "invoker", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'juxt' })
+], RpsRamda.prototype, "juxt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lift' })
+], RpsRamda.prototype, "lift", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lift-n' })
+], RpsRamda.prototype, "liftN", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'memoize' })
+], RpsRamda.prototype, "memoize", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'memoize-with' })
+], RpsRamda.prototype, "memoizeWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'n-ary' })
+], RpsRamda.prototype, "nAry", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'nth-arg' })
+], RpsRamda.prototype, "nthArg", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'o' })
+], RpsRamda.prototype, "o", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'of' })
+], RpsRamda.prototype, "of", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'once' })
+], RpsRamda.prototype, "once", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partial' })
+], RpsRamda.prototype, "partial", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'partial-right' })
+], RpsRamda.prototype, "partialRight", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pipe' })
+], RpsRamda.prototype, "pipe", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pipe-k' })
+], RpsRamda.prototype, "pipeK", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'pipe-p' })
+], RpsRamda.prototype, "pipeP", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 't' })
+], RpsRamda.prototype, "t", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'tap' })
+], RpsRamda.prototype, "tap", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'try-catch' })
+], RpsRamda.prototype, "tryCatch", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unapply' })
+], RpsRamda.prototype, "unapply", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unary' })
+], RpsRamda.prototype, "unary", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'uncurry-n' })
+], RpsRamda.prototype, "uncurryN", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'use-with' })
+], RpsRamda.prototype, "useWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'all-pass' })
+], RpsRamda.prototype, "allPass", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'and' })
+], RpsRamda.prototype, "and", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'any-pass' })
+], RpsRamda.prototype, "anyPass", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'both' })
+], RpsRamda.prototype, "both", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'complement' })
+], RpsRamda.prototype, "complement", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'cond' })
+], RpsRamda.prototype, "cond", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'default-to' })
+], RpsRamda.prototype, "defaultTo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'either' })
+], RpsRamda.prototype, "either", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'if-else' })
+], RpsRamda.prototype, "ifElse", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is-empty' })
+], RpsRamda.prototype, "isEmpty", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'not' })
+], RpsRamda.prototype, "not", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'or' })
+], RpsRamda.prototype, "or", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-satisfies' })
+], RpsRamda.prototype, "pathSatisfies", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-satisfies' })
+], RpsRamda.prototype, "propSatisfies", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'unless' })
+], RpsRamda.prototype, "unless", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'until' })
+], RpsRamda.prototype, "until", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'when' })
+], RpsRamda.prototype, "when", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'clamp' })
+], RpsRamda.prototype, "clamp", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'count-by' })
+], RpsRamda.prototype, "countBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'difference' })
+], RpsRamda.prototype, "difference", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'difference-with' })
+], RpsRamda.prototype, "differenceWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'eq-by' })
+], RpsRamda.prototype, "eqBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'equals' })
+], RpsRamda.prototype, "equals", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'gt' })
+], RpsRamda.prototype, "gt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'gte' })
+], RpsRamda.prototype, "gte", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'identical' })
+], RpsRamda.prototype, "identical", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'inner-join' })
+], RpsRamda.prototype, "innerJoin", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'intersection' })
+], RpsRamda.prototype, "intersection", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lt' })
+], RpsRamda.prototype, "lt", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'lte' })
+], RpsRamda.prototype, "lte", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'max' })
+], RpsRamda.prototype, "max", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'max-by' })
+], RpsRamda.prototype, "maxBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'min' })
+], RpsRamda.prototype, "min", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'min-by' })
+], RpsRamda.prototype, "minBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'path-eq' })
+], RpsRamda.prototype, "pathEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-eq' })
+], RpsRamda.prototype, "propEq", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort-by' })
+], RpsRamda.prototype, "sortBy", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sort-with' })
+], RpsRamda.prototype, "sortWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'symmetric-difference' })
+], RpsRamda.prototype, "symmetricDifference", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'symmetric-difference-with' })
+], RpsRamda.prototype, "symmetricDifferenceWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'union' })
+], RpsRamda.prototype, "union", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'union-with' })
+], RpsRamda.prototype, "unionWith", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is' })
+], RpsRamda.prototype, "is", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'is-nil' })
+], RpsRamda.prototype, "isNil", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'prop-is' })
+], RpsRamda.prototype, "propIs", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'type' })
+], RpsRamda.prototype, "type", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'add' })
+], RpsRamda.prototype, "add", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'dec' })
+], RpsRamda.prototype, "dec", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'divide' })
+], RpsRamda.prototype, "divide", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'inc' })
+], RpsRamda.prototype, "inc", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'math-mod' })
+], RpsRamda.prototype, "mathMod", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'mean' })
+], RpsRamda.prototype, "mean", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'median' })
+], RpsRamda.prototype, "median", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'modulo' })
+], RpsRamda.prototype, "modulo", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'multiply' })
+], RpsRamda.prototype, "multiply", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'negate' })
+], RpsRamda.prototype, "negate", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'product' })
+], RpsRamda.prototype, "product", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'subtract' })
+], RpsRamda.prototype, "subtract", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'sum' })
+], RpsRamda.prototype, "sum", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'trim' })
+], RpsRamda.prototype, "trim", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'match' })
+], RpsRamda.prototype, "match", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'replace' })
+], RpsRamda.prototype, "replace", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'split' })
+], RpsRamda.prototype, "split", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'test' })
+], RpsRamda.prototype, "test", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-lower' })
+], RpsRamda.prototype, "toLower", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-string' })
+], RpsRamda.prototype, "toString", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'to-upper' })
+], RpsRamda.prototype, "toUpper", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'r' })
+], RpsRamda.prototype, "r", null);
+__decorate([
+    rpscript_interface_1.rpsAction({ verbName: 'regexp' })
+], RpsRamda.prototype, "regexp", null);
+RpsRamda = __decorate([
+    rpscript_interface_1.RpsModule("ramda")
+], RpsRamda);
+exports.default = RpsRamda;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <!--<img class="logo" src="img/toast-ui.png" style="">-->
+    <div class="footer-text">Typecasting SG</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
