@@ -37,6 +37,13 @@ if (package) {
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109872082-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-109872082-2');
+    </script>
     <title><?js= title + ' | ' + name ?></title>
 
     <script src="scripts/prettify/prettify.js"> </script>
@@ -70,7 +77,8 @@ if (package) {
     <div class="title">
         <h1><a href="index.html" class="link"><?js= name ?></a></h1>
         <?js if (version) { ?>
-            <span class="version">v<?js= version ?></span>
+            <!--<span class="version">v<?js= version ?></span>-->
+            <span class="badge badge-warning">alpha</span>
         <?js } ?>
     </div>
     <div class="search-container" id="search-container">
@@ -95,10 +103,10 @@ if (package) {
     <?js= content ?>
 </div>
 
-<footer>
+<!--<footer>
     <!--<img class="logo" src="<?js= logoUrl?>" style="<?js= style ?>">-->
-    <div class="footer-text"><?js= footerText || 'Typecasting' ?></div>
-</footer>
+    <!--<div class="footer-text"><?js= footerText || 'Typecasting' ?></div>-->
+</footer>-->
 <script>prettyPrint();</script>
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/tui-doc.js"></script>

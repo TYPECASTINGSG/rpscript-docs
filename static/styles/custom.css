@@ -1,3 +1,9 @@
+.lnb .title .link {
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+}
+
 .main section article dl dt .name {
     font-size:15px;
     font-weight:normal;

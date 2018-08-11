@@ -12,7 +12,7 @@
     },
     "templates": {
         "name": "RPScript",
-        "footerText":"Typecasting SG",
+        "footerText":"RPScript",
         "useCollapsibles": true,
         "tabNames": {
             "api": "API",

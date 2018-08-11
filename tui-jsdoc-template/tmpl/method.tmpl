@@ -6,10 +6,14 @@ var self = this;
 <dt>
     <?js if (data.kind !== 'module') { ?>
         <h4 class="name" id="<?js= id ?>">
+            <?js if (data.summary) { ?>
+            <p class="summary"><?js= summary ?></p>
+            <?js } ?>
+
             <?js if (data.hideconstructor) { ?>
-                <?js= name ?>
+                <!--<?js= name ?>-->
             <?js } else { ?>
-                <?js= (data.kind === 'class' ? 'new ' : '') + data.attribs + name + (data.signature ? data.signature : '') ?>
+                <!--<?js= (data.kind === 'class' ? 'new ' : '') + data.attribs + name + (data.signature ? data.signature : '') ?>-->
             <?js } ?>    
             <?js if (data.meta && self.outputSourceFiles) {?>
             <!--<div class="container-source members">
@@ -19,9 +23,6 @@ var self = this;
             <?js } ?>
         </h4>
 
-        <?js if (data.summary) { ?>
-        <p class="summary"><?js= summary ?></p>
-        <?js } ?>
     <?js } ?>
 </dt>
 <dd>

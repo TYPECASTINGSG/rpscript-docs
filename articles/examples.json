@@ -2,19 +2,13 @@
     "gettingstarted": {
         "title": "Getting Started"
     },
-    "motivation": {
-        "title": "Motivation"
+    "usage": {
+        "title":"Usage"
     },
-    "directive": {
-        "title": "Directive"
+    "examplegovdata": {
+        "title":"Example: Data Processing"
     },
-    "actions": {
-        "title": "Actions"
-    },
-    "modules": {
-        "title": "Modules"
-    },
-    "example-hello-world": {
-        "title": "Example: Hello World In Style"
+    "examplefiglet": {
+        "title":"Example: Fanciful Ascii Art"
     }
 }
