@@ -39,7 +39,7 @@
         <h1><a href="index.html" class="link">RPScript</a></h1>
         
             <!--<span class="version">v1.0.0</span>-->
-            <span class="badge badge-warning">alpha</span>
+            <!--<span class="badge badge-warning">alpha</span>-->
         
     </div>
     <div class="search-container" id="search-container">
@@ -79,8 +79,9 @@
 
 
     <section>
-        <article class="readme"><h1>RPScript</h1><p>A simple scripting language to automate the boring stuff.</p>
-<p>RPScript provides a framework to simplify automation. The syntax is designed to be intuitive and straightforward,  allowing you to write scripts without the need for in-depth programming knowledge.</p>
+        <article class="readme"><h1>RPSCRIPT <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="30px"> <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="30px"> <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="30px"></h1><p><a href="https://badge.fury.io/js/rpscript"><img src="https://badge.fury.io/js/rpscript.svg" alt="npm version"></a></p>
+<p><img style="float: right;" src="https://s3.amazonaws.com/sample.rpscript.com/images/cool_robot100.png"><br>A simple scripting language to automate the boring stuff.</p>
+<p>RPScript provides a framework that simplifies automation. The syntax is designed to be intuitive and straightforward,  allowing you to write scripts without the need for in-depth programming knowledge.</p>
 <p>In short, it allows you to replace this:</p>
 <pre class="prettyprint source"><code>var R = require('ramda');
 
@@ -112,12 +113,105 @@ extract &quot;download.zip&quot; &quot;./temp/&quot;
 
 csv-to-data --columns=true read-file &quot;temp/data-gov-sg-dataset-listing.csv&quot; | as &quot;dataset&quot;
 
-log uniq pluck 'organisation' $dataset</code></pre><h2>Install</h2><p>Prerequisite: NodeJS</p>
+log uniq pluck 'organisation' $dataset</code></pre><h2>Installation <img src="https://s3.amazonaws.com/sample.rpscript.com/images/smart_robot50.png" width="18px"></h2><p>Prerequisite: NodeJS</p>
 <pre class="prettyprint source"><code>npm i -g rpscript</code></pre><p>This will install a global command line in your machine.</p>
 <p>Module installation.</p>
 <pre class="prettyprint source"><code>rps install basic</code></pre><p>Create a file &quot;helloworld.rps&quot; and add this line:</p>
-<pre class="prettyprint source"><code>log repeat &quot;hello world &quot; 3</code></pre><h2>Usage</h2><p>Coming soon.</p>
-<h2>Examples</h2><p>More example coming soon.</p></article>
+<pre class="prettyprint source"><code>log repeat &quot;hello world &quot; 3</code></pre><h2>Getting Started <img src="https://s3.amazonaws.com/sample.rpscript.com/images/handy_robot50.png" width="25px"></h2><p>Getting started guide is available at <a href="http://docs.rpscript.com/tutorial-gettingstarted.html">Getting Started</a>.</p>
+<h2>Usage <img src="https://s3.amazonaws.com/sample.rpscript.com/images/handy_robot50.png" width="25px"></h2><p>Usage guide is available at <a href="http://docs.rpscript.com/tutorial-usage.html">Usage</a></p>
+<h2>Modules <img src="https://s3.amazonaws.com/sample.rpscript.com/images/bossy_robot50.png" width="18px"></h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Status</th>
+<th>Description</th>
+<th>Doc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-basic">Basic</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-basic"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-basic.svg" alt="npm version"></a></td>
+<td>Basic operation and data manipulation.</td>
+<td><a href="http://docs.rpscript.com/Basic.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-beeper">Beeper</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-beeper"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-beeper.svg" alt="npm version"></a></td>
+<td>Make terminal beeps.</td>
+<td><a href="http://docs.rpscript.com/Beeper.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-csv">CSV</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-csv"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-csv.svg" alt="npm version"></a></td>
+<td>CSV utility.</td>
+<td><a href="http://docs.rpscript.com/CSV.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-date">Date</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-date"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-date.svg" alt="npm version"></a></td>
+<td>Date utility.</td>
+<td><a href="http://docs.rpscript.com/Date.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-download">Downloading</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-downloading"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-downloading.svg" alt="npm version"></a></td>
+<td>File Download.</td>
+<td><a href="http://docs.rpscript.com/Download.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-figlet">Figlet</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-figlet"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-figlet.svg" alt="npm version"></a></td>
+<td>Ascii Art.</td>
+<td><a href="http://docs.rpscript.com/Figlet.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-file">File</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-file"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-file.svg" alt="npm version"></a></td>
+<td>File system.</td>
+<td><a href="http://docs.rpscript.com/File.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-hogan">Hogan</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-hogan"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-hogan.svg" alt="npm version"></a></td>
+<td>Moustache Templating.</td>
+<td><a href="http://docs.rpscript.com/Hogan.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-notifier">Notifier</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-notifier"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-notifier.svg" alt="npm version"></a></td>
+<td>Desktop Notification.</td>
+<td><a href="http://docs.rpscript.com/Notifier.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-open">Open</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-open"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-open.svg" alt="npm version"></a></td>
+<td>Open a file or url in the user's preferred application.</td>
+<td><a href="http://docs.rpscript.com/Open.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-adm-zip">Zip</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-zip"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-zip.svg" alt="npm version"></a></td>
+<td>File compression and extraction.</td>
+<td><a href="http://docs.rpscript.com/Zip.html">Here</a></td>
+</tr>
+</tbody>
+</table>
+<h2>FAQ <img src="https://s3.amazonaws.com/sample.rpscript.com/images/smart_robot50.png" width="18px"></h2><p><strong>What is RPScript?</strong></p>
+<p>RPScript is a scripting language for process automation.</p>
+<p><strong>Why do I need RPScript if I can use Python, Javascript for automation?</strong></p>
+<p>Unlike general purpose languages such as Python and Javascript, RPScript has only one specific goal, process automation.</p>
+<p>General purpose languages are powerful and flexible. However, this tends to compensate by having complicated syntax and language features. In the end, you have to deal with boilerplates and unnecessary steps that lead to complication despite only to perform a simple task.</p>
+<p>RPScript goal is to make the syntax compact. Ideally, every action models as close to a single process as possible.</p>
+<p><strong>Is it stable?</strong></p>
+<p>It is currently in Alpha; I will appreciate if you can give it a try and provide your valuable feedback.</p>
+<p><strong>Is rpscript a node.js library?</strong></p>
+<p>RPScript is a transpiler that transpiles to javascript. It runs on top of Node.JS. </p>
+<p>Most, if not, all the modules are wrappers that utilize what that the npm ecosystem already provided.</p>
+<h2>Creator <img src="https://s3.amazonaws.com/sample.rpscript.com/images/kind_robot50.png" width="20px"></h2><p><strong>James Chong (@wei3hua2)</strong><br><a href="https://github.com/wei3hua2">Github</a><br><a href="https://twitter.com/wei3hua2">Twitter</a><br><a href="mailto:james.chong@typecasting.sg">Email</a></p>
+<h2>Changelog <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="23px"></h2><p>0.3.0 - Initial alpha release</p>
+<h2>Copyright and Licence</h2><p>Code released under Apache 2.0</p>
+<p>Image created by Freepik</p></article>
     </section>
 
 

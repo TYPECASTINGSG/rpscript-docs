@@ -6,18 +6,14 @@ After you have installed Node.js, fire up your terminal console, and enter the c
 ```
 npm i -g rpscript
 ```
-Congratulation, rpscript is now installed in your machine.
-
-RPScript is nothing more than an execution environment that process your script. After your installation, a global command 'rps' will be available to you.
-
-This is the application used for parsing, executing your script and manage your modules.
+Congratulation, rpscript has now installed in your machine.
 
 To confirm the installation is successful, enter:
 ```
 rps
 ```
-You will then see a similar message as below.
-```
+You will then see the message below.
+<pre class="prettyprint"><code class="nocode">
   Usage: rps [filename] [options]
 
   ******************************************** 
@@ -37,84 +33,92 @@ You will then see a similar message as below.
 
   Commands:
 
-    verify <filename>  Verify if the rps script is valid
+    verify &#x3C;filename&#x3E;  Verify if the rps script is valid
     install [modules]  Install one or more modules
     remove [modules]   Remove one or more modules
     modules            List modules information
-    module <module>    Show module information
+    module &#x3C;module&#x3E;    Show module information
     actions            List installed actions
     help [cmd]         display help for [cmd]
-```
+</code></pre>
 
 ## Module installation
 
-RPScript is module driven. Without module, you can't do anything about it. To start it off, let's install the core module, basic.
+Actions (similar to expression) is the heart of RPScript. When you install a module, you are actually installing a set of actions that model certain process.
 
-```
+To get started, install the module [basic](file:///home/jameschong/projects/rpscript-site/docs/Basic.html).
+
+<pre class="prettyprint"><code class="nocode">
 rps install basic
-```
-This is will basic operations and data manipulation keywords.
+</code></pre>
+This module provides some basic operations and data manipulation.
 You can verify with the command when it is done.
-```
+<pre class="prettyprint"><code class="nocode">
 rps module basic
-```
+</code></pre>
 
 ## Writing your first hello world
 
-Let's not dive into the real action. Let's create our first script. Create a text file 'hello.rps' and start typing with your favourite text editor.
+Let's create our first script. Create a text file 'hello.rps' and copy the code below to your favourite text editor.
 
-```
-;Printout 'hello rpscript'
+<pre class="prettyprint lang-rps"><code>
+;print 'hello rpscript'
 log "hello"
-```
+</code></pre>
 
-Nothing fanciful here, just a normal print out to the terminal.
+You should be seeing a standard "hello" message on the terminal.
 
-Let's getting a bit fancier by say.... print out 3 times?
-```
+To print out 3 times.
+<pre class="prettyprint lang-rps"><code>
 log repeat "hello" 3
-```
-To find out more on the keywords, refer to the [documentation](http://doc.rpscript.com/api).
+</code></pre>
 
-Sick of silly console log 'Hello world'? I heard you. It's get a little arty farty by making the hello fancier.
+`log` and `repeat` are keywords that comes with the installed basic module.
+
+To find out more on the available keywords, refer to the [documentation](http://doc.rpscript.com/api).
+
+## Fancy Ascii Art
+
+Now, let's get fancier by adding some ascii art.
+
 Let's install the [figlet](http://doc.rpscript.com/doc/figlet)
-```
+<pre class="prettyprint"><code class="lang-rps">
 rps install figlet
 rps module figlet
 
 ;name : figlet
 ;version : xxx
 ;actions : figlet
-```
+</code></pre>
 Now, change your script to.
-```
-log figlet 'hello'
-```
-Add a little spook to your text.
-```
-log figlet 'Casper' --font="Ghost"
-```
+<pre class="prettyprint lang-rps"><code>
+log figlet "Ghost" "Casper"
+</code></pre>
 
-Let's say by now you kinda really like RPScript and want to write something awesome to show your love for it. Let's celebrate by sharing your appreciation by doing it in style.
+## Compose actions
 
-```
+RPScript is a functional language. Which explains why ramda is part of the `basic` module. For now, I assume you have basic foundation on ramda. I highly recommend to read the tutorial series [Thinking in Ramda](http://randycoulman.com/blog/categories/thinking-in-ramda/).
+
+Let's start with an example that prints out prints out a word every one second.
+<pre class="prettyprint lang-rps"><code>
 assign "val" split " " "RPScript is really awesome . . ."
+for-each (compose (wait 1) (log) (figlet "Ghost")) $val
+</code></pre>
 
-for-each (compose (wait 1) (log) (figlet)) $val
-```
-What does this two lines of statement means?
+What does it mean?
 
-Line one simple say assign a variable name val, and save the result of `split " " "RPScript is really awesome . . ."` which converts a string to an list by splitting it with space.
+**Line one** assigns a variable name val, and save the result of the action `split " " "RPScript is really awesome . . ."`
+The action [split](http://docs.rpscript.com/Basic.html#.split) takes a string and split into an array of strings with whitespace as the delimiter.
 
-The second line simply all items from the list, and perform an operation.
+**Line two** takes all items from the list, and perform the composition of 3 actions evaluated from right to left.
+What it says is [for each](http://docs.rpscript.com/Basic.html#.for-each) item in the list, convert with [figlet](http://docs.rpscript.com/Figlet.html#.figlet), then [print](http://docs.rpscript.com/Basic.html#.log) to the terminal, then [wait](http://docs.rpscript.com/Basic.html#.wait) 1 second.
 
-And what is the operation? It is a `compose` 3 actions. figlet, log, wait 1 sec.
 
 If the order bothers you, you can switch the order by using pipe instead. 
 
-```
+<pre class="prettyprint lang-rps"><code>
 assign "val" split " " "RPScript is really awesome . . ."
-assign "slowFiglet" pipe (figlet) (log) (wait 1)
+assign "slowFiglet" pipe (figlet "Ghost") (log) (wait 1)
 
 for-each $slowFiglet $val
-```
+</code></pre>

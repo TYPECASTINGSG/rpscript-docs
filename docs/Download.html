@@ -39,7 +39,7 @@
         <h1><a href="index.html" class="link">RPScript</a></h1>
         
             <!--<span class="version">v1.0.0</span>-->
-            <span class="badge badge-warning">alpha</span>
+            <!--<span class="badge badge-warning">alpha</span>-->
         
     </div>
     <div class="search-container" id="search-container">
@@ -165,7 +165,7 @@
             
 
             
-                <!--<span class="type-signature"></span>download<span class="signature"> url options</span><span class="type-signature"> &rarr; {void}</span>-->
+                <!--<span class="type-signature"></span>download<span class="signature"> url options</span><span class="type-signature"> &rarr; {Buffer}</span>-->
                 
             
             <!--<div class="container-source members">
@@ -232,7 +232,7 @@
 
             
 
-            <td class="description last"><p>Files to download</p></td>
+            <td class="description last"><p>Files to download.</p></td>
         </tr>
 
     
@@ -255,7 +255,7 @@
 
             
 
-            <td class="description last"><p>List of options provided.</p></td>
+            <td class="description last"><p>dest - destination of the downloaded file.</p></td>
         </tr>
 
     
@@ -283,7 +283,7 @@
 
 
 
-<span class="param-type">void</span>
+<span class="param-type">Buffer</span>
 
 
 
@@ -336,7 +336,7 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint lang-rps"><code>download 'http://url/filename.txt'</code></pre>
+    <pre class="prettyprint lang-rps"><code>download "http://url/filename.txt"</code></pre>
 
     
 

@@ -1,11 +1,11 @@
 # cd ../rpscript-api-basic && npm run build
 # cd ../rpscript-api-open && npm run build  #COMPLETED
-cd ../rpscript-api-download && npm run build  #stable:HIGH
-cd ../rpscript-api-csv && npm run build
+# cd ../rpscript-api-download && npm run build  #stable:HIGH
+# cd ../rpscript-api-csv && npm run build
 # cd ../rpscript-api-figlet && npm run build  #COMPLETED
-cd ../rpscript-api-beeper && npm run build  #COMPLETED
+# cd ../rpscript-api-beeper && npm run build  #COMPLETED
 # cd ../rpscript-api-file && npm run build
-cd ../rpscript-api-hogan && npm run build #COMPLETED
+# cd ../rpscript-api-hogan && npm run build #COMPLETED
 # cd ../rpscript-api-date-fp && npm run build
 # cd ../rpscript-api-adm-zip && npm run build #stable:MED
 # cd ../rpscript-api-notifier && npm run build #COMPLETED

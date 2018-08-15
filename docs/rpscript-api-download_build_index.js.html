@@ -41,7 +41,7 @@
         <h1><a href="index.html" class="link">RPScript</a></h1>
         
             <!--<span class="version">v1.0.0</span>-->
-            <span class="badge badge-warning">alpha</span>
+            <!--<span class="badge badge-warning">alpha</span>-->
         
     </div>
     <div class="search-container" id="search-container">
@@ -103,12 +103,12 @@ let RPSDownload = class RPSDownload {
      * @function download
      * @memberof Download
      * @example
-     * download 'http://url/filename.txt'
+     * download "http://url/filename.txt"
      *
-     * @param {String|Array} url Files to download
-     * @param {*} options List of options provided.
+     * @param {String|Array} url Files to download.
+     * @param {*} options dest - destination of the downloaded file.
      *
-     * @returns {void}
+     * @returns {Buffer}
      * @summary download :: String|Array → Buffer
      *
     */

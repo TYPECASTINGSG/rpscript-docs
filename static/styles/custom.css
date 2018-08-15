@@ -2,6 +2,8 @@
     color: #fff;
     font-style: normal;
     font-weight: bold;
+    font-size:1.1em;
+    font-family:monospace;
 }
 
 .main section article dl dt .name {
