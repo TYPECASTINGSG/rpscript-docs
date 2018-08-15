@@ -72,22 +72,18 @@
 
     
         <article class="readme">
-            <p>Simple language to automate your tasks.</p>
-<p>To create a language simple enough even for non-developer to be able to write and maintain their repetitive task. </p>
-<p>RPScript is strongly influent by functional programming style of coding. Higher-order function and currying is heavily used. </p>
-<p>Actions is nothing more than function, able to compose them to perform data transformation and manipulation.</p>
-<p>RPScript has a different take on module management. There is no import statement required. Modules are loaded dynamically and are managed using command line.</p>
+            <p>RPScript is strongly influent by functional programming. Higher-order function and currying is heavily used. </p>
+<p>Actions represent function in typical functional programming context. Similar to functions, actions can be composed to perform data transformation and manipulation.</p>
+<p>RPScript has a different take on module management. There is no import statement required. Modules are loaded dynamically. The installation and removal is handled using command line. There is no import statement required.</p>
 <p>Some key principles:</p>
 <ul>
-<li><p>Intuitive and simple syntax. Every expression should focus on a process or activity. </p>
-</li>
 <li><p>Everything is an action. Action represents a user activity. It is represented with prefix keyword, follow by optional arguments and/or parameters.</p>
 <pre class="prettyprint source"><code>action :: &lt;keyword> &lt;--opt=literal> &lt;...params></code></pre></li>
-<li><p>Leave the concept of libraries out of the syntax. Use on command line to to perform module management. No more <code>import * from 'csv'</code> , <code>new CSV(params)</code>.</p>
+<li><p>Leave the concept of libraries out of the syntax. Rely on command line to perform module management. No more <code>import * from 'csv'</code> , <code>new CSV(params)</code>.</p>
 <pre class="prettyprint source"><code>rps install csv</code></pre></li>
-<li>Modules consists of a list of keywords. When you install a module, you are simply adding more keywords into the framework.</li>
+<li>Module represents a list of keywords. When you install a module, you are simply adding more keywords into the framework. To view the list of keywords, enter the command.<pre class="prettyprint source"><code>rps module &lt;moduleName></code></pre></li>
 </ul>
-<pre class="prettyprint source"><code>&lt;keyword> &lt;...parameters></code></pre><h2>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
+<h2>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
 &lt;action>     ::=  &lt;keyword> opt* param* | &quot;(&quot; &lt;keyword> opt* param* &quot;)&quot; 
 
 &lt;param>      ::=  &lt;literal> | &lt;lamda> | &lt;variable> | &lt;action>
@@ -111,7 +107,7 @@
 <tr>
 <td><strong>Action</strong></td>
 <td><code>log &quot;hello&quot;</code></td>
-<td>Execute a process. Similar to function execution is other language.</td>
+<td>Execute a process. Similar to function execution in other language.</td>
 </tr>
 <tr>
 <td><strong>Keyword</strong></td>
@@ -125,7 +121,7 @@
 </tr>
 <tr>
 <td><strong>Option</strong></td>
-<td>notify &quot;title&quot; &quot;message&quot; <code>--sound=true</code></td>
+<td>notify <code>--sound=true</code> &quot;title&quot; &quot;message&quot;</td>
 <td>additional options declare when executing an action.</td>
 </tr>
 <tr>
@@ -141,44 +137,66 @@
 <tr>
 <td><strong>Variable</strong></td>
 <td>for-each <code>$printout $list</code></td>
-<td>Similar to other languages.</td>
+<td>variable is assigned using the <code>as</code> or <code>assign</code> keyword.</td>
 </tr>
 <tr>
 <td><strong>EnvVar</strong></td>
-<td>log <code>$$1</code></td>
+<td>log <code>$$0</code></td>
 <td>Param to be passed before execution.</td>
 </tr>
 </tbody>
 </table>
-<h3>Expression</h3><p>Expression consists of a single action an additional piped action.<br>Expression is evaluated with newline.</p>
-<h3>Action</h3><p>Action is equivalent to the typical function in functional programming. Similar to homoiconic language such as lisp, keyword is equivalent to to operator whereas options and params are the operands.</p>
-<p>One distinct difference is the options. Think of it as the optional values for the particular operation. It is not mandatory to have an option field, but if you need advanced customization, you can add the additional field and it will override the default value.</p>
+<h2>Expression</h2><p>Expression consists of a single action and an optional piped action.</p>
+<p>piped action is just syntactic sugar that makes the expression more readable.</p>
+<p>Example, assignment can be written as:</p>
+<pre class="prettyprint source"><code>identity 10 | as 'val'</code></pre><p>This is equivalent to:</p>
+<pre class="prettyprint source"><code>as 'val' identity 10</code></pre><p>Expression ends with a newline.</p>
+<h2>Action</h2><p>Action is equivalent to the function in functional programming. Similar to homoiconic language such as lisp, keyword is equivalent to to operator whereas options and params are the operands.</p>
+<p>One distinct difference is the options. Think of it as the optional fields for the particular operation. </p>
+<p>It is not mandatory to have an option field, but if you need advanced customization, you can add the additional field and it will override the default value.</p>
 <p>Whereas param is similar to the traditional arguments of most programming languages.</p>
-<p>One distinction between options and param is that options is not curried, whereas most param is curried.</p>
+<p>Another distinction between options and param is that options is not curried, whereas most param is typically curried.</p>
 <p>action is evaluate from left to right. Take a simple expression.</p>
 <pre class="prettyprint source"><code>log &quot;hello&quot;</code></pre><p>The parser will take the first word as the keyword, subsequent values as either options or param.</p>
-<p>Let's take the second example.</p>
-<pre class="prettyprint source"><code>log figlet &quot;hello&quot;</code></pre><p>This is equivalent to</p>
-<pre class="prettyprint source"><code>log (figlet &quot;hello&quot;)</code></pre><p>The parser will always asssume that what comes after the keywords will be param.<br>In this case, the expression will be to <code>log</code> the output of <code>figlet</code> with the input of <code>&quot;hello&quot;</code></p>
-<p>Let's say if you want to iterate a list of item and print out. You will realise the expression below <code>DOES NOT</code> do what you expected.</p>
-<pre class="prettyprint source"><code>;INCORRECT
-for-each log [1,2,3]</code></pre><p>That is because the evaluated result is <code>for-each (log [1,2,3])</code>. Since for-each requires 2 params, it will return a function that expects an additional input.</p>
-<p>The right way is to explicitly indicate the scope of the <code>log</code> operation.</p>
-<pre class="prettyprint source"><code>;CORRECT
-for-each (log) [1,2,3]</code></pre><p>This actually says that the <code>log</code> action does not include <code>[1,2,3]</code>. And it is treated as a function that takes an input of any type. [http://doc.rpscript.com/log].</p>
-<h3>Keywords</h3><p>This is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a <code>rps install &lt;xxx&gt;</code>, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the (documentation)[http://doc.rpscript.com].</p>
-<h3>Lamda</h3><p>This is similar to traditional lamda function. The syntax follows the javascript convention, except that parameters must have the '$' sign.</p>
-<pre class="prettyprint source"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre><h3>Literal</h3><p>Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.</p>
-<h3>Variable</h3><p>There are 2 ways to assign a variable.</p>
+<p>Take another example.</p>
+<pre class="prettyprint source"><code>log figlet &quot;Ghost&quot; &quot;hello&quot;</code></pre><p>This is equivalent to</p>
+<pre class="prettyprint source"><code>log (figlet &quot;Ghost&quot; &quot;hello&quot;)</code></pre><p>The parser will always asssume that what comes after the keywords will be param.<br>In this case, the expression will be to <code>log</code> the output of <code>figlet</code> with the input of <code>&quot;Ghost&quot; and &quot;hello&quot;</code></p>
+<p>Let's say if you want to add 2 to a list of items and print out. You will realise the expression below <code>DOES NOT</code> do what is expected.</p>
+<pre class="prettyprint lang-rps"><code>
+map add 2 [1,2,3] | as 'val'
+log $val
+;incorrect output
+</code></pre>
+
+<p>That is because the expression is evaluated as <code>map (add 2 [1,2,3])</code>. Since map requires 2 params, it will return a function that expects another input (curried).</p>
+<p>The right way is to explicitly indicate the scope of the <code>log</code> operator.</p>
+<pre class="prettyprint lang-rps"><code>
+;CORRECT
+map (add 2) [1,2,3] | as $val
+log $val
+;output : 3,4,5
+</code></pre>
+
+<p>This actually says that the <code>log</code> action is a seperate action and it does not include <code>[1,2,3]</code>. <a href="http://docs.rpscript.com/Basic.html#.log">log documentation</a>.</p>
+<h2>Keywords</h2><p>Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a <code>rps install &lt;xxx&gt;</code>, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the <a href="http://docs.rpscript.com">documentation</a>.</p>
+<h2>Lamda</h2><p>This is similar lamda function in functional programming. The syntax follows the javascript convention, except that must have the <code>$</code> sign.</p>
+<pre class="prettyprint source"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre><h2>Literal</h2><p>Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.</p>
+<h2>Variable</h2><p>There are 2 ways to assign a variable.</p>
 <pre class="prettyprint source"><code>assign 'var1' 'hello'</code></pre><p>or </p>
 <pre class="prettyprint source"><code>log 'hello' | as 'var1'</code></pre><p>The 'assign' and 'as' keywords do the same thing, It takes the first value as the variable name, second as the variable value.</p>
 <p>To access the variable.</p>
-<pre class="prettyprint source"><code>log $var1</code></pre><h2>Module</h2><p>Module is made up of keywords.<br>When you install a module, you are basically adding more keywords to your dictionary.</p>
-<p>A full list of keys can be display with this command.</p>
+<pre class="prettyprint source"><code>log $var1</code></pre><p>All variable must have a prefixed <code>$</code> sign.</p>
+<h2>Environment Variable</h2><p>Environment variable can be passed as part of the command line. The environment variable can be represented with a <code>$$</code> follow by the digit from left to right sequence starting from <code>0</code>.</p>
+<pre class="prettyprint source"><code>rps script.rps &quot;variable1&quot; &quot;variable2&quot;</code></pre><p>Given the example, scrip.rps will interpret <code>$$0</code> as <code>variable1</code>, and <code>$$1</code> as <code>variable2</code>.</p>
+<p>You can test out with the expression below.</p>
+<pre class="prettyprint source"><code>log $$0
+log $$1</code></pre><h2>Module</h2><p>Module is made up of keywords.<br>When you install a module, you are basically adding more keywords to your dictionary.</p>
+<p>To view the list of installed modules.</p>
+<pre class="prettyprint source"><code>rps modules</code></pre><p>A full list of installed keys can be displayed with this command.</p>
 <pre class="prettyprint source"><code>rps actions</code></pre><p>You can also view the keywords related to a specific module.</p>
 <pre class="prettyprint source"><code>rps module csv</code></pre><p>To add a module.</p>
-<pre class="prettyprint source"><code>rps install csv</code></pre><p>For the list of modules, please refer to API Documentation.</p>
-<p>To remove.</p>
+<pre class="prettyprint source"><code>rps install csv</code></pre><p>For the list of modules, please refer to <a href="http://docs.rpscript.com/">API Documentation</a>.</p>
+<p>To remove a module.</p>
 <pre class="prettyprint source"><code>rps remove csv</code></pre>
         </article>
     
