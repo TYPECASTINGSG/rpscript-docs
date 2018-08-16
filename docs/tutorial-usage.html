@@ -72,10 +72,24 @@
 
     
         <article class="readme">
-            <p>RPScript is strongly influent by functional programming. Higher-order function and currying is heavily used. </p>
+            <ol>
+<li><a href="#Principle">Principle</a></li>
+<li><a href="#Actions">Actions</a></li>
+<li><a href="#Syntax">Syntax</a><ul>
+<li><a href="#Expression">Expression</a></li>
+<li><a href="#Keyword">Keyword</a></li>
+<li><a href="#Variable">Variable</a></li>
+<li><a href="#Literal">Literal</a></li>
+<li><a href="#Lamda">Lamda</a></li>
+<li><a href="#EnvVar">Environment Variable</a></li>
+</ul>
+</li>
+<li><a href="#Module">Module</a></li>
+</ol>
+<p>RPScript is strongly influent by functional programming. Higher-order function and currying is heavily used. </p>
 <p>Actions represent function in typical functional programming context. Similar to functions, actions can be composed to perform data transformation and manipulation.</p>
 <p>RPScript has a different take on module management. There is no import statement required. Modules are loaded dynamically. The installation and removal is handled using command line. There is no import statement required.</p>
-<p>Some key principles:</p>
+<h2>Principle</h2><p>Some key principles:</p>
 <ul>
 <li><p>Everything is an action. Action represents a user activity. It is represented with prefix keyword, follow by optional arguments and/or parameters.</p>
 <pre class="prettyprint source"><code>action :: &lt;keyword> &lt;--opt=literal> &lt;...params></code></pre></li>
@@ -83,6 +97,68 @@
 <pre class="prettyprint source"><code>rps install csv</code></pre></li>
 <li>Module represents a list of keywords. When you install a module, you are simply adding more keywords into the framework. To view the list of keywords, enter the command.<pre class="prettyprint source"><code>rps module &lt;moduleName></code></pre></li>
 </ul>
+<h2>Actions</h2><p>Action is the heart of RPScript. Action is heavily influenced by the traditional function in functional programming.</p>
+<p>Every action comes with a mandatory <code>keyword</code> (operator) , <code>parameter</code> (operand) and optional <code>option</code>.</p>
+<pre class="prettyprint source"><code>action :: &lt;keyword> &lt;--option=literal> &lt;...param></code></pre><p>Example</p>
+<pre class="prettyprint lang-rps"><code>log "Print to console"
+
+csv-to-data --columns=true "name,title,descript\n'nameA','titleB','descC'"
+</code></pre>
+
+<p><strong>Currying</strong><br>Actions are curried. </p>
+<pre class="prettyprint lang-rps">
+<code>assign 'logging' log
+call $logging "Print to console"
+
+;same as above
+log "Print to console" | as 'result'
+
+log type $logging  ;output: Function
+log type $result   ;output: String
+</code></pre>
+
+<p>Line 1 assigns <code>log</code> with zero parameter. Thus it returns a function that takes one parameter and perform the log operation.</p>
+<p>The assigned variable $logging is a function.</p>
+<p>Line 7 will show an output of the type Function.<br>Line 8 will be the type String.</p>
+<p>This is explained in the <a href="http://docs.rpscript.com/Basic.html#.log">API documentation</a> with the signature.</p>
+<pre class="prettyprint source"><code>log :: a → a</code></pre><p>The log keyword takes any type <code>a</code> as input, and output the same type.</p>
+<p>The signature style follows <a href="https://github.com/ramda/ramda/wiki/Type-Signatures">Ramda Type Signature</a>. </p>
+<p><strong>Params</strong></p>
+<p>The interpretation of parameters depends on the keywords. Check out the <a href="http://docs.rpscript.com">documentation</a> for the keywords provided by different modules.</p>
+<p><strong>Options</strong></p>
+<p>Option provides entry of arguments that are optional. The intention is to reduce the size of the parameter list by classifying optional fields in different category.</p>
+<p>Option has the syntax.</p>
+<pre class="prettyprint source"><code>option :: &quot;--&quot; &lt;optionName> &quot;=&quot; &lt;optionValue></code></pre><p>And it is included right after the keyword</p>
+<pre class="prettyprint source"><code>csv-to-data --columns=true &quot;&lt;data>&quot;</code></pre><p>The example above is a keyword from the csv module. It is a wrapper for the node.js module <a href="http://csv.adaltas.com/">CSV</a>.</p>
+<p>The keyword <a href="http://docs.rpscript.com/CSV.html#.csv-to-data">csv-to-data</a> takes a csv string content and convert it to a manipulable data structure. </p>
+<p>From the example above, <code>columns</code> is an optional field that asssume the first line is the header if set to true.</p>
+<p>If this option is excluded, it will default to null. as per <a href="http://csv.adaltas.com/parse/">CSV Documentation</a>.</p>
+<p><strong>Evaluation</strong><br>Take the expression.</p>
+<pre class="prettyprint source"><code>log &quot;hello&quot;</code></pre><p>The parser will take the first word as the keyword, subsequent values as either options or params.</p>
+<p>Actions are evaluated right-to-left eagerly.</p>
+<pre class="prettyprint source"><code>log figlet &quot;Ghost&quot; &quot;hello&quot;</code></pre><p>This is equivalent to</p>
+<pre class="prettyprint source"><code>log (figlet &quot;Ghost&quot; &quot;hello&quot;)</code></pre><p>The expression will evaluate the action <code>figlet</code>, then pass the output to <code>log</code>.</p>
+<p>Let's say if you want to add 2 to a list of items and print the result. You will realise the expression below <code>DOES NOT</code> do what is expected.</p>
+<pre class="prettyprint lang-rps"><code>;incorrect output
+log map add 2 [1,2,3]
+</code></pre>
+
+<p>Evaluated to:</p>
+<pre class="prettyprint lang-rps"><code>log (map (add 2 [1,2,3] ) )
+</code></pre>
+
+<p>This expression will evaluate <code>add 2 [1,2,3]</code> and pass the result to <code>map</code>.<br>Since there is only one param , <code>map</code> will be curried to return a function that requires another argument.</p>
+<p>Thus, you will be seeing this as output instead.<br><code>function n(r){return 0===arguments.length||e(r)?n:t.apply(this,arguments)}</code></p>
+<p>This can be fixed by explicitly scoping the <code>add</code> action with parentheses</p>
+<pre class="prettyprint lang-rps"><code>log map (add 2) [1,2,3]
+;output : 3,4,5
+</code></pre>
+
+<p>Which will be evaluated to:</p>
+<pre class="prettyprint lang-rps"><code>log ( map (add 2) [1,2,3] )
+</code></pre>
+
+<p><code>add</code> will be evaluated to a function that takes another argument. It will be passed to <code>map</code> as the first param, and the array <code>[1,2,3]</code> is the second param. The output will be a mapped array that will be the input for <code>log</code>.</p>
 <h2>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
 &lt;action>     ::=  &lt;keyword> opt* param* | &quot;(&quot; &lt;keyword> opt* param* &quot;)&quot; 
 
@@ -107,22 +183,22 @@
 <tr>
 <td><strong>Action</strong></td>
 <td><code>log &quot;hello&quot;</code></td>
-<td>Execute a process. Similar to function execution in other language.</td>
+<td>User action.</td>
 </tr>
 <tr>
 <td><strong>Keyword</strong></td>
 <td><code>log</code> &quot;hello&quot;</td>
-<td>The operation to be performed. </td>
+<td>Operator of the action.</td>
 </tr>
 <tr>
 <td><strong>Param</strong></td>
 <td>log <code>&quot;hello&quot;</code></td>
-<td>parameter that is passed to the action.</td>
+<td>Operand of the action.</td>
 </tr>
 <tr>
 <td><strong>Option</strong></td>
 <td>notify <code>--sound=true</code> &quot;title&quot; &quot;message&quot;</td>
-<td>additional options declare when executing an action.</td>
+<td>options declare of the action.</td>
 </tr>
 <tr>
 <td><strong>Lamda</strong></td>
@@ -132,61 +208,45 @@
 <tr>
 <td><strong>Literal</strong></td>
 <td>log <code>&quot;hello&quot;</code></td>
-<td>Similar to other languages.</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>Variable</strong></td>
 <td>for-each <code>$printout $list</code></td>
-<td>variable is assigned using the <code>as</code> or <code>assign</code> keyword.</td>
+<td>variable is assignable using the <code>as</code> or <code>assign</code> keyword.</td>
 </tr>
 <tr>
 <td><strong>EnvVar</strong></td>
 <td>log <code>$$0</code></td>
-<td>Param to be passed before execution.</td>
+<td>environment paramter passed before execution.</td>
 </tr>
 </tbody>
 </table>
 <h2>Expression</h2><p>Expression consists of a single action and an optional piped action.</p>
 <p>piped action is just syntactic sugar that makes the expression more readable.</p>
 <p>Example, assignment can be written as:</p>
-<pre class="prettyprint source"><code>identity 10 | as 'val'</code></pre><p>This is equivalent to:</p>
-<pre class="prettyprint source"><code>as 'val' identity 10</code></pre><p>Expression ends with a newline.</p>
-<h2>Action</h2><p>Action is equivalent to the function in functional programming. Similar to homoiconic language such as lisp, keyword is equivalent to to operator whereas options and params are the operands.</p>
-<p>One distinct difference is the options. Think of it as the optional fields for the particular operation. </p>
-<p>It is not mandatory to have an option field, but if you need advanced customization, you can add the additional field and it will override the default value.</p>
-<p>Whereas param is similar to the traditional arguments of most programming languages.</p>
-<p>Another distinction between options and param is that options is not curried, whereas most param is typically curried.</p>
-<p>action is evaluate from left to right. Take a simple expression.</p>
-<pre class="prettyprint source"><code>log &quot;hello&quot;</code></pre><p>The parser will take the first word as the keyword, subsequent values as either options or param.</p>
-<p>Take another example.</p>
-<pre class="prettyprint source"><code>log figlet &quot;Ghost&quot; &quot;hello&quot;</code></pre><p>This is equivalent to</p>
-<pre class="prettyprint source"><code>log (figlet &quot;Ghost&quot; &quot;hello&quot;)</code></pre><p>The parser will always asssume that what comes after the keywords will be param.<br>In this case, the expression will be to <code>log</code> the output of <code>figlet</code> with the input of <code>&quot;Ghost&quot; and &quot;hello&quot;</code></p>
-<p>Let's say if you want to add 2 to a list of items and print out. You will realise the expression below <code>DOES NOT</code> do what is expected.</p>
-<pre class="prettyprint lang-rps"><code>
-map add 2 [1,2,3] | as 'val'
-log $val
-;incorrect output
-</code></pre>
+<pre class="prettyprint lang-rps"><code>identity 10 | as 'val'</code></pre>
 
-<p>That is because the expression is evaluated as <code>map (add 2 [1,2,3])</code>. Since map requires 2 params, it will return a function that expects another input (curried).</p>
-<p>The right way is to explicitly indicate the scope of the <code>log</code> operator.</p>
-<pre class="prettyprint lang-rps"><code>
-;CORRECT
-map (add 2) [1,2,3] | as $val
-log $val
-;output : 3,4,5
-</code></pre>
+<p>This is equivalent to:</p>
+<pre class="prettyprint lang-rps"><code>as 'val' identity 10</code></pre>
 
-<p>This actually says that the <code>log</code> action is a seperate action and it does not include <code>[1,2,3]</code>. <a href="http://docs.rpscript.com/Basic.html#.log">log documentation</a>.</p>
+
+<p>Expression ends with a newline.</p>
 <h2>Keywords</h2><p>Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a <code>rps install &lt;xxx&gt;</code>, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the <a href="http://docs.rpscript.com">documentation</a>.</p>
 <h2>Lamda</h2><p>This is similar lamda function in functional programming. The syntax follows the javascript convention, except that must have the <code>$</code> sign.</p>
-<pre class="prettyprint source"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre><h2>Literal</h2><p>Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.</p>
-<h2>Variable</h2><p>There are 2 ways to assign a variable.</p>
+<pre class="prettyprint lang-rps"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre>
+
+<h2>Literal</h2><p>Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.</p>
+<pre class="prettyprint source"><code>assign &quot;array&quot; [1,2,3]
+assign &quot;object&quot; {a:1,b:2,c:3}
+assign &quot;str&quot; &quot;Hello world&quot;
+assign &quot;num&quot; 123
+assign &quot;template&quot; `Hello world`</code></pre><h2>Variable</h2><p>There are 2 ways to assign a variable.</p>
 <pre class="prettyprint source"><code>assign 'var1' 'hello'</code></pre><p>or </p>
 <pre class="prettyprint source"><code>log 'hello' | as 'var1'</code></pre><p>The 'assign' and 'as' keywords do the same thing, It takes the first value as the variable name, second as the variable value.</p>
 <p>To access the variable.</p>
 <pre class="prettyprint source"><code>log $var1</code></pre><p>All variable must have a prefixed <code>$</code> sign.</p>
-<h2>Environment Variable</h2><p>Environment variable can be passed as part of the command line. The environment variable can be represented with a <code>$$</code> follow by the digit from left to right sequence starting from <code>0</code>.</p>
+<h2>EnvVar</h2><p>Environment variable can be passed as part of the command line. The environment variable can be represented with a <code>$$</code> follow by the digit from left to right sequence starting with <code>0</code>.</p>
 <pre class="prettyprint source"><code>rps script.rps &quot;variable1&quot; &quot;variable2&quot;</code></pre><p>Given the example, scrip.rps will interpret <code>$$0</code> as <code>variable1</code>, and <code>$$1</code> as <code>variable2</code>.</p>
 <p>You can test out with the expression below.</p>
 <pre class="prettyprint source"><code>log $$0
