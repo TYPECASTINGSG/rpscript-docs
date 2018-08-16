@@ -153,19 +153,22 @@ Which will be evaluated to:
 ## Syntax
 ```
 <expression> ::=  <action> ("|" <action>)? NL
-<action>     ::=  <keyword> opt* param* | "(" <keyword> opt* param* ")" 
 
+<action>     ::=  <keyword> opt* param* | "(" <keyword> opt* param* ")" 
 <param>      ::=  <literal> | <lamda> | <variable> | <action>
-<opt>        ::=  "--" <optName> ("=" <literal> )?
+<opt>        ::=  "--" <optName> ("=" <literal> | <variable> )?
+
 <lamda>      ::=  "(" variable* ")" "=>" action
 <literal>    ::=  String | Number | Object | Array | Boolean | Symbol
-<variable>   ::= [$][a-zA-Z0-9]+ | <envvar>
-<envvar>     ::= [$$][a-zA-Z0-9]+
 
-<Symbol>     ::= [A-Z][a-zA-Z0-9.]*
+<variable>   ::=  [$][a-zA-Z0-9]+ | <envvar>
+<envvar>     ::=  [$$][0-9]+
+
+<symbol>     ::=  [A-Z][a-zA-Z0-9.]*
 <keyword>    ::=  [a-z][a-zA-Z0-9-]* 
-<optName>    ::= [a-z][a-zA-Z0-9-]*
+<optName>    ::=  [a-z][a-zA-Z0-9-]*
 ```
+
 
 Feature | Example | Detail
 --- | --- | ---
@@ -198,16 +201,17 @@ Expression ends with a newline.
 
 ## Keywords
 
-Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a `rps install <xxx>`, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the [documentation](http://docs.rpscript.com).
+Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a `rps install xxx`, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the [documentation](http://docs.rpscript.com).
 
 ## Lamda
 
-This is similar lamda function in functional programming. The syntax follows the javascript convention, except that must have the `$` sign.
+This is similar lamda function in functional programming. 
+The syntax follows the javascript convention, except that must have the `$` sign.
 <pre class="prettyprint lang-rps"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre>
 
 ## Literal
 
-Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.
+Currently supported literal are Number, Boolean, String, Template String, Object and Array. The syntax follows javascript convention.
 
 ```
 assign "array" [1,2,3]
@@ -215,6 +219,7 @@ assign "object" {a:1,b:2,c:3}
 assign "str" "Hello world"
 assign "num" 123
 assign "template" `Hello world`
+assign "truth" true
 ```
 
 ## Variable
@@ -256,7 +261,7 @@ log $$1
 ## Module
 
 Module is made up of keywords.
-When you install a module, you are basically adding more keywords to your dictionary.
+When you install a module, you are adding more keywords to your dictionary.
 
 To view the list of installed modules.
 ```

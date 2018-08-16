@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="An open source implementation for process automation. Also known as Robotic Process Automation (RPA). RPScript is a scripting language that eliminates tedious tasks.">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109872082-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -9,7 +10,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-109872082-2');
     </script>
-    <title>Tutorial: Usage | RPScript</title>
+    <title>Open Source Script For Process Automation | RPScript</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -160,18 +161,20 @@ log map add 2 [1,2,3]
 
 <p><code>add</code> will be evaluated to a function that takes another argument. It will be passed to <code>map</code> as the first param, and the array <code>[1,2,3]</code> is the second param. The output will be a mapped array that will be the input for <code>log</code>.</p>
 <h2>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
-&lt;action>     ::=  &lt;keyword> opt* param* | &quot;(&quot; &lt;keyword> opt* param* &quot;)&quot; 
 
+&lt;action>     ::=  &lt;keyword> opt* param* | &quot;(&quot; &lt;keyword> opt* param* &quot;)&quot; 
 &lt;param>      ::=  &lt;literal> | &lt;lamda> | &lt;variable> | &lt;action>
-&lt;opt>        ::=  &quot;--&quot; &lt;optName> (&quot;=&quot; &lt;literal> )?
+&lt;opt>        ::=  &quot;--&quot; &lt;optName> (&quot;=&quot; &lt;literal> | &lt;variable> )?
+
 &lt;lamda>      ::=  &quot;(&quot; variable* &quot;)&quot; &quot;=>&quot; action
 &lt;literal>    ::=  String | Number | Object | Array | Boolean | Symbol
-&lt;variable>   ::= [$][a-zA-Z0-9]+ | &lt;envvar>
-&lt;envvar>     ::= [$$][a-zA-Z0-9]+
 
-&lt;Symbol>     ::= [A-Z][a-zA-Z0-9.]*
+&lt;variable>   ::=  [$][a-zA-Z0-9]+ | &lt;envvar>
+&lt;envvar>     ::=  [$$][0-9]+
+
+&lt;symbol>     ::=  [A-Z][a-zA-Z0-9.]*
 &lt;keyword>    ::=  [a-z][a-zA-Z0-9-]* 
-&lt;optName>    ::= [a-z][a-zA-Z0-9-]*</code></pre><table>
+&lt;optName>    ::=  [a-z][a-zA-Z0-9-]*</code></pre><table>
 <thead>
 <tr>
 <th>Feature</th>
@@ -232,16 +235,17 @@ log map add 2 [1,2,3]
 
 
 <p>Expression ends with a newline.</p>
-<h2>Keywords</h2><p>Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a <code>rps install &lt;xxx&gt;</code>, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the <a href="http://docs.rpscript.com">documentation</a>.</p>
-<h2>Lamda</h2><p>This is similar lamda function in functional programming. The syntax follows the javascript convention, except that must have the <code>$</code> sign.</p>
+<h2>Keywords</h2><p>Keyword is the prefix of an action. It is equivalent to the operator of homoiconic languages. Keywords are managed by modules. When you perform a <code>rps install xxx</code>, you are installing a set of keywords to be used. For a list of available modules and keywords, check out the <a href="http://docs.rpscript.com">documentation</a>.</p>
+<h2>Lamda</h2><p>This is similar lamda function in functional programming.<br>The syntax follows the javascript convention, except that must have the <code>$</code> sign.</p>
 <pre class="prettyprint lang-rps"><code>for-each ($val)=> (log $val) [1,2,3,4,5]</code></pre>
 
-<h2>Literal</h2><p>Currently supported literal are Number, String, Template String, Object and Array. The syntax follows javascript convention.</p>
+<h2>Literal</h2><p>Currently supported literal are Number, Boolean, String, Template String, Object and Array. The syntax follows javascript convention.</p>
 <pre class="prettyprint source"><code>assign &quot;array&quot; [1,2,3]
 assign &quot;object&quot; {a:1,b:2,c:3}
 assign &quot;str&quot; &quot;Hello world&quot;
 assign &quot;num&quot; 123
-assign &quot;template&quot; `Hello world`</code></pre><h2>Variable</h2><p>There are 2 ways to assign a variable.</p>
+assign &quot;template&quot; `Hello world`
+assign &quot;truth&quot; true</code></pre><h2>Variable</h2><p>There are 2 ways to assign a variable.</p>
 <pre class="prettyprint source"><code>assign 'var1' 'hello'</code></pre><p>or </p>
 <pre class="prettyprint source"><code>log 'hello' | as 'var1'</code></pre><p>The 'assign' and 'as' keywords do the same thing, It takes the first value as the variable name, second as the variable value.</p>
 <p>To access the variable.</p>
@@ -250,7 +254,7 @@ assign &quot;template&quot; `Hello world`</code></pre><h2>Variable</h2><p>There 
 <pre class="prettyprint source"><code>rps script.rps &quot;variable1&quot; &quot;variable2&quot;</code></pre><p>Given the example, scrip.rps will interpret <code>$$0</code> as <code>variable1</code>, and <code>$$1</code> as <code>variable2</code>.</p>
 <p>You can test out with the expression below.</p>
 <pre class="prettyprint source"><code>log $$0
-log $$1</code></pre><h2>Module</h2><p>Module is made up of keywords.<br>When you install a module, you are basically adding more keywords to your dictionary.</p>
+log $$1</code></pre><h2>Module</h2><p>Module is made up of keywords.<br>When you install a module, you are adding more keywords to your dictionary.</p>
 <p>To view the list of installed modules.</p>
 <pre class="prettyprint source"><code>rps modules</code></pre><p>A full list of installed keys can be displayed with this command.</p>
 <pre class="prettyprint source"><code>rps actions</code></pre><p>You can also view the keywords related to a specific module.</p>
