@@ -75,29 +75,29 @@
     
         <article class="readme">
             <ol>
-<li><a href="#Feature">Key Feature</a></li>
-<li><a href="#Syntax">Syntax</a></li>
-<li><a href="#Actions">Actions</a></li>
-<li><a href="#Module">Module</a></li>
-<li><a href="#Expression">Expression</a></li>
-<li><a href="#Variable">Variable</a></li>
-<li><a href="#Literal">Literal</a></li>
-<li><a href="#Lamda">Lamda</a></li>
-<li><a href="#EnvVar">Environment Variable</a></li>
+<li><a href="#feature">Key Feature</a></li>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#actions">Actions</a></li>
+<li><a href="#expression">Expression</a></li>
+<li><a href="#variable">Variable</a></li>
+<li><a href="#literal">Literal</a></li>
+<li><a href="#lamda">Lamda</a></li>
+<li><a href="#envvar">Environment Variable</a></li>
+<li><a href="#module">Module</a></li>
 </ol>
-<h2>Feature</h2><p>Key features:</p>
+<h2><a name="feature"></a>Key Feature</h2><p>Key features:</p>
 <ul>
 <li><p>Action represents a user activity/process. It has a prefixed keyword, followed by options and parameters.</p>
 <pre class="prettyprint source"><code>log &quot;hello world&quot;</code></pre></li>
 <li><p>No module related statement. Rely on the command line to perform module management. There is no statement such as <code>import * from 'csv'</code> , <code>new CSV(params)</code>.<br>Install a module with this command:</p>
 <pre class="prettyprint source"><code>rps install csv</code></pre></li>
-<li>Module consists of a group of related keywords. Module installation adds those keywords into the framework.<br>To view the list of keywords of a module, run the command.<pre class="prettyprint nocode"><code>
+<li>Module consists of a group of related keywords. Module installation adds those keywords into the system.<br>To view the list of keywords of a module, run the command.<pre class="prettyprint nocode"><code>
 rps module &#x3C;moduleName&#x3E;
 </code></pre>
 
 </li>
 </ul>
-<h2>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
+<h2><a name="syntax"></a>Syntax</h2><pre class="prettyprint source"><code>&lt;expression> ::=  &lt;action> (&quot;|&quot; &lt;action>)? NL
 
 &lt;action>     ::=  &lt;keyword> opt* param* | &quot;(&quot; &lt;keyword> opt* param* &quot;)&quot; 
 &lt;param>      ::=  &lt;literal> | &lt;lamda> | &lt;variable> | &lt;action>
@@ -137,12 +137,12 @@ rps module &#x3C;moduleName&#x3E;
 <tr>
 <td><strong>Option</strong></td>
 <td>notify <code>--sound=true</code> &quot;title&quot; &quot;message&quot;</td>
-<td>optional field of the action.</td>
+<td>Optional attribute of the action.</td>
 </tr>
 <tr>
 <td><strong>Lamda</strong></td>
 <td>assign 'printout' <code>($val)=&gt; log val</code></td>
-<td>shorthand function declaration.</td>
+<td>Lamda declaration.</td>
 </tr>
 <tr>
 <td><strong>Literal</strong></td>
@@ -152,24 +152,26 @@ rps module &#x3C;moduleName&#x3E;
 <tr>
 <td><strong>Variable</strong></td>
 <td>for-each <code>$print $list</code></td>
-<td>variable is assignable using the <code>as</code> or <code>assign</code> keyword.</td>
+<td>Variable is assignable using the <code>as</code> or <code>assign</code> keyword.</td>
 </tr>
 <tr>
 <td><strong>EnvVar</strong></td>
 <td>log <code>$$0</code></td>
-<td>variable passed from the command line.</td>
+<td>Variable passed from the command line.</td>
 </tr>
 </tbody>
 </table>
-<h2>Actions</h2><p>Action is similar to function in functional programming.</p>
+<h2><a name="actions"></a>Actions</h2><p>Action is similar to function in functional programming.</p>
 <p>Every action comes with a mandatory <code>keyword</code> (operator) , <code>parameter</code> (operand) and  <code>option</code> (optional attributes).</p>
-<p>Example</p>
+<p>Example:</p>
 <pre class="prettyprint lang-rps"><code>log "Print to console"
 
 csv-to-data --columns=true "name,title,descript\n'nameA','titleB','descC'"
 </code></pre>
 
-<p><strong>Currying</strong><br>If the required number of parameters are not met, action will return a new function with the remaining parameters as the arguments.</p>
+<p>In line 1, <code>log</code> is the keyword. There is no option for <code>log</code>, and it has a parameter <code>&quot;Print to console&quot;</code>.</p>
+<p>In line 3, <code>csv-to-data</code> is the keyword. It has 1 option <code>columns</code>, and a <code>String</code> parameter.</p>
+<p><strong>Currying</strong><br>If the required number of parameters are not met, the action will return a new function with the remaining parameters as the arguments.</p>
 <p>Take the example:</p>
 <pre class="prettyprint lang-rps">
 <code>;function is assigned to logging since log requires an input
@@ -185,24 +187,38 @@ log type $result   ;output: String
 
 <p>Line 2 assigns the variable <code>logging</code> to the result of the action <code>log</code> with no parameter. Since <code>log</code> requires an input to display on the console, instead of evaluation, it returns a function that takes a single argument.</p>
 <p>Line 3 applies the <code>$logging</code> function with the string <code>Print</code>.</p>
-<p>The required parameters and options are documented in <a href="http://www.rpscript.com/Basic.html#.log">API documentation</a>.</p>
-<p>The signature of the action is explained in the form:</p>
+<p>When you visit the <code>log</code> <a href="http://www.rpscript.com/Basic.html#.log">API documentation</a>.<br>The signature of the action is explained in the form:</p>
 <pre class="prettyprint source"><code>log :: a → a</code></pre><p>The log keyword takes any type <code>a</code> as input, and output the same type.</p>
 <p>The signature style follows Ramda Type Signature. For further explanation, please check out <a href="https://github.com/ramda/ramda/wiki/Type-Signatures">Ramda Type Signature</a>. </p>
-<p><strong>Keywords</strong></p>
+<p><strong>Keywords/Parameters</strong></p>
 <p>A keyword is the prefix/operator of an action.</p>
-<p>Keywords are managed by modules. When you run <code>rps install csv</code>, keywords related to the module <code>csv</code> are added to the framework.</p>
-<p>For a list of available modules and keywords, check out the <a href="http://www.rpscript.com">documentation</a>.</p>
-<p><strong>Parameters</strong></p>
-<p>Parameters are the required arguments for a particular action.</p>
-<p>Check out the <a href="http://www.rpscript.com">documentation</a> for the keywords provided by different modules.</p>
+<p>Keywords are managed by modules. When you run <code>rps install beeper</code>, keywords related to the module <code>beeper</code> are added to your system.</p>
+<p>The <a href="http://www.rpscript.com/Beeper.html#.beep">API documentation</a> for beeper explains the usage of the keyword with the signature below.</p>
+<pre class="prettyprint source"><code>beep :: String|Number → void</code></pre><p>The signature says that the keyword beep takes a string or number as an argument, and return nothing. The usage below are valid.</p>
+<pre class="prettyprint lang-rps"><code>beep 3
+beep "**-**"
+</code></pre>
+
+<p>Let's take <a href="http://www.rpscript.com/Figlet.html#.figlet">figlet</a> as the second example with 2 parameters.</p>
+<pre class="prettyprint source"><code>figlet :: String → String → String</code></pre><p>The signature says that the <code>figlet</code> keyword takes a <code>String</code>, convert it to a function that takes another <code>String</code>, and return the result as a <code>String</code>.</p>
+<p>These usages are all valid.</p>
+<pre class="prettyprint lang-rps"><code>figlet "Ghost" "Spooky"
+
+;passing 1 parameter will result in a function that takes the second input
+figlet "Ghost" | as "figletGhost"
+call $figletGhost "Spooky"
+</code></pre>
+
 <p><strong>Options</strong></p>
 <p>Option is the optional attributes of an action. It is not curried and has a different syntax from parameter.</p>
 <pre class="prettyprint source"><code>&lt;option> :: &quot;--&quot; &lt;optionName> &quot;=&quot; &lt;optionValue></code></pre><p>It is specified after keyword and before parameter with the structure <code>--&lt;optionName&gt;=&lt;optionValue&gt;</code>.</p>
-<pre class="prettyprint source"><code>csv-to-data --columns=true &quot;&lt;data>&quot;</code></pre><p><code>csv-to-data</code> is a keyword from the csv module. It is a wrapper for the node.js module <a href="http://csv.adaltas.com/">CSV</a>.</p>
+<pre class="prettyprint lang-rps"><code>csv-to-data --columns=true "name,title,descript\n'nameA','titleB','descC'"
+</code></pre>
+
+<p><code>csv-to-data</code> is a keyword from the csv module. It is a wrapper for the node.js module <a href="http://csv.adaltas.com/">CSV</a>.</p>
 <p>The keyword <a href="http://www.rpscript.com/CSV.html#.csv-to-data">csv-to-data</a> takes a csv string content and converts it to a manipulable data structure. </p>
-<p>From the example above, <code>columns</code> is an optional field that assumes the first line to be the header by setting it to true.</p>
-<p>If this option is excluded, it will default to null. as per <a href="http://csv.adaltas.com/parse/">CSV Documentation</a>.</p>
+<p>From the example above, <code>columns</code> is an optional attribute that assumes the first line to be the header by setting it to true.</p>
+<p>If this option is excluded, it will default to null according to <a href="http://csv.adaltas.com/parse/">CSV Documentation</a>.</p>
 <p><strong>Evaluation</strong>  </p>
 <p>Take the expression.</p>
 <pre class="prettyprint source"><code>log &quot;hello&quot;</code></pre><p>The expression is interpreted as a keyword, followed by a single parameter.</p>
@@ -235,7 +251,7 @@ log map add 2 [1,2,3]
 <p>In this scenario, <code>add 2</code> is evaluated to return a function that takes the second argument. </p>
 <p><code>map</code> is now provided with two arguments. The return function of <code>add 2</code> as the first, and the array <code>[1,2,3]</code> as the second.</p>
 <p>Now the <code>map</code> action has both required parameters for evaluation.</p>
-<h2>Expression</h2><p>An expression consists of a single action and an optional piped action.</p>
+<h2><a name="expression"></a>Expression</h2><p>An expression consists of a single action and an optional piped action.</p>
 <p>Example, assignment can be written as:</p>
 <pre class="prettyprint lang-rps"><code>identity 10 | as 'val'</code></pre>
 
@@ -244,16 +260,16 @@ log map add 2 [1,2,3]
 
 <p>By placing the assignment on the right and keeping the executing process on the left, the <code>identity</code> action is brought into focus reading from left to right.</p>
 <p>Expression ends with a newline.</p>
-<h2>Lamda</h2><p>Lamda is similar to anonymous function is functional programming. The syntax is almost similar to javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow Functions</a> except that all variable must have <code>$</code> sign and no curly bracket is allowed.</p>
+<h2><a name="lamda"></a>Lamda</h2><p>Lamda is similar to anonymous function is functional programming. The syntax is almost similar to javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow Functions</a> except that all variable must have <code>$</code> sign and no curly bracket is allowed.</p>
 <pre class="prettyprint lang-rps"><code>for-each ($val)=>(log $val) [1,2,3,4,5]</code></pre>
 
-<h2>Literal</h2><p>Currently supported literal are Number, Boolean, String, Template String, Object, and Array. The syntax follows javascript convention.</p>
+<h2><a name="literal"></a>Literal</h2><p>Currently supported literal are Number, Boolean, String, Template String, Object, and Array. The syntax follows javascript convention.</p>
 <pre class="prettyprint source"><code>assign &quot;array&quot; [1,2,3]
 assign &quot;object&quot; {a:1,b:2,c:3}
 assign &quot;str&quot; &quot;Hello world&quot;
 assign &quot;num&quot; 123
 assign &quot;template&quot; `Hello world`
-assign &quot;truth&quot; true</code></pre><h2>Variable</h2><p>Under the basic module, there are 2 keywords can be used for variable assignment.</p>
+assign &quot;truth&quot; true</code></pre><h2><a name="variable"></a>Variable</h2><p>Under the basic module, there are 2 keywords can be used for variable assignment.</p>
 <pre class="prettyprint source"><code>assign 'var1' 'hello'</code></pre><p>or </p>
 <pre class="prettyprint lang-rps"><code>
 log 'hello' | as 'var1'
@@ -262,18 +278,18 @@ as 'var1' log 'hello'
 </code></pre>
 
 <p>The 'assign' and 'as' keywords do the same thing, it takes the first value as the variable name, second as the variable value.</p>
-<p>The choice of which keywords and what style to use is just a matter of preference.</p>
+<p>The choice of which keywords and style to use is a matter of preference.</p>
 <p>To access the variable, prefix a <code>$</code> sign.</p>
-<pre class="prettyprint source"><code>log $var1</code></pre><h2>EnvVar</h2><p>Arguments can be passed from the command line before execution.</p>
+<pre class="prettyprint source"><code>log $var1</code></pre><h2><a name="envvar"></a>EnvVar</h2><p>Arguments can be passed from the command line before execution.</p>
 <p>The argument is represented with a <code>$$</code> followed by digit starting from <code>0</code>.</p>
 <p>To pass the argument from the command line.</p>
 <pre class="prettyprint source"><code>rps script.rps &quot;variable1&quot; &quot;variable2&quot;</code></pre><p>Given the example, script.rps will interpret <code>$$0</code> as <code>variable1</code>, and <code>$$1</code> as <code>variable2</code>.</p>
 <p>The expressions below will print &quot;variable1&quot; and &quot;variable2&quot;</p>
 <pre class="prettyprint source"><code>log $$0
-log $$1</code></pre><h2>Module</h2><p>A module is made up of a group of related keywords.<br>When you install a module, you are adding those keywords to your application.</p>
+log $$1</code></pre><h2><a name="module"></a>Module</h2><p>A module is made up of a group of related keywords. When you install a module, you are adding those keywords to your system.</p>
 <p>To view the list of installed modules.</p>
-<pre class="prettyprint source"><code>rps modules</code></pre><p>A full list of installed keywords will be shown with this command.</p>
-<pre class="prettyprint source"><code>rps actions</code></pre><p>You can also view the keywords related to a specific module.</p>
+<pre class="prettyprint source"><code>rps modules</code></pre><p>To view all installed keywords in your system.</p>
+<pre class="prettyprint source"><code>rps actions</code></pre><p>To view the keywords for a specific module.</p>
 <pre class="prettyprint source"><code>rps module csv</code></pre><p>To add a module.</p>
 <pre class="prettyprint source"><code>rps install csv        ;latest version
 rps install csv@0.1.2  ;specific version</code></pre><p>To remove a module.</p>

@@ -1,16 +1,16 @@
-1. [Key Feature](#Feature)
-2. [Syntax](#Syntax)
-3. [Actions](#Actions)
-4. [Module](#Module)
-5. [Expression](#Expression)
-6. [Variable](#Variable)
-7. [Literal](#Literal)
-8. [Lamda](#Lamda)
-9. [Environment Variable](#EnvVar)
+1. [Key Feature](#feature)
+2. [Syntax](#syntax)
+3. [Actions](#actions)
+4. [Expression](#expression)
+5. [Variable](#variable)
+6. [Literal](#literal)
+7. [Lamda](#lamda)
+8. [Environment Variable](#envvar)
+9. [Module](#module)
 
 
 
-## Feature
+## <a name="feature"></a>Key Feature
 Key features:
 
 * Action represents a user activity/process. It has a prefixed keyword, followed by options and parameters.
@@ -23,13 +23,13 @@ Install a module with this command:
 ````
 rps install csv
 ````
-* Module consists of a group of related keywords. Module installation adds those keywords into the framework.  
+* Module consists of a group of related keywords. Module installation adds those keywords into the system.  
 To view the list of keywords of a module, run the command.
 <pre class="prettyprint nocode"><code>
 rps module &#x3C;moduleName&#x3E;
 </code></pre>
 
-## Syntax
+## <a name="syntax"></a>Syntax
 ```
 <expression> ::=  <action> ("|" <action>)? NL
 
@@ -53,27 +53,31 @@ Feature | Example | Detail
 **Action** | `log "hello"` | User action.
 **Keyword** | `log` "hello" | Operator of the action.
 **Param** | log `"hello"` | Operand of the action.
-**Option** | notify `--sound=true` "title" "message"  | optional field of the action.
-**Lamda** | assign 'printout' `($val)=> log val` | shorthand function declaration.
+**Option** | notify `--sound=true` "title" "message"  | Optional attribute of the action.
+**Lamda** | assign 'printout' `($val)=> log val` | Lamda declaration.
 **Literal** | log `"hello"` | 
-**Variable** | for-each `$print $list` | variable is assignable using the `as` or `assign` keyword.
-**EnvVar** | log `$$0` | variable passed from the command line.
+**Variable** | for-each `$print $list` | Variable is assignable using the `as` or `assign` keyword.
+**EnvVar** | log `$$0` | Variable passed from the command line.
 
 
-## Actions
+## <a name="actions"></a>Actions
 
 Action is similar to function in functional programming.
 
 Every action comes with a mandatory ```keyword``` (operator) , ```parameter``` (operand) and  ```option``` (optional attributes).
 
-Example
+Example:
 <pre class="prettyprint lang-rps"><code>log "Print to console"
 
 csv-to-data --columns=true "name,title,descript\n'nameA','titleB','descC'"
 </code></pre>
 
+In line 1, `log` is the keyword. There is no option for `log`, and it has a parameter `"Print to console"`.
+
+In line 3, `csv-to-data` is the keyword. It has 1 option `columns`, and a `String` parameter.
+
 **Currying**  
-If the required number of parameters are not met, action will return a new function with the remaining parameters as the arguments.
+If the required number of parameters are not met, the action will return a new function with the remaining parameters as the arguments.
 
 Take the example:
 <pre class="prettyprint lang-rps">
@@ -92,9 +96,7 @@ Line 2 assigns the variable `logging` to the result of the action `log` with no 
 
 Line 3 applies the `$logging` function with the string `Print`.
 
-
-The required parameters and options are documented in [API documentation](http://www.rpscript.com/Basic.html#.log).
-
+When you visit the `log` [API documentation](http://www.rpscript.com/Basic.html#.log).
 The signature of the action is explained in the form:
 ```
 log :: a → a
@@ -104,19 +106,35 @@ The log keyword takes any type `a` as input, and output the same type.
 The signature style follows Ramda Type Signature. For further explanation, please check out [Ramda Type Signature](https://github.com/ramda/ramda/wiki/Type-Signatures). 
 
 
-**Keywords**
+**Keywords/Parameters**
 
 A keyword is the prefix/operator of an action.
 
-Keywords are managed by modules. When you run `rps install csv`, keywords related to the module `csv` are added to the framework.
+Keywords are managed by modules. When you run `rps install beeper`, keywords related to the module `beeper` are added to your system.
 
-For a list of available modules and keywords, check out the [documentation](http://www.rpscript.com).
+The [API documentation](http://www.rpscript.com/Beeper.html#.beep) for beeper explains the usage of the keyword with the signature below.
+```
+beep :: String|Number → void
+```
+The signature says that the keyword beep takes a string or number as an argument, and return nothing. The usage below are valid.
 
-**Parameters**
+<pre class="prettyprint lang-rps"><code>beep 3
+beep "**-**"
+</code></pre>
 
-Parameters are the required arguments for a particular action.
+Let's take [figlet](http://www.rpscript.com/Figlet.html#.figlet) as the second example with 2 parameters.
+```
+figlet :: String → String → String
+```
+The signature says that the `figlet` keyword takes a `String`, convert it to a function that takes another `String`, and return the result as a `String`.
 
-Check out the [documentation](http://www.rpscript.com) for the keywords provided by different modules.
+These usages are all valid.
+<pre class="prettyprint lang-rps"><code>figlet "Ghost" "Spooky"
+
+;passing 1 parameter will result in a function that takes the second input
+figlet "Ghost" | as "figletGhost"
+call $figletGhost "Spooky"
+</code></pre>
 
 **Options**
 
@@ -127,17 +145,16 @@ Option is the optional attributes of an action. It is not curried and has a diff
 ```
 
 It is specified after keyword and before parameter with the structure `--<optionName>=<optionValue>`.
-```
-csv-to-data --columns=true "<data>"
-```
+<pre class="prettyprint lang-rps"><code>csv-to-data --columns=true "name,title,descript\n'nameA','titleB','descC'"
+</code></pre>
 
 `csv-to-data` is a keyword from the csv module. It is a wrapper for the node.js module [CSV](http://csv.adaltas.com/).
 
 The keyword [csv-to-data](http://www.rpscript.com/CSV.html#.csv-to-data) takes a csv string content and converts it to a manipulable data structure. 
 
-From the example above, `columns` is an optional field that assumes the first line to be the header by setting it to true.
+From the example above, `columns` is an optional attribute that assumes the first line to be the header by setting it to true.
 
-If this option is excluded, it will default to null. as per [CSV Documentation](http://csv.adaltas.com/parse/).
+If this option is excluded, it will default to null according to [CSV Documentation](http://csv.adaltas.com/parse/).
 
 **Evaluation**  
 
@@ -198,7 +215,7 @@ In this scenario, `add 2` is evaluated to return a function that takes the secon
 Now the `map` action has both required parameters for evaluation.
 
 
-## Expression
+## <a name="expression"></a>Expression
 
 An expression consists of a single action and an optional piped action.
 
@@ -215,14 +232,14 @@ By placing the assignment on the right and keeping the executing process on the 
 Expression ends with a newline.
 
 
-## Lamda
+## <a name="lamda"></a>Lamda
 
 Lamda is similar to anonymous function is functional programming. The syntax is almost similar to javascript [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) except that all variable must have `$` sign and no curly bracket is allowed.
 
 
 <pre class="prettyprint lang-rps"><code>for-each ($val)=>(log $val) [1,2,3,4,5]</code></pre>
 
-## Literal
+## <a name="literal"></a>Literal
 
 Currently supported literal are Number, Boolean, String, Template String, Object, and Array. The syntax follows javascript convention.
 
@@ -235,7 +252,7 @@ assign "template" `Hello world`
 assign "truth" true
 ```
 
-## Variable
+## <a name="variable"></a>Variable
 
 Under the basic module, there are 2 keywords can be used for variable assignment.
 ```
@@ -250,14 +267,14 @@ as 'var1' log 'hello'
 
 The 'assign' and 'as' keywords do the same thing, it takes the first value as the variable name, second as the variable value.
 
-The choice of which keywords and what style to use is just a matter of preference.
+The choice of which keywords and style to use is a matter of preference.
 
 To access the variable, prefix a `$` sign.
 ```
 log $var1
 ```
 
-## EnvVar
+## <a name="envvar"></a>EnvVar
 
 Arguments can be passed from the command line before execution.
 
@@ -276,22 +293,21 @@ log $$1
 ```
 
 
-## Module
+## <a name="module"></a>Module
 
-A module is made up of a group of related keywords.
-When you install a module, you are adding those keywords to your application.
+A module is made up of a group of related keywords. When you install a module, you are adding those keywords to your system.
 
 To view the list of installed modules.
 ```
 rps modules
 ```
 
-A full list of installed keywords will be shown with this command.
+To view all installed keywords in your system.
 ```
 rps actions
 ```
 
-You can also view the keywords related to a specific module.
+To view the keywords for a specific module.
 ```
 rps module csv
 ```

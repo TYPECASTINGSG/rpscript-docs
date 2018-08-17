@@ -108,59 +108,53 @@
     help [cmd]         display help for [cmd]
 </code></pre>
 
-<h2>Module installation</h2><p>Actions (similar to expression) is the heart of RPScript. When you install a module, you are actually installing a set of actions that model certain process.</p>
+<h2>Module installation</h2><p>Actions (similar to expression) is the heart of RPScript. When you install a module, you are actually installing a set of actions that model a user process.</p>
 <p>To get started, install the module <a href="file:///home/jameschong/projects/rpscript-site/docs/Basic.html">basic</a>.</p>
-<pre class="prettyprint"><code class="nocode">
-rps install basic
+<pre class="prettyprint"><code class="nocode">rps install basic
 </code></pre>
 This module provides some basic operations and data manipulation.
 You can verify with the command when it is done.
-<pre class="prettyprint"><code class="nocode">
-rps module basic
+
+<pre class="prettyprint"><code class="nocode">rps module basic
 </code></pre>
 
 <h2>Writing your first hello world</h2><p>Let's create our first script. Create a text file 'hello.rps' and copy the code below to your favourite text editor.</p>
-<pre class="prettyprint lang-rps"><code>
-;print 'hello rpscript'
+<pre class="prettyprint lang-rps"><code>;print 'hello'
 log "hello"
 </code></pre>
 
 <p>You should be seeing a standard &quot;hello&quot; message on the terminal.</p>
 <p>To print out 3 times.</p>
-<pre class="prettyprint lang-rps"><code>
-log repeat "hello" 3
+<pre class="prettyprint lang-rps"><code>log repeat "hello" 3
 </code></pre>
 
-<p><code>log</code> and <code>repeat</code> are keywords that comes with the installed basic module.</p>
-<p>To find out more on the available keywords, refer to the <a href="http://doc.rpscript.com/api">documentation</a>.</p>
+<p><code>log</code> and <code>repeat</code> are keywords from the installed <code>basic</code> module.</p>
+<p>There are currently 11 available modules that you can install and use immediately. More modules will be available in the future. For the full list of modules, refer to the API documentation.</p>
 <h2>Fancy Ascii Art</h2><p>Now, let's get fancier by adding some ascii art.</p>
-<p>Let's install the <a href="http://doc.rpscript.com/doc/figlet">figlet</a></p>
-<pre class="prettyprint"><code class="lang-rps">
-rps install figlet
+<p>Let's install the <a href="http://doc.rpscript.com/doc/figlet">figlet</a> module.</p>
+<pre class="prettyprint"><code class="lang-rps">rps install figlet
 rps module figlet
 
 ;name : figlet
 ;version : xxx
 ;actions : figlet
 </code></pre>
-Now, change your script to.
-<pre class="prettyprint lang-rps"><code>
-log figlet "Ghost" "Casper"
+Now, change your script to and run `rps hello.rps`
+<pre class="prettyprint lang-rps"><code>log figlet "Ghost" "Casper"
 </code></pre>
 
-<h2>Compose actions</h2><p>RPScript is a functional language. Which explains why ramda is part of the <code>basic</code> module. For now, I assume you have basic foundation on ramda. I highly recommend to read the tutorial series <a href="http://randycoulman.com/blog/categories/thinking-in-ramda/">Thinking in Ramda</a>.</p>
-<p>Let's start with an example that prints out prints out a word every one second.</p>
-<pre class="prettyprint lang-rps"><code>
-assign "val" split " " "RPScript is really awesome . . ."
+<h2>Compose actions</h2><p>RPScript is a functional language, which explains why ramda is part of the <code>basic</code> module. For now, I assume you have basic foundation on ramda. I highly recommend to read the tutorial series <a href="http://randycoulman.com/blog/categories/thinking-in-ramda/">Thinking in Ramda</a>.</p>
+<p>Let's start with an example that prints a word every one second.</p>
+<pre class="prettyprint lang-rps"><code>assign "val" split " " "RPScript is really awesome . . ."
 for-each (compose (wait 1) (log) (figlet "Ghost")) $val
 </code></pre>
 
 <p>What does it mean?</p>
-<p><strong>Line one</strong> assigns a variable name val, and save the result of the action <code>split &quot; &quot; &quot;RPScript is really awesome . . .&quot;</code><br>The action <a href="http://docs.rpscript.com/Basic.html#.split">split</a> takes a string and split into an array of strings with whitespace as the delimiter.</p>
-<p><strong>Line two</strong> takes all items from the list, and perform the composition of 3 actions evaluated from right to left.<br>What it says is <a href="http://docs.rpscript.com/Basic.html#.for-each">for each</a> item in the list, convert with <a href="http://docs.rpscript.com/Figlet.html#.figlet">figlet</a>, then <a href="http://docs.rpscript.com/Basic.html#.log">print</a> to the terminal, then <a href="http://docs.rpscript.com/Basic.html#.wait">wait</a> 1 second.</p>
-<p>If the order bothers you, you can switch the order by using pipe instead. </p>
-<pre class="prettyprint lang-rps"><code>
-assign "val" split " " "RPScript is really awesome . . ."
+<p><strong>Line 1</strong> assigns a variable name val, and save the result of the action <code>split &quot; &quot; &quot;RPScript is really awesome . . .&quot;</code><br>The action <a href="http://docs.rpscript.com/Basic.html#.split">split</a> takes a string and split into an array of strings with whitespace as the delimiter.</p>
+<p><strong>Line 2</strong> takes all items from the list, and perform the composition of 3 actions evaluated from right to left.</p>
+<p><a href="http://docs.rpscript.com/Basic.html#.for-each">for each</a> item in the list, convert with <a href="http://docs.rpscript.com/Figlet.html#.figlet">figlet</a>, then <a href="http://docs.rpscript.com/Basic.html#.log">print</a> to the terminal, then <a href="http://docs.rpscript.com/Basic.html#.wait">wait</a> 1 second.</p>
+<p>If the order bothers you, you can switch by using pipe instead. </p>
+<pre class="prettyprint lang-rps"><code>assign "val" split " " "RPScript is really awesome . . ."
 assign "slowFiglet" pipe (figlet "Ghost") (log) (wait 1)
 
 for-each $slowFiglet $val
