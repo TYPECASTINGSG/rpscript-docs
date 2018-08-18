@@ -7,7 +7,7 @@
 # cd ../rpscript-api-file && npm run build
 # cd ../rpscript-api-hogan && npm run build #COMPLETED
 # cd ../rpscript-api-date-fp && npm run build
-# cd ../rpscript-api-adm-zip && npm run build #stable:MED
+cd ../rpscript-api-adm-zip && npm run build #stable:MED
 # cd ../rpscript-api-notifier && npm run build #COMPLETED
 
 # cd ../rpscript-api-columnify && npm run build  #stable:HIGH

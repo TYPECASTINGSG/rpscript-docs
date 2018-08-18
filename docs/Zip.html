@@ -82,7 +82,7 @@
         <div class="container-overview">
         
             
-                <div class="description"><p>Zipping and extracting files</p></div>
+                <div class="description"><p>Compression and extracting module.</p></div>
             
 
             
@@ -116,13 +116,6 @@
 
     
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://www.npmjs.com/package/adm-zip">Zip</a></li>
-        </ul>
-    </dd>
     
 
     
@@ -167,12 +160,12 @@
             
 
             
-                <!--<span class="type-signature"></span>compress<span class="signature"> zipFile entries</span><span class="type-signature"></span>-->
+                <!--<span class="type-signature"></span>compress<span class="signature"> zipFile entries</span><span class="type-signature"> &rarr; {String}</span>-->
                 
             
             <!--<div class="container-source members">
                 <code><a href="rpscript-api-adm-zip_build_index.js.html">rpscript-api-adm-zip/build/index.js</a></code>,
-                <code><a href="rpscript-api-adm-zip_build_index.js.html#line33">line 33</a></code>
+                <code><a href="rpscript-api-adm-zip_build_index.js.html#line32">line 32</a></code>
             </div>-->
             
         </h4>
@@ -221,7 +214,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -231,7 +224,7 @@
 
             
 
-            <td class="description last"><p>name of the zip file</p></td>
+            <td class="description last"><p>name of the zip file.</p></td>
         </tr>
 
     
@@ -254,7 +247,7 @@
 
             
 
-            <td class="description last"><p>the list of files or folders to be zipped</p></td>
+            <td class="description last"><p>the list of files or folders to be zipped.</p></td>
         </tr>
 
     
@@ -274,6 +267,27 @@
 
     
 
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>zip file name.</p>
+
+
+
+
+            
+    </div>
     
 
     
@@ -316,7 +330,7 @@
     
         <h5>Example</h5>
         
-    <pre class="prettyprint lang-rps"><code>;Write to a file call back.zip, compress temp folder and readme.md file
+    <pre class="prettyprint lang-rps"><code>;Create to a file call back.zip, compress temp folder and readme.md file
 compress "backup.zip" "./temp/" "./readme.md"</code></pre>
 
     
@@ -334,7 +348,7 @@ compress "backup.zip" "./temp/" "./readme.md"</code></pre>
             
 
             
-                <!--<span class="type-signature"></span>extract<span class="signature"> zipFile extractTo</span><span class="type-signature"></span>-->
+                <!--<span class="type-signature"></span>extract<span class="signature"> zipFile extractTo</span><span class="type-signature"> &rarr; {String}</span>-->
                 
             
             <!--<div class="container-source members">
@@ -388,7 +402,7 @@ compress "backup.zip" "./temp/" "./readme.md"</code></pre>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -411,7 +425,7 @@ compress "backup.zip" "./temp/" "./readme.md"</code></pre>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
             
@@ -441,6 +455,27 @@ compress "backup.zip" "./temp/" "./readme.md"</code></pre>
 
     
 
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>extracted directory name.</p>
+
+
+
+
+            
+    </div>
     
 
     
