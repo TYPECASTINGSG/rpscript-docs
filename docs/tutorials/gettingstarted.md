@@ -58,15 +58,20 @@ You can verify with the command when it is done.
 
 ## Writing your first hello world
 
-Let's create our first script. Create a text file 'hello.rps' and copy the code below to your favourite text editor.
+Let's create our first script. Create a text file 'hello.rps' and copy and paste the code below to your favourite text editor.
 
 <pre class="prettyprint lang-rps"><code>;print 'hello'
 log "hello"
 </code></pre>
 
-You should be seeing a standard "hello" message on the terminal.
+Go to the terminal, and run the command:
+```
+rps hello.rps
+```
 
-To print out 3 times.
+You should see a standard "hello" message on the terminal.
+
+To print out 3 times, replace line with the expression below and run the command again.
 <pre class="prettyprint lang-rps"><code>log repeat "hello" 3
 </code></pre>
 
