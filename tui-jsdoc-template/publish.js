@@ -386,8 +386,9 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
         items.forEach(function(item) {
             var linkHtml;
 
-            if ( !hasOwnProp.call(item, 'longname') ) {
-                itemsNav += '<li>' + linktoFn('', item.name) + buildSubNav(item) + '</li>';
+            if(item.title === '<hide>'){}
+            else if ( !hasOwnProp.call(item, 'longname') ) {
+                itemsNav += '<li> ' + linktoFn('', item.name) + buildSubNav(item) + '</li>';
             }
             else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
                 var displayName;
