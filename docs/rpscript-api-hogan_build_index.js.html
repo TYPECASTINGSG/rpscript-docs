@@ -91,7 +91,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 let Hogan = require('hogan.js');
 const rpscript_interface_1 = require("rpscript-interface");
 /** Module for moustache templating
- * @see {@link http://twitter.github.io/hogan.js/|Hogan}
+ * @see {@link http://twitter.github.io/hogan.js/}
  * @namespace Hogan
  * @example
  * rps install hogan
@@ -101,7 +101,7 @@ let RPSHogan = class RPSHogan {
    * @function hogan
    * @memberof Hogan
    * @example
-   * hogan-compile 'template-content' {a:1,b:2}
+   * hogan 'Follow @{{screenName}}' {screenName:'therpscript'}
    *
    * @param {String} template template content.
    * @param {Object} context context to be passed into the template.

@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_notifier_1 = __importDefault(require("node-notifier"));
 const rpscript_interface_1 = require("rpscript-interface");
 /** Module for Node Notifier
- * @see https://www.npmjs.com/package/node-notifier {@link https://www.npmjs.com/package/node-notifier|Notifier}
+ * @see {@link https://www.npmjs.com/package/node-notifier}
  * @namespace Notifier
  *
  * @example
@@ -119,7 +119,6 @@ let RPSNotifier = class RPSNotifier {
   */
     notify(ctx, opts, ...params) {
         return __awaiter(this, void 0, void 0, function* () {
-            // title?:string, message?:string
             let fn = rpscript_interface_1.R.curry(function noti(title, message) {
                 if (title)
                     opts['title'] = title;

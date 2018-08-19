@@ -125,13 +125,12 @@ let RpsFile = class RpsFile {
      * @param {string} content The content to append to
      * @return {void}
      *
-     * @summary read-file :: String → String → void
+     * @summary append-to-file :: String → String → void
      *
     */
     append(ctx, opts, ...params) {
         return __awaiter(this, void 0, void 0, function* () {
             var that = this;
-            // filepath?:string, content?:any
             let fn = rpscript_interface_1.R.curry(function (filepath, content) {
                 content = that.parseWriteContent(content);
                 fs_1.default.appendFileSync(filepath, content, 'utf8');
@@ -143,7 +142,7 @@ let RpsFile = class RpsFile {
    * @function write-file
    * @memberof File
    * @param {string} filepath path to be read from
-   * @param {string} content The content to append to
+   * @param {string} content The content to write
    * @return {void}
    *
    * @summary write-file :: String → String → void
@@ -186,10 +185,10 @@ let RpsFile = class RpsFile {
    * @example
    * write-file 'file.txt' ''
    * ;Print out true
-   * console-log file-exists 'file.txt'
+   * log file-exists 'file.txt'
    * delete-file 'file.txt'
    * ;Print out false
-   * console-log file-exists 'file.txt'
+   * log file-exists 'file.txt'
    *
    * @summary file-exists :: String → Boolean
    *
@@ -215,7 +214,7 @@ let RpsFile = class RpsFile {
      * rename-file 'file.txt' 'name.txt'
      * log file-exists 'name.txt'
      *
-     * @summary delete-file :: String → String → void
+     * @summary rename-file :: String → String → void
      *
      *
     */
@@ -237,7 +236,7 @@ let RpsFile = class RpsFile {
      *
      * @example
      * file-stat 'file.txt'
-     * console-log $RESULT
+     * log $RESULT
      *
      * @summary file-stat :: String → fs.Stats
      *
