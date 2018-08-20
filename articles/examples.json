@@ -16,5 +16,8 @@
     },
     "compression": {
         "title":"<hide>"
+    },
+    "table": {
+        "title":"<hide>"
     }
 }
