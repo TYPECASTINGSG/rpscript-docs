@@ -69,12 +69,49 @@
     <header>
         
 
-        <h2>Examples</h2>
+        <h2><hide></h2>
     </header>
 
     
         <article class="readme">
-            <ul class="list-group"><br>    <li class="list-group-item"><h3><a href="./tutorial-helloworld.html">Hello world</a></h3><p>Print hello world 3 times on the terminal.</p></li><br>    <li class="list-group-item"><h3><a href="./tutorial-asciiart.html">Ascii Art with Figlet</a></h3><p>Display pretty ascii in style.</p></li><br></ul>
+            <h1>Ascii Art with Figlet</h1><p>Various ways to display Pretty Ascii art.</p>
+<h2><strong>Source</strong></h2><p><strong>simple_figlet.rps</strong></p>
+<script src="https://gist.github.com/wei3hua2/4228c5e5c70826779f7f1da866749d56.js?file=simple_figlet.rps"></script>
+
+<p>running the command <code>rps simple_figlet.rps</code> will print the text 'casper' with the font below.</p>
+<pre class="prettyprint source"><code>             ('-.      .-')     _ (`-.    ('-.  _  .-')   
+            ( OO ).-. ( OO ).  ( (OO  ) _(  OO)( \( -O )  
+   .-----.  / . --. /(_)---\_)_.`     \(,------.,------.  
+  '  .--./  | \-.  \ /    _ |(__...--'' |  .---'|   /`. ' 
+  |  |('-..-'-'  |  |\  :` `. |  /  | | |  |    |  /  | | 
+ /_) |OO  )\| |_.'  | '..`''.)|  |_.' |(|  '--. |  |_.' | 
+ ||  |`-'|  |  .-.  |.-._)   \|  .___.' |  .--' |  .  '.' 
+(_'  '--'\  |  | |  |\       /|  |      |  `---.|  |\  \  
+   `-----'  `--' `--' `-----' `--'      `------'`--' '--' </code></pre><p>module used :<br><span class="badge">basic</span> <span class="badge">figlet</span></p>
+<hr>
+<hr>
+<p><strong>sentence_figlet.rps</strong></p>
+<script src="https://gist.github.com/wei3hua2/4228c5e5c70826779f7f1da866749d56.js?file=sentence_figlet.rps"></script>
+
+<p>Break the sentence by whitespace and display each section every 1 second.</p>
+<p>module used :<br><span class="badge">basic</span> <span class="badge">figlet</span></p>
+<hr>
+<hr>
+<p><strong>write_all_fonts.rps</strong></p>
+<script src="https://gist.github.com/wei3hua2/4228c5e5c70826779f7f1da866749d56.js?file=write_all_fonts.rps"></script>
+
+<p>Download the font list, convert the text &quot;rp script&quot; for each font, and save it to the file &quot;result_fonts.txt&quot;.</p>
+<p>module used :<br><span class="badge">basic</span> <span class="badge">figlet</span> <span class="badge">downloading</span> <span class="badge">open</span> <span class="badge">file</span></p>
+<hr>
+<hr>
+<p><strong>print_all_fonts.rps</strong></p>
+<script src="https://gist.github.com/wei3hua2/4228c5e5c70826779f7f1da866749d56.js?file=print_all_fonts.rps"></script>
+
+<p>Print the text 'rp script' on the terminal font by font.</p>
+<p>module used :<br><span class="badge">basic</span> <span class="badge">figlet</span> <span class="badge">downloading</span> <span class="badge">file</span></p>
+<h3><strong>Docker</strong></h3><p><a href="https://gist.githubusercontent.com/wei3hua2/4228c5e5c70826779f7f1da866749d56/raw/b3d93df830908c0deefc74c9b73a429c64a379d1/Dockerfile">source</a></p>
+<pre class="prettyprint source"><code>docker run typecasting/rpscript-example-printfiglets</code></pre><hr>
+<hr>
         </article>
     
 </section>
