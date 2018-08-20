@@ -5,10 +5,10 @@
     "usage": {
         "title":"Usage"
     },
-    "examplegovdata": {
-        "title":"Example: Data Processing"
+    "examples": {
+        "title":"Examples"
     },
-    "examplefiglet": {
-        "title":"Example: Fanciful Ascii Art"
+    "helloworld": {
+        "title":"<hide>"
     }
 }
