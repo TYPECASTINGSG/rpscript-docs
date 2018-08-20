@@ -15,6 +15,8 @@ module used :
 
 Generated report
 <a target="_blank" href="./examples/all-organisations.txt">all-organisations.txt</a>
+<a target="_blank" href="./examples/dataset-by-organisations.txt">dataset-by-organisations.txt</a>
+<a target="_blank" href="./examples/dataset-length.txt">dataset-length.txt</a>
 
 ---
 ---
