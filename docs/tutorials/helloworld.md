@@ -2,6 +2,9 @@
 
 Simple `hello world` repeat 3 times, and print on the terminal.
 
+module used :
+<span class="badge">basic</span>
+
 ## __Source__
 
 **hello.rps**
