@@ -79,58 +79,62 @@ var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, targ
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
 };
+var __awaiter = (this &amp;&amp; this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
     return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const opn_1 = __importDefault(require("opn"));
-const child_process_1 = require("child_process");
+const request_promise_1 = __importDefault(require("request-promise"));
 const rpscript_interface_1 = require("rpscript-interface");
-var deasyncPromise = require('deasync-promise');
-/** Open a file or url in the user's preferred application.
- *
- * @see {@link https://www.npmjs.com/package/opn}
- * @namespace Open
+/** Module for making http call
+ * @see {@link https://www.npmjs.com/package/request-promise}
+ * @namespace Request
  *
  * @example
- * rps install open
- *
+ * rps install request
 */
-let RPSOpen = class RPSOpen {
+let RPSRequest = class RPSRequest {
     /**
-     * @function open
-     * @memberof Open
+     * @function request
+     * @memberof Request
      * @example
-     * ;Opens a browser
-     * open "http://www.google.com"
-     * open --app="firefox" "http://www.google.com"
+     * ; GET the content of google.com
+     * request "http://www.google.com"
      *
+     * @param {string} url url
+     * @param {*} options refer to request-promise documentation.
+     * @summary request :: String → String
      *
-     * @param {string} filepath file to open.
-     * @param {*} options refer to Opn documentation.
-     * @summary open :: String → ChildProcess
+     * @see {@link https://www.npmjs.com/package/request-promise}
      *
     */
-    open(ctx, opts, filepath) {
-        if (!filepath) {
-            return function (filepath) {
-                return deasyncPromise(opn_1.default(filepath, opts));
-            };
-        }
-        else
-            return opn_1.default(filepath, opts);
-    }
-    childProcessOpen(filepath) {
-        return child_process_1.execSync(`xdg-open ${filepath}`);
+    request(ctx, opts, url) {
+        return __awaiter(this, void 0, void 0, function* () {
+            function req(url) {
+                opts['uri'] = url;
+                return request_promise_1.default(opts);
+            }
+            if (!url)
+                return req;
+            else
+                return req(url);
+        });
     }
 };
 __decorate([
-    rpscript_interface_1.rpsAction({ verbName: 'open' })
-], RPSOpen.prototype, "open", null);
-RPSOpen = __decorate([
-    rpscript_interface_1.RpsModule("open")
-], RPSOpen);
-exports.default = RPSOpen;
+    rpscript_interface_1.rpsAction({ verbName: 'request' })
+], RPSRequest.prototype, "request", null);
+RPSRequest = __decorate([
+    rpscript_interface_1.RpsModule("request")
+], RPSRequest);
+exports.default = RPSRequest;
 </code></pre>
         </article>
     </section>

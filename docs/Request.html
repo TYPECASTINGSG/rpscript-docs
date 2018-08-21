@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,71 +67,278 @@
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>"use strict";
-var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
-};
-var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
-    return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const opn_1 = __importDefault(require("opn"));
-const child_process_1 = require("child_process");
-const rpscript_interface_1 = require("rpscript-interface");
-var deasyncPromise = require('deasync-promise');
-/** Open a file or url in the user's preferred application.
- *
- * @see {@link https://www.npmjs.com/package/opn}
- * @namespace Open
- *
- * @example
- * rps install open
- *
-*/
-let RPSOpen = class RPSOpen {
-    /**
-     * @function open
-     * @memberof Open
-     * @example
-     * ;Opens a browser
-     * open "http://www.google.com"
-     * open --app="firefox" "http://www.google.com"
-     *
-     *
-     * @param {string} filepath file to open.
-     * @param {*} options refer to Opn documentation.
-     * @summary open :: String → ChildProcess
-     *
-    */
-    open(ctx, opts, filepath) {
-        if (!filepath) {
-            return function (filepath) {
-                return deasyncPromise(opn_1.default(filepath, opts));
-            };
-        }
-        else
-            return opn_1.default(filepath, opts);
-    }
-    childProcessOpen(filepath) {
-        return child_process_1.execSync(`xdg-open ${filepath}`);
-    }
-};
-__decorate([
-    rpscript_interface_1.rpsAction({ verbName: 'open' })
-], RPSOpen.prototype, "open", null);
-RPSOpen = __decorate([
-    rpscript_interface_1.RpsModule("open")
-], RPSOpen);
-exports.default = RPSOpen;
-</code></pre>
-        </article>
-    </section>
+        <h2>Request</h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description"><p>Module for making http call</p></div>
+            
+
+            
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.npmjs.com/package/request-promise">https://www.npmjs.com/package/request-promise</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+            
+                <h3>Example</h3>
+                
+    <pre class="prettyprint lang-rps"><code>rps install request</code></pre>
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Actions</h3>
+
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id=".request">
+            
+            <p class="summary"><p>request :: String → String</p></p>
+            
+
+            
+                <!--<span class="type-signature"></span>request<span class="signature"> url options</span><span class="type-signature"></span>-->
+                
+            
+            <!--<div class="container-source members">
+                <code><a href="rpscript-api-request_build_index.js.html">rpscript-api-request/build/index.js</a></code>,
+                <code><a href="rpscript-api-request_build_index.js.html#line30">line 30</a></code>
+            </div>-->
+            
+        </h4>
+
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>url</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>refer to request-promise documentation.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://www.npmjs.com/package/request-promise">https://www.npmjs.com/package/request-promise</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint lang-rps"><code>; GET the content of google.com
+request "http://www.google.com"</code></pre>
+
+    
+
+</dd>
+
+            </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
@@ -150,7 +355,7 @@ exports.default = RPSOpen;
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = '_sub'.replace(/"/g, '_');
+        var id = 'Request_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
