@@ -91,69 +91,94 @@ var __importDefault = (this &amp;&amp; this.__importDefault) || function (mod) {
     return (mod &amp;&amp; mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const sync_1 = __importDefault(require("csv-parse/lib/sync"));
-const sync_2 = __importDefault(require("csv-stringify/lib/sync"));
+const cheerio_1 = __importDefault(require("cheerio"));
 const rpscript_interface_1 = require("rpscript-interface");
-/** Module for parsing CSV file
- * @see {@link https://www.npmjs.com/package/csv|CSV}
- * @namespace CSV
+/** Html document traversal and manipulation with cheerio
+ * @see {@link https://www.npmjs.com/package/cheerio}
+ * @namespace Cheerio
+ *
  * @example
- * rps install csv
+ * rps install cheerio
 */
-let RPSCsv = class RPSCsv {
+let RPSCheerio = class RPSCheerio {
     /**
-     * @function csv-to-data
-     * @memberof CSV
-     * @param {string} csvString csv content to be parsed
-     * @param {*} options
-     * @example
-     * csv-to-data --columns=true read-file "input.csv"
-     *
-     *
-     * @summary csv-to-data :: String → String
-     *
-     * @see {@link http://csv.adaltas.com/parse/} for available options.
-    */
-    parseCsvToData(ctx, opts, csvString) {
+   * @function cheerio
+   * @memberof Cheerio
+   * @example
+   * ; load document to cheerio
+   * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
+   * selector $doc Children First Text
+   *
+   * @param {string} document Html document.
+   * @param {string} context Optional context.
+   * @return {Cheerio} cheerio object.
+   * @summary cheerio :: (String, String?) → Cheerio
+   *
+  */
+    load(ctx, opts, doc, context) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (csvString)
-                return sync_1.default(csvString, opts);
+            if (!context)
+                return cheerio_1.default.load(doc).root();
             else
-                return function (csvString) { return sync_1.default(csvString, opts); };
+                return cheerio_1.default(doc, context);
         });
     }
     /**
-     * @function data-to-csv
-     * @memberof CSV
-     * @param {string} data csv content to be parsed
-     * @param {*} options
+     * @function selector
+     * @memberof Cheerio
      * @example
-     * write-file "result.csv" data-to-csv $processedResult
+     * ;load document to cheerio
+     * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
      *
-     * @summary data-to-csv :: String → String
+     * ;equivalent to $('h2').children().first().text() in cheerio
+     * selector $doc Children First Text
      *
-     * @see {@link http://csv.adaltas.com/stringify/} for available options.
+     * @param {Cheerio} selector The selector to traverse/manipulate.
+     * @param {...*} chains The chain to navigate. Capital word represents function in cheerio.
+     *
+     * @summary selector :: Cheerio → ...* → *
+     *
      *
     */
-    parseDataToCsv(ctx, opts, data) {
+    execute(ctx, opts, obj, ...chain) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (data)
-                return sync_2.default(data, opts);
-            else
-                return function (data) { return sync_2.default(data, opts); };
+            function fn(...chain) {
+                //map data structure
+                let placeholder = [];
+                chain.forEach(c => {
+                    if (typeof c === 'symbol')
+                        placeholder.push({ fn: c, param: [] });
+                    else
+                        placeholder[placeholder.length - 1].param.push(c);
+                });
+                //execute
+                let output = obj;
+                for (var i = 0; i &lt; placeholder.length; i++) {
+                    let item = placeholder[i];
+                    let fnName = item.fn.toString();
+                    fnName = fnName.replace('Symbol(', ''); //whatever
+                    fnName = fnName.replace(')', '');
+                    output = output[fnName].apply(output, item.param);
+                }
+                return output;
+            }
+            if (chain &amp;&amp; chain.length > 0)
+                return rpscript_interface_1.R.apply(fn, chain);
+            else if (obj)
+                return fn;
         });
     }
 };
 __decorate([
-    rpscript_interface_1.rpsAction({ verbName: 'csv-to-data' })
-], RPSCsv.prototype, "parseCsvToData", null);
+    rpscript_interface_1.rpsAction({ verbName: 'cheerio' })
+], RPSCheerio.prototype, "load", null);
 __decorate([
-    rpscript_interface_1.rpsAction({ verbName: 'data-to-csv' })
-], RPSCsv.prototype, "parseDataToCsv", null);
-RPSCsv = __decorate([
-    rpscript_interface_1.RpsModule("csv")
-], RPSCsv);
-exports.default = RPSCsv;
+    rpscript_interface_1.rpsAction({ verbName: 'selector' })
+], RPSCheerio.prototype, "execute", null);
+RPSCheerio = __decorate([
+    rpscript_interface_1.RpsModule("cheerio")
+], RPSCheerio);
+exports.default = RPSCheerio;
 </code></pre>
         </article>
     </section>

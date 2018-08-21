@@ -10,13 +10,13 @@
 # cd ../rpscript-api-adm-zip && npm run build #stable:MED
 # cd ../rpscript-api-notifier && npm run build #COMPLETED
 # cd ../rpscript-api-request && npm run build
+# cd ../rpscript-api-cheerio && npm run build
 
 # cd ../rpscript-api-columnify && npm run build  #stable:HIGH
 # cd ../rpscript-api-shelljs && npm run build
 # cd ../rpscript-api-replace-string && npm run build  #stable:HIGH
 # cd ../rpscript-api-faker && npm run build #stable:HIGH
 # cd ../rpscript-api-sloc && npm run build
-# cd ../rpscript-api-cheerio && npm run build
 # cd ../rpscript-api-mathjs && npm run build
 # cd ../rpscript-api-fs-extra && npm run build
 # cd ../rpscript-api-moment && npm run build
@@ -37,6 +37,7 @@ cd ../rpscript-site
 ../rpscript-api-file/build/index.js \
 ../rpscript-api-notifier/build/index.js \
 ../rpscript-api-request/build/index.js \
+../rpscript-api-cheerio/build/index.js \
 -d docs -c jsdoc.conf.json --readme README.md
 
 # ../rpscript-api-shelljs/build/index.js \
@@ -47,8 +48,6 @@ cd ../rpscript-site
 # ../rpscript-api-sloc/build/index.js \
 # ../rpscript-api-shelljs/build/index.js \
 # ../rpscript-api-lodash/build/index.js \
-# ../rpscript-api-request/build/index.js \
-# ../rpscript-api-cheerio/build/index.js \
 # ../rpscript-api-file/build/index.js \
 # ../rpscript-api-mathjs/build/index.js \
 # ../rpscript-api-fs-extra/build/index.js \
