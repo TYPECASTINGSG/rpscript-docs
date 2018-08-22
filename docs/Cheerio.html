@@ -163,11 +163,11 @@
     
         <h4 class="name" id=".cheerio">
             
-            <p class="summary"><p>cheerio :: (String, String?) → Cheerio</p></p>
+            <p class="summary"><p>cheerio :: String → CheerioStatic</p></p>
             
 
             
-                <!--<span class="type-signature"></span>cheerio<span class="signature"> document context</span><span class="type-signature"> &rarr; {<a href="Cheerio.html">Cheerio</a>}</span>-->
+                <!--<span class="type-signature"></span>cheerio<span class="signature"> document</span><span class="type-signature"> &rarr; {<a href="Cheerio.html">Cheerio</a>}</span>-->
                 
             
             <!--<div class="container-source members">
@@ -232,29 +232,6 @@
             
 
             <td class="description last"><p>Html document.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>context</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Optional context.</p></td>
         </tr>
 
     
@@ -338,8 +315,8 @@
         <h5>Example</h5>
         
     <pre class="prettyprint lang-rps"><code>; load document to cheerio
-cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
-selector $doc Children First Text</code></pre>
+cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>"| 'doc'
+selector $doc 'h2' First Text</code></pre>
 
     
 
@@ -352,16 +329,16 @@ selector $doc Children First Text</code></pre>
     
         <h4 class="name" id=".selector">
             
-            <p class="summary"><p>selector :: Cheerio → ...<em> → </em></p></p>
+            <p class="summary"><p>selector :: CheerioStatic → String|Cheerio → ...<em> → </em></p></p>
             
 
             
-                <!--<span class="type-signature"></span>selector<span class="signature"> selector &hellip;chains</span><span class="type-signature"></span>-->
+                <!--<span class="type-signature"></span>selector<span class="signature"> selector context &hellip;chains</span><span class="type-signature"></span>-->
                 
             
             <!--<div class="container-source members">
                 <code><a href="rpscript-api-cheerio_build_index.js.html">rpscript-api-cheerio/build/index.js</a></code>,
-                <code><a href="rpscript-api-cheerio_build_index.js.html#line52">line 52</a></code>
+                <code><a href="rpscript-api-cheerio_build_index.js.html#line50">line 50</a></code>
             </div>-->
             
         </h4>
@@ -412,7 +389,7 @@ selector $doc Children First Text</code></pre>
             <td class="type">
             
                 
-<span class="param-type"><a href="Cheerio.html">Cheerio</a></span>
+<span class="param-type">CheerioStatic</span>
 
 
             
@@ -431,6 +408,40 @@ selector $doc Children First Text</code></pre>
             
 
             <td class="description last"><p>The selector to traverse/manipulate.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type"><a href="Cheerio.html">Cheerio</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>context of the document.</p></td>
         </tr>
 
     
@@ -526,10 +537,10 @@ selector $doc Children First Text</code></pre>
         <h5>Example</h5>
         
     <pre class="prettyprint lang-rps"><code>;load document to cheerio
-cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
+cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" | 'doc'
 
 ;equivalent to $('h2').children().first().text() in cheerio
-selector $doc Children First Text</code></pre>
+selector $doc 'h2' Children First Text</code></pre>
 
     
 

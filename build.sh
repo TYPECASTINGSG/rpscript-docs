@@ -22,6 +22,12 @@
 # cd ../rpscript-api-moment && npm run build
 # cd ../rpscript-api-robotjs && npm run build
 
+# util          : excel pdf shelljs markdown d3 mail faker static-server file-watch git
+# 3rd party app : sql tensorflow
+# computation   : sloc tabletojson columnify mathjs
+# services      : aws googleapi googlemap facebook twitter telegram twilio stackexchange quora slack github
+# framework     : chatbot browser-automation robotjs electron mocha
+
 
 cd ../rpscript-site
 ./node_modules/.bin/jsdoc \

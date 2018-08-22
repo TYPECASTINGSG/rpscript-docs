@@ -106,21 +106,19 @@ let RPSCheerio = class RPSCheerio {
    * @memberof Cheerio
    * @example
    * ; load document to cheerio
-   * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
-   * selector $doc Children First Text
+   * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>"| 'doc'
+   * selector $doc 'h2' First Text
    *
    * @param {string} document Html document.
-   * @param {string} context Optional context.
    * @return {Cheerio} cheerio object.
-   * @summary cheerio :: (String, String?) → Cheerio
+   * @summary cheerio :: String → CheerioStatic
    *
   */
-    load(ctx, opts, doc, context) {
+    load(ctx, opts, doc) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!context)
-                return cheerio_1.default.load(doc).root();
-            else
-                return cheerio_1.default(doc, context);
+            // if(!context) return cheerio.load(doc).root();
+            // else return cheerio(doc,context);
+            return cheerio_1.default.load(doc);
         });
     }
     /**
@@ -128,21 +126,22 @@ let RPSCheerio = class RPSCheerio {
      * @memberof Cheerio
      * @example
      * ;load document to cheerio
-     * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" 'h2' | 'doc'
+     * cheerio "&lt;h2 class='title'>Hello &lt;span class='wei'>wei&lt;/span> world&lt;/h2>" | 'doc'
      *
      * ;equivalent to $('h2').children().first().text() in cheerio
-     * selector $doc Children First Text
+     * selector $doc 'h2' Children First Text
      *
-     * @param {Cheerio} selector The selector to traverse/manipulate.
+     * @param {CheerioStatic} selector The selector to traverse/manipulate.
+     * @param {String|Cheerio} context context of the document.
      * @param {...*} chains The chain to navigate. Capital word represents function in cheerio.
      *
-     * @summary selector :: Cheerio → ...* → *
+     * @summary selector :: CheerioStatic → String|Cheerio → ...* → *
      *
      *
     */
-    execute(ctx, opts, obj, ...chain) {
+    execute(ctx, opts, obj, context, ...chain) {
         return __awaiter(this, void 0, void 0, function* () {
-            function fn(...chain) {
+            function fn(ctx, ...chain) {
                 //map data structure
                 let placeholder = [];
                 chain.forEach(c => {
@@ -152,7 +151,7 @@ let RPSCheerio = class RPSCheerio {
                         placeholder[placeholder.length - 1].param.push(c);
                 });
                 //execute
-                let output = obj;
+                let output = rpscript_interface_1.R.call(obj, ctx);
                 for (var i = 0; i &lt; placeholder.length; i++) {
                     let item = placeholder[i];
                     let fnName = item.fn.toString();
@@ -162,9 +161,11 @@ let RPSCheerio = class RPSCheerio {
                 }
                 return output;
             }
-            if (chain &amp;&amp; chain.length > 0)
-                return rpscript_interface_1.R.apply(fn, chain);
-            else if (obj)
+            if (!context)
+                return (ctx, ...chain) => rpscript_interface_1.R.apply(fn, rpscript_interface_1.R.prepend(ctx, chain));
+            else if (chain &amp;&amp; chain.length > 0)
+                return rpscript_interface_1.R.apply(fn, rpscript_interface_1.R.prepend(context, chain));
+            else
                 return fn;
         });
     }

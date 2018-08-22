@@ -109,7 +109,7 @@ download('https://data.gov.sg/dataset/dba9594b-fb5c-41c5-bb7c-92860ee31aeb/downl
     console.log(orgList); //print out the list of organisations
 });
 </code></pre><p>with this:</p>
-<pre class="prettyprint source"><code>download &quot;.&quot; &quot;https://data.gov.sg/dataset/dba9594b-fb5c-41c5-bb7c-92860ee31aeb/download&quot;
+<pre class="prettyprint source"><code>download &quot;https://data.gov.sg/dataset/dba9594b-fb5c-41c5-bb7c-92860ee31aeb/download&quot;
 
 extract &quot;download.zip&quot; &quot;./temp/&quot;
 
@@ -122,6 +122,11 @@ log uniq pluck 'organisation' $dataset</code></pre><h2>Installation <img src="ht
 <pre class="prettyprint source"><code>log repeat &quot;hello world &quot; 3</code></pre><p>Go to the terminal, and run the command:</p>
 <pre class="prettyprint source"><code>rps helloworld.rps</code></pre><h2>Getting Started <img src="https://s3.amazonaws.com/sample.rpscript.com/images/handy_robot50.png" width="25px"></h2><p>Getting started guide is available at <a href="http://www.rpscript.com/tutorial-gettingstarted.html">Getting Started</a>.</p>
 <h2>Usage <img src="https://s3.amazonaws.com/sample.rpscript.com/images/handy_robot50.png" width="25px"></h2><p>Usage guide is available at <a href="http://www.rpscript.com/tutorial-usage.html">Usage</a></p>
+<h2>Usage <img src="https://s3.amazonaws.com/sample.rpscript.com/images/handy_robot50.png" width="25px"></h2><p><a href="http://www.rpscript.com/tutorial-helloworld.html">Hello world</a></p>
+<p><a href="http://www.rpscript.com/tutorial-asciiart.html">Ascii Art with Figlet</a></p>
+<p><a href="http://www.rpscript.com/tutorial-compression.html">Compression</a></p>
+<p><a href="http://www.rpscript.com/tutorial-table.html">Table generation from CSV file</a></p>
+<p><a href="http://www.rpscript.com/tutorial-datasetanalysis.html">Data Analysis from CSV file</a></p>
 <h2>Modules <img src="https://s3.amazonaws.com/sample.rpscript.com/images/bossy_robot50.png" width="18px"></h2><table>
 <thead>
 <tr>
@@ -199,6 +204,18 @@ log uniq pluck 'organisation' $dataset</code></pre><h2>Installation <img src="ht
 <td><a href="http://www.rpscript.com/Zip.html">Here</a></td>
 </tr>
 <tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-request">Request</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-request"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-request.svg" alt="npm version"></a></td>
+<td>Http call.</td>
+<td><a href="http://www.rpscript.com/Request.html">Here</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/TYPECASTINGSG/rpscript-api-cheerio">Cheerio</a></td>
+<td><a href="https://badge.fury.io/js/%40typecasting%2Frpscript-api-cheerio"><img src="https://badge.fury.io/js/%40typecasting%2Frpscript-api-cheerio.svg" alt="npm version"></a></td>
+<td>jQuery style traversal and manipulation.</td>
+<td><a href="http://www.rpscript.com/Cheerio.html">Here</a></td>
+</tr>
+<tr>
 <td>_</td>
 <td>_</td>
 <td>More coming soon</td>
@@ -218,7 +235,8 @@ log uniq pluck 'organisation' $dataset</code></pre><h2>Installation <img src="ht
 <p>RPScript is a transpiler that transpiles to javascript. It runs on top of Node.JS. </p>
 <p>Most, if not, all the modules are wrappers that utilize what that the npm ecosystem already provided.</p>
 <h2>Creator <img src="https://s3.amazonaws.com/sample.rpscript.com/images/kind_robot50.png" width="20px"></h2><p><strong>James Chong (@wei3hua2)</strong><br><a href="https://github.com/wei3hua2">Github</a><br><a href="https://twitter.com/wei3hua2">Twitter</a><br><a href="mailto:james.chong@typecasting.sg">Email</a></p>
-<h2>Changelog <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="23px"></h2><p>0.3.0 - Initial alpha release</p>
+<h2>Changelog <img src="https://s3.amazonaws.com/sample.rpscript.com/images/cheerful_robot50.png" width="23px"></h2><p>0.3.1 - Fixes: #1 #2</p>
+<p>0.3.0 - Initial alpha release</p>
 <h2>Copyright and Licence</h2><p>Code released under Apache 2.0</p>
 <p>Image created by Freepik</p></article>
     </section>
