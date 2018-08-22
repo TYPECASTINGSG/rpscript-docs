@@ -9,78 +9,138 @@
 
 <url>
   <loc>http://www.rpscript.com/</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/index.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-examples.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/tutorial-gettingstarted.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/tutorial-usage.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Basic.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Beeper.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/Cheerio.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/CSV.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Date.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Download.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Figlet.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/File.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Hogan.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Notifier.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Open.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/Request.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rpscript.com/Zip.html</loc>
-  <lastmod>2018-08-16T07:31:47+00:00</lastmod>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-helloworld.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-asciiart.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-compression.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-table.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/tutorial-datasetanalysis.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/examples/dataset.html</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/examples/all-organisations.txt</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/examples/dataset-by-organisations.txt</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.rpscript.com/examples/dataset-length.txt</loc>
+  <lastmod>2018-08-22T03:42:21+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
